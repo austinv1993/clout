@@ -1,1 +1,8 @@
 /* Empty. Add your own CSS if you like */
+body, html {
+  width: 100%;
+  height: 100%;    
+}
+.ex-list {
+  margin-top: 10px;  
+}
