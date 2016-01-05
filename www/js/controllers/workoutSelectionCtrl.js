@@ -1,4 +1,4 @@
-angular.module('starter')
+angular.module('clout')
 .controller('workoutSelectionCtrl', function($scope) {
     
 });
