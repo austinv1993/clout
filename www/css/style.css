@@ -23,3 +23,12 @@ body, html {
   font-weight: 300;
   font-size: 24px;
 }
+
+.button-small {
+  background-color: #FFC900;
+  color: white;
+}
+
+.item-input {
+  font-weight: 300;
+}
