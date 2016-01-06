@@ -4,6 +4,8 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 
 	function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) {
 
+		$scope.workout = {};
+
 		$scope.newExercise = {};
 
 		$scope.exercises = [];
@@ -26,19 +28,21 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 			array.splice(index, 1);
 		};
 
+		$scope.newEquipment = {};
+
 		$scope.equipments = [];
+
 
 
 
 		$scope.addNewEquipment = function() {
 
-			if ($scope.newEquipment === "") {
+			if (!$scope.newEquipment.text) {
 				alert("Please enter equipment");
 			}
 			else {
-				$scope.equipments.push($scope.newEquipment);
-				$scope.newEquipment = "";
-				$scope.EquipmentAdded = true;
+				$scope.equipments.push($scope.newEquipment.text);
+				$scope.newEquipment = {};
 			}
 		};
 
@@ -50,12 +54,27 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 			array.splice(index, 1);
 		};
 
+		$scope.reps = false;
+        $scope.interval = false;
+
+        $scope.workoutType = function() {
+            if($scope.workout.type === "reps") {
+                $scope.reps = true;
+                $scope.interval = false;
+            }
+            if($scope.workout.type === "interval") {
+                $scope.interval = true;
+                $scope.reps = false;
+            }
+        };
+
+
 		$scope.newWorkout = {
-			name: $scope.newWorkoutName,
-			workoutType: $scope.newWorkoutType,
+			name: $scope.workout.name,
+			workoutType: $scope.workout.type,
 			exercises: $scope.exercises,
 			equipment: $scope.equipments,
-			level: $scope.level,
+			level: $scope.workout.level,
 			time: $scope.estWorkoutTime,
 			description: $scope.description
 		};
