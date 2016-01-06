@@ -13,7 +13,7 @@
   <div class="list">
     <label class="item item-input item-floating-label">
       <span class="input-label">Workout Name</span>
-      <input type="text" placeholder="Workout Name">
+      <input type="text" placeholder="Workout Name" ng-model="newWorkoutName">
     </label>
   </div>
 
@@ -33,7 +33,7 @@
     <div class="input-label">
       Workout Type
     </div>
-    <select>
+    <select ng-model="newWorkoutType">
       <option>Reps</option>
       <option selected>Interval</option>
 
@@ -46,21 +46,29 @@
 
   <div class="item item-input-inset">
     <label class="item-input-wrapper">
-      <input type="text" placeholder="Add Exercise">
+      <input type="text" placeholder="Add Exercise" ng-model="newExercise.text">
     </label>
-    <button class="button button-small">
+    <button class="button button-small" ng-click="addNewExercise()">
       Submit
     </button>
   </div>
 
 </div>
 
-<!-- <div class="row responsive-sm">
-  <div class="col">Bench Press</div>
-  <div class="col">Bicep Curl</div>
-  <div class="col">Hammer Curl</div>
-  <div class="col">Skull Crushers</div>
-</div> -->
+<div class="row responsive-sm">
+  <div class="col" ng-repeat="exercise in exercises track by $index">
+
+    <button class="ion-close-circled" ng-click="deleteExercise(exercises, $index)">
+  
+    </button>
+
+    {{ exercise }}
+
+
+  </div>
+</div>
+
+
 
 <div class="list">
 
@@ -90,7 +98,7 @@
 
 
 <br>
-<hr/>
+
 
 <div class="item item-input-inset">
   <label class="item-input-wrapper">

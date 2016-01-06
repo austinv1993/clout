@@ -32,3 +32,10 @@ body, html {
 .item-input {
   font-weight: 300;
 }
+
+.ion-close-circled {
+  color: red;
+  background-color: none;
+  background: none;
+  border: none;
+}

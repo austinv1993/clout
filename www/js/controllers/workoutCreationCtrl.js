@@ -1,37 +1,37 @@
-angular.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'workoutCreationSrvc', workoutCreationCtrl]);
+var app = angular.module('clout');
+
+app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'workoutCreationSrvc', workoutCreationCtrl]);
 
 	function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) {
-		
+
+		$scope.newExercise = {};
+
 		$scope.exercises = [];
-		
-		$scope.exerciseAdded = false;
-		
+
+
+
 		$scope.addNewExercise = function() {
-			
-			if ($scope.newExercise === "") {
+
+			if (!$scope.newExercise.text) {
 				alert("Please enter exercise");
 			}
 			else {
-				$scope.exercises.push($scope.newExercise);
-				$scope.newExercise = "";
-				$scope.exerciseAdded = true;
+				$scope.exercises.push($scope.newExercise.text);
+				$scope.newExercise = {};
 			}
 		};
-		
+
 		$scope.deleteExercise = function(array, index) {
-			
-			if ($scope.exercises.length < 2) {
-				$scope.exerciseAdded = false;
-			}
+
 			array.splice(index, 1);
 		};
-		
+
 		$scope.equipments = [];
-		
-		$scope.equipmentAdded = false;
-		
+
+
+
 		$scope.addNewEquipment = function() {
-			
+
 			if ($scope.newEquipment === "") {
 				alert("Please enter equipment");
 			}
@@ -41,15 +41,15 @@ angular.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', '
 				$scope.EquipmentAdded = true;
 			}
 		};
-		
+
 		$scope.deleteEquipment = function(array, index) {
-			
+
 			if ($scope.equipments.length < 2) {
 				$scope.equipmentAdded = false;
 			}
 			array.splice(index, 1);
 		};
-				
+
 		$scope.newWorkout = {
 			name: $scope.newWorkoutName,
 			workoutType: $scope.newWorkoutType,
@@ -59,14 +59,14 @@ angular.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', '
 			time: $scope.estWorkoutTime,
 			description: $scope.description
 		};
-		
+
 		$scope.postNewWorkout = function() {
-		
+
 			workoutCreationSrvc.addNewWorkout($scope.newWorkout).then(function (data) {
-				
+
 				alert("Workout Added");
 				$state.go('tab.workout-selection');
-				
+
 			});
 		}
 };
@@ -75,7 +75,7 @@ angular.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', '
 // ***HTML code for adding exercises***
 
 // <h4>Exercises</h4>
-					
+
 // <form ng-submit="addNewExercise()">
 // 	<input class="" ng-model="newExercise" placeholder=""></input><br>
 // </form>
@@ -88,7 +88,7 @@ angular.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', '
 // ***HTML code for adding required equipment***
 
 // <h4>Equipment</h4>
-					
+
 // <form ng-submit="addNewEquipment()">
 // 	<input class="" ng-model="newEquipment" placeholder=""></input><br>
 // </form>
