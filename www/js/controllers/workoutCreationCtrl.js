@@ -1,52 +1,44 @@
-angular.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'workoutCreationSrvc', workoutCreationCtrl]);
+var app = angular.module('clout');
+
+app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'workoutCreationSrvc', workoutCreationCtrl]);
 
 	function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) {
 		
-		$scope.exercises = [];
+		$scope.newExercise = {};
 		
-		$scope.exerciseAdded = false;
+		$scope.exercises = [];
 		
 		$scope.addNewExercise = function() {
 			
-			if ($scope.newExercise === "") {
+			if(!$scope.newExercise.text) {
 				alert("Please enter exercise");
 			}
 			else {
-				$scope.exercises.push($scope.newExercise);
-				$scope.newExercise = "";
-				$scope.exerciseAdded = true;
+				$scope.exercises.push($scope.newExercise.text);
+				$scope.newExercise = {};
 			}
 		};
 		
 		$scope.deleteExercise = function(array, index) {
 			
-			if ($scope.exercises.length < 2) {
-				$scope.exerciseAdded = false;
-			}
 			array.splice(index, 1);
 		};
 		
 		$scope.equipments = [];
 		
-		$scope.equipmentAdded = false;
-		
 		$scope.addNewEquipment = function() {
 			
-			if ($scope.newEquipment === "") {
+			if($scope.newEquipment === "") {
 				alert("Please enter equipment");
 			}
 			else {
 				$scope.equipments.push($scope.newEquipment);
 				$scope.newEquipment = "";
-				$scope.EquipmentAdded = true;
 			}
 		};
 		
 		$scope.deleteEquipment = function(array, index) {
 			
-			if ($scope.equipments.length < 2) {
-				$scope.equipmentAdded = false;
-			}
 			array.splice(index, 1);
 		};
 				
@@ -83,6 +75,7 @@ angular.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', '
 // <ul>
 // 	<li class="" ng-repeat="exercise in exercises track by $index" >{{ exercise }}<button id="" ng-click="delete(exercises, $index)">Remove</button></li>
 // </ul>
+// <input id="" ng-show="exerciseAdded" type="submit" value="SUBMIT" ng-click="postNewWorkout()"></input><br>
 
 
 // ***HTML code for adding required equipment***
@@ -96,3 +89,4 @@ angular.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', '
 // <ul>
 // 	<li class="" ng-repeat="equipment in equipments track by $index" >{{ equipment }}<button id="" ng-click="delete(equipments, $index)">Remove</button></li>
 // </ul>
+// <input id="" ng-show="equipmentAdded" type="submit" value="SUBMIT" ng-click="postNewWorkout()"></input><br>
