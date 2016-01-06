@@ -5,5 +5,7 @@ angular.module('clout')
             $scope.workouts = workouts;
         })
     }
+    // $scope.getWorkouts(); NOT YET BRAH
+    
 
 });
