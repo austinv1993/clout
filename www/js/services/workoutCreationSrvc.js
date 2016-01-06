@@ -6,11 +6,9 @@ function workoutCreationSrvc($q, $http) {
 		
 		return $http.post('/api/', newWorkout)
 			.then(function(response) {
-				
 				return "Workout Added";
 			}, function(error) {
-				
-				return error;
+				console.log(error);
 			});
 	};
 };

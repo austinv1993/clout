@@ -58,7 +58,7 @@ angular.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', '
 			level: $scope.level,
 			time: $scope.estWorkoutTime,
 			description: $scope.description
-		}
+		};
 		
 		$scope.postNewWorkout = function() {
 		
