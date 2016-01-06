@@ -5,4 +5,5 @@ angular.module('clout')
             $scope.workouts = workouts;
         })
     }
+
 });
