@@ -6,3 +6,21 @@ body, html {
 .ex-list {
   margin-top: 10px;  
 }
+.container {
+    margin: 15px;
+}
+.workout {
+    /*outline: 1px solid red;*/
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.float {
+    float: left;
+}
+.margin {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.clear {
+    clear: both;
+}
