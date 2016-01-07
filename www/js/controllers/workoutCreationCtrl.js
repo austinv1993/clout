@@ -103,13 +103,11 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 			}
 			if($scope.workout.type === "interval") {
 				if(!$scope.workoutTime) {
-					console.log("got to interval");
 					$scope.errorMessages.push(" estimated time");
 				}
 			}
 			if($scope.workout.type === "reps") {
 				if(!$scope.workoutReps) {
-					console.log("got to reps");
 					$scope.errorMessages.push(" reps/sets");
 				}
 			}
@@ -126,8 +124,6 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 			else {
 				workoutCreationSrvc.addNewWorkout($scope.newWorkout).then(function (data) {
 
-					console.log($scope.workout.name);
-					console.log($scope.newWorkout);
 					alert("Workout Added");
 					$state.go('tab.workout-selection');
 
