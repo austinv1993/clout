@@ -18,7 +18,13 @@ angular.module('clout')
             } else {
                 $scope.endOfResults = true;
             }
+            if (workoutSelectionSrvc.offset === 0) {
+                $scope.showBackButton = false;
+            } else {
+                $scope.showBackButton = true;
+            }
             console.log($scope.endOfResults);
+            console.log(workoutSelectionSrvc.offset);
         });
     };
     
@@ -30,6 +36,12 @@ angular.module('clout')
                 $scope.endOfResults = false;
             } else {
                 $scope.endOfResults = true;
+            }
+            console.log(workoutSelectionSrvc.offset);
+            if (workoutSelectionSrvc.offset === 0) {
+                $scope.showBackButton = false;
+            } else {
+                $scope.showBackButton = true;
             }
         });
     };
