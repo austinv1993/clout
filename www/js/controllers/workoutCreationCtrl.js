@@ -1,4 +1,3 @@
-
 var app = angular.module('clout');
 
 app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'workoutCreationSrvc', workoutCreationCtrl]);
