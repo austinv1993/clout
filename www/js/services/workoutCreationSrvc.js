@@ -1,6 +1,6 @@
 var app = angular.module('clout');
 
-app.service('workoutCreationSrvc', ['$q', '$http', workoutCreationCtrl]);
+app.service('workoutCreationSrvc', ['$q', '$http', workoutCreationSrvc]);
 
 function workoutCreationSrvc($q, $http) {
 

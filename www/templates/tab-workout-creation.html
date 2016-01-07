@@ -117,42 +117,43 @@
 
 </input>
 
-<button class="type-selector">
-  Submit
-</button>
 </div> -->
-
-<div class="item item-input-inset time-holder" ng-show="interval" value="workout.mins">
-  <label class="item-input-wrapper mins-holder">
-    <input type="text" placeholder="Mins" maxlength="2">
-  </label>
-
-</div>
-
-<div class="item item-input-inset time-holder" ng-show="interval" value="workout.secs">
-
-
-  <label class="item-input-wrapper mins-holder">
-    <input type="text" placeholder="Secs" maxlength="2">
-  </label>
-
-
-</div>
 
 <p ng-show="interval" class="time-selector">Please select workout time</p>
 
-<div class="item item-input-inset time-holder" ng-show="reps" value="workout.reps">
+<div class="item item-input-inset time-holder" ng-show="interval" >
+  <label class="item-input-wrapper mins-holder">
+    <input type="text" placeholder="Mins" maxlength="2" ng-model="workout.mins">
+  </label>
+
+</div>
+
+<div class="item item-input-inset time-holder" ng-show="interval" >
+
 
   <label class="item-input-wrapper mins-holder">
-    <input type="text" placeholder="Reps" maxlength="2">
+    <input type="text" placeholder="Secs" maxlength="2" ng-model="workout.secs">
+  </label>
+
+
+</div>
+
+<!-- <p ng-show="interval" class="time-selector">Please select workout time</p> -->
+<p ng-show="reps" class="time-selector">Please select repetition and sets</p>
+
+
+<div class="item item-input-inset time-holder" ng-show="reps" >
+
+  <label class="item-input-wrapper mins-holder">
+    <input type="text" placeholder="Reps" maxlength="2" ng-model="workout.reps">
   </label>
 
 </div>
 
 
-<div class="item item-input-inset time-holder" ng-show="reps" value="workout.sets">
+<div class="item item-input-inset time-holder" ng-show="reps">
   <label class="item-input-wrapper mins-holder">
-    <input type="text" placeholder="Sets" maxlength="2">
+    <input type="text" placeholder="Sets" maxlength="2"  ng-model="workout.sets">
   </label>
 
 </div>
