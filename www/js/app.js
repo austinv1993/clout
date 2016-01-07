@@ -53,6 +53,6 @@ angular.module('clout', ['ionic', 'clout.controllers', 'clout.services'])
     }
   })
 
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/workout-creation');
 
 });
