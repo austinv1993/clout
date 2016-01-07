@@ -1,5 +1,5 @@
 angular.module('clout')
-.service('workoutsService', function($http) {
+.service('workoutSelectionSrvc', function($http) {
     this.offset = 0;
     this.pageCount = 6;
     

@@ -1,7 +1,7 @@
 angular.module('clout')
-.controller('workoutSelectionCtrl', function($scope, workoutsService) {
+.controller('workoutSelectionCtrl', function($scope, workoutSelectionSrvc) {
     $scope.getFirstPage = function() {
-        workoutsService.getWorkouts().then(function(workouts) {
+        workoutSelectionSrvc.getWorkouts().then(function(workouts) {
             $scope.workouts = workouts;
         });
     };
@@ -9,10 +9,10 @@ angular.module('clout')
     $scope.endOfResults = false;
     
     $scope.getMoreWorkouts = function() {
-        workoutsService.offset += 6;
-        workoutsService.getWorkouts().then(function(workouts) {
+        workoutSelectionSrvc.offset += 6;
+        workoutSelectionSrvc.getWorkouts().then(function(workouts) {
             $scope.workouts = workouts;
-            console.log(workoutsService.offset);
+            console.log(workoutSelectionSrvc.offset);
             if ($scope.workouts.length > 0) {
                 $scope.endOfResults = false;
             } else {
@@ -23,8 +23,8 @@ angular.module('clout')
     };
     
     $scope.getPreviousWorkouts = function() {
-        workoutsService.offset -= 6;
-        workoutsService.getPreviousWorkouts().then(function(workouts) {
+        workoutSelectionSrvc.offset -= 6;
+        workoutSelectionSrvc.getPreviousWorkouts().then(function(workouts) {
             $scope.workouts = workouts;
             if ($scope.workouts.length > 0) {
                 $scope.endOfResults = false;
