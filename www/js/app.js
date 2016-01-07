@@ -8,7 +8,7 @@ angular.module('clout', ['ionic', 'clout.controllers', 'clout.services'])
 
     }
     if (window.StatusBar) {
-      
+
       StatusBar.styleDefault();
     }
   });
@@ -16,21 +16,21 @@ angular.module('clout', ['ionic', 'clout.controllers', 'clout.services'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
-  
+
   $stateProvider
 
-  
+
     .state('tab', {
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
-  })                                                                                                                                                                                            
-  .state('tab.dash', {                      
-    url: '/dash',
+  })
+  .state('tab.workout-creation', {
+    url: '/workout-creation',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-workout-creation': {
+        templateUrl: 'templates/tab-workout-creation.html',
+        controller: 'workoutCreationCtrl'
       }
     }
   })
@@ -52,7 +52,7 @@ angular.module('clout', ['ionic', 'clout.controllers', 'clout.services'])
       }
     }
   })
-  
-  $urlRouterProvider.otherwise('/tab/dash');
+
+  $urlRouterProvider.otherwise('/tab/workout-creation');
 
 });
