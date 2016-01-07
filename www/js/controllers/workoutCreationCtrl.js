@@ -79,15 +79,54 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 			description: $scope.description
 		};
 
-		$scope.postNewWorkout = function() {
+		$scope.errorMessages = [];
 
-			workoutCreationSrvc.addNewWorkout($scope.newWorkout).then(function (data) {
+		        $scope.postNewWorkout = function() {
 
-				alert("Workout Added");
-				$state.go('tab.workout-selection');
+		            if(!$scope.workout.name) {
+		                $scope.errorMessages.push(" name");
+		            }
+		            if(!$scope.workout.type) {
+		                $scope.errorMessages.push(" type");
+		            }
+		            if($scope.exercises.length === 0) {
+		                $scope.errorMessages.push(" exercises");
+		            }
+		            if($scope.equipments.length === 0) {
+		                $scope.errorMessages.push(" equipment");
+		            }
+		            if(!$scope.workout.level) {
+		                $scope.errorMessages.push(" level");
+		            }
+		            if($scope.workout.type === "interval") {
+		                if(!$scope.workout.time) {
+		                    $scope.errorMessages.push(" estimated time");
+		                }
+		            }
+		            if($scope.workout.type === "reps") {
+		                if(!$scope.workout.reps) {
+		                    $scope.errorMessages.push(" reps/sets");
+		                }
+		            }
 
-			});
-		}
+		            if(!$scope.workout.description )
+
+		            if($scope.errorMessages.length > 0) {
+		                alert("The following are missing: " + $scope.errorMessages);
+		                $scope.errorMessages = [];
+		            }
+
+		            else {
+		                workoutCreationSrvc.addNewWorkout($scope.newWorkout).then(function (data) {
+
+		                    console.log("it got to the service");
+												console.log("$scope.newWorkout");
+		                    alert("Workout Added");
+		                    $state.go('tab.workout-selection');
+
+		                });
+		            }
+		        };
 };
 
 

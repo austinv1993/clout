@@ -88,6 +88,7 @@
 
 
 
+
 <label class="item item-input item-select">
   <div class="input-label">
     Level
@@ -107,48 +108,53 @@
 
 <br>
 
+<!-- <div class="type-container">
+<input class="mock-time" placeholder="Mins" maxlength="2">
 
-<div class="item item-input-inset time-holder" ng-show="interval">
+</input>:
+
+<input class="mock-time-two" placeholder="Secs" maxlength="2">
+
+</input>
+
+<button class="type-selector">
+  Submit
+</button>
+</div> -->
+
+<div class="item item-input-inset time-holder" ng-show="interval" value="workout.mins">
   <label class="item-input-wrapper mins-holder">
     <input type="text" placeholder="Mins" maxlength="2">
   </label>
-  <button class="button button-small">
-    Submit
-  </button>
+
 </div>
 
-<div class="item item-input-inset time-holder" ng-show="interval">
+<div class="item item-input-inset time-holder" ng-show="interval" value="workout.secs">
 
 
   <label class="item-input-wrapper mins-holder">
     <input type="text" placeholder="Secs" maxlength="2">
   </label>
-  <button class="button button-small">
-    Submit
-  </button>
+
 
 </div>
 
 <p ng-show="interval" class="time-selector">Please select workout time</p>
 
-<div class="item item-input-inset time-holder" ng-show="reps">
+<div class="item item-input-inset time-holder" ng-show="reps" value="workout.reps">
 
   <label class="item-input-wrapper mins-holder">
     <input type="text" placeholder="Reps" maxlength="2">
   </label>
-  <button class="button button-small">
-    Submit
-  </button>
+
 </div>
 
 
-<div class="item item-input-inset time-holder" ng-show="reps">
+<div class="item item-input-inset time-holder" ng-show="reps" value="workout.sets">
   <label class="item-input-wrapper mins-holder">
     <input type="text" placeholder="Sets" maxlength="2">
   </label>
-  <button class="button button-small">
-    Submit
-  </button>
+
 </div>
 
 
@@ -158,13 +164,13 @@
 <div class="list">
   <label class="item item-input item-floating-label">
     <span class="input-label">Workout Description</span>
-    <input type="text" placeholder="Workout Description" class="workout_descript">
+    <input type="text" placeholder="Workout Description" class="workout_descript" ng-model="workout.description">
   </label>
 </div>
 
 <div class="list">
 
-  <button class="button button-block button-energized">
+  <button class="button button-block button-energized" ng-click="postNewWorkout()">
     Create Workout
   </button>
       <!-- <button class="button button-energized">Endurance</button><br>
