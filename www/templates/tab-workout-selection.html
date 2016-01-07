@@ -4,35 +4,37 @@
             <div class="bar bar-header item-input-inset">
                 <label class="item-input-wrapper">
                     <i class="icon ion-ios-search placeholder-icon"></i>
-                    <input type="search" placeholder="Search">
+                    <input ng-model="searchName" type="search" placeholder="Search">
                 </label>
                 <button class="button button-clear">
                     Cancel
                 </button>
             </div>
-            <button class="button button-icon icon ion-navicon-round" ng-click="show()">
-            </button>
-            <div class="workout">
-                <p class="float">Name</p>
-                <p class="float margin">Length</p>
-                <p>Type</p>
-                <p>Description</p>
+            <!--<button class="button button-icon icon ion-navicon-round" ng-touch="show()">
+            </button>-->
+            <!--<div ng-repeat="workout in workouts | filter:{name:searchName}">
+                <div class="workout">
+                    <p class="float">{{workout.name}}</p>
+                    <p class="float margin">{{workout.length}} minutes</p>
+                    <p>Type: {{workout.type}}</p>
+                    <p>Description: {{workout.description}}</p>
+                </div>
+                <hr>
+            </div>-->
+            <div ng-hide="workouts">
+                No more workouts!
             </div>
-            <hr>
-            <div class="workout">
-                <p class="float">Name</p>
-                <p class="float margin">Length</p>
-                <p>Type</p>
-                <p>Description</p>
-            </div>
-            <hr>
-            <div class="workout">
-                <p class="float">Name</p>
-                <p class="float margin">Length</p>
-                <p>Type</p>
-                <p>Description</p>
-            </div>
-            <hr>
-        </div>
+           <ion-list>
+               <ion-item ng-repeat="workout in workouts | filter:{name:searchName}">
+                    <p class="float">{{workout.name}}</p>
+                    <p class="float margin">{{workout.length}} minutes</p>
+                    <p>Type: {{workout.type}}</p>
+                    <p>Description: {{workout.description}}</p>
+               </ion-item>
+               <!--<ion-infinite-scroll on-infinite="getWorkouts()" distance="1%"></ion-infinite-scroll> -->
+               <button class="button button-positive" style="margin:auto 0" ng-click="getPreviousWorkouts()">Back</button>
+               <button class="button button-positive" style="margin:auto 0" ng-click="getMoreWorkouts()">Next Page</button>
+           </ion-list>
+           <a sref="tab.workout-creation">Create New Workout!</a>
     </ion-content>
 </ion-view>
