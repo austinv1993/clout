@@ -52,6 +52,15 @@ angular.module('clout', ['ionic', 'clout.controllers', 'clout.services'])
       }
     }
   })
+  .state('view-workout', {
+    url: '/view-workout',
+    views: {
+      'view-workout': {
+        templateUrl: 'templates/view-workout.html',
+        controller: 'workoutSelectionCtrl'
+      }
+    }
+  })
 
   $urlRouterProvider.otherwise('/tab/workout-creation');
 
