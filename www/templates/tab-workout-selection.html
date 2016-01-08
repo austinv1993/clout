@@ -10,6 +10,8 @@
                     Cancel
                 </button>
             </div>
+
+            
             <!--<button class="button button-icon icon ion-navicon-round" ng-touch="show()">
             </button>-->
             <!--<div ng-repeat="workout in workouts | filter:{name:searchName}">
@@ -26,25 +28,29 @@
             </button>
             <ion-list>
                 <ion-item ng-repeat="workout in workouts | filter:{name:searchName}">
-                    <p class='workOutName'>{{workout.name}}</p>
-                    <p class='workOutTime'>{{workout.length}} minutes</p>
+
+                    <p class="workOutName">{{workout.name}}</p>
+                    <p class="workOutTime">{{workout.length}} minutes</p>
                     <p>Type: {{workout.type}}</p>
                     <p>Description: {{workout.description}}</p>
                     
-                    <a href='/#/workout-view'><button class="button button-small button-assertive" style="margin:0 8px; background-color: #341a1a; float: right;">
+                    <button class="button button-small button-assertive" style='margin-left: 10px; background-color: #510000; float: right;'>
   View
-</button></a>
-                               <button class="button button-small button-assertive" style="margin:auto 0; background-color: #383747; float: right;">
+</button>
+                    <button class="button button-small button-assertive" style='margin-left: 0 auto; background-color: #383747; float: right;'>
+
   Quick Start
 </button>
                 </ion-item>
                 <!--<ion-infinite-scroll on-infinite="getWorkouts()" distance="1%"></ion-infinite-scroll> -->
-                <button ng-show="showBackButton" class="button button-positive" style="margin:auto 0; background-color: #341a1a;" ng-click="getPreviousWorkouts()">Back</button>
-                <button ng-show="!endOfResults" class="button button-positive" style="margin:auto 0; background-color: #341a1a;" ng-click="getMoreWorkouts()">Next Page</button>
+
+                <button ng-show="showBackButton" class="button button-positive" style="margin:auto 0; background-color: #510000;" ng-click="getPreviousWorkouts()">Back</button>
+                <button ng-show="!endOfResults" class="button button-positive" style="margin:auto 0; background-color: #510000;" ng-click="getMoreWorkouts()">Next Page</button>
             </ion-list>
            
-            <button sref="tab.workout-creation" class="button button-block button-energized" style="margin-top:10px; background-color: #383747;" ng-click="postNewWorkout()">
-    Create New Workout
-  </button>
+            <button sref="tab.workout-creation" class="button button-block button-energized" style='background-color: #383747;'ng-click="postNewWorkout()">
+        Create New Workout
+      </button>
+
     </ion-content>
 </ion-view>

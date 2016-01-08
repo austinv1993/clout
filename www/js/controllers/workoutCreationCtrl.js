@@ -2,132 +2,164 @@ var app = angular.module('clout');
 
 app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'workoutCreationSrvc', workoutCreationCtrl]);
 
-	function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) {
+    function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) {
 
-		$scope.newExercise = {};
+        $scope.newExercise = {};
 
-		$scope.workout = {};
+        $scope.workout = {};
 
-		$scope.exercises = [];
+        $scope.exercises = [];
 
-		$scope.addNewExercise = function() {
+        $scope.addNewExercise = function() {
 
-			if(!$scope.newExercise.text) {
-				alert("Please enter exercise");
-			}
-			else {
-				$scope.exercises.push($scope.newExercise.text);
-				$scope.newExercise = {};
-			}
-		};
+            if($scope.workout.type === "interval") {
 
-		$scope.deleteExercise = function(array, index) {
+                if(!$scope.newExercise.name || !$scope.newExercise.mins || !$scope.newExercise.secs) {
+                    alert("Please enter exercise information");
+                }
+                else {
+                    $scope.exercises.push({
+                        name: $scope.newExercise.name,
+                        mins: $scope.newExercise.mins,
+                        secs: $scope.newExercise.secs
+                    });
+                    $scope.newExercise = {};
+                }
+            }
 
-			array.splice(index, 1);
-		};
+            if($scope.workout.type === "repetition") {
 
-		$scope.newEquipment = {};
+                if(!$scope.newExercise.name || !$scope.newExercise.reps || !$scope.newExercise.sets) {
+                    alert("Please enter exercise information");
+                }
+                else {
+                    $scope.exercises.push({
+                        name: $scope.newExercise.name,
+                        reps: $scope.newExercise.reps,
+                        sets: $scope.newExercise.sets
+                    });
+                    $scope.newExercise = {};
+                }
+            }
+        };
 
-		$scope.equipments = [];
+        $scope.deleteExercise = function(array, index) {
 
-		$scope.addNewEquipment = function() {
+            array.splice(index, 1);
+        };
 
-			if(!$scope.newEquipment.text) {
-				alert("Please enter equipment");
-			}
-			else {
-				$scope.equipments.push($scope.newEquipment.text);
-				$scope.newEquipment = {};
-			}
-		};
+        $scope.newEquipment = {};
 
-		$scope.deleteEquipment = function(array, index) {
+        $scope.equipments = [];
 
-			array.splice(index, 1);
-		};
+        $scope.addNewEquipment = function() {
 
-		$scope.reps = false;
+            if(!$scope.newEquipment.text) {
+                alert("Please enter equipment");
+            }
+            else {
+                $scope.equipments.push($scope.newEquipment.text);
+                $scope.newEquipment = {};
+            }
+        };
 
-		$scope.interval = false;
+        $scope.deleteEquipment = function(array, index) {
 
-		$scope.workoutType = function() {
-			if($scope.workout.type === "reps") {
-				$scope.reps = true;
-				$scope.interval = false;
-			}
-			if($scope.workout.type === "interval") {
-				$scope.interval = true;
-				$scope.reps = false;
-			}
-		};
+            array.splice(index, 1);
+        };
 
-		$scope.errorMessages = [];
+        $scope.reps = false;
 
-		$scope.postNewWorkout = function() {
+        $scope.interval = false;
 
-			$scope.workoutTime = {
-				mins: $scope.workout.mins,
-				secs: $scope.workout.secs
-			};
+        $scope.workoutType = function() {
+            if($scope.workout.type === "repetition") {
+                $scope.repetition = true;
+                $scope.interval = false;
+                $scope.exercises = [];
+            }
+            if($scope.workout.type === "interval") {
+                $scope.interval = true;
+                $scope.repetition = false;
+                $scope.exercises = [];
+            }
+        };
 
-			$scope.workoutReps = {
-				reps: $scope.workout.reps,
-				sets: $scope.workout.sets
-			};
+        $scope.errorMessages = [];
 
-			$scope.newWorkout = {
-				name: $scope.workout.name,
-				workoutType: $scope.workout.type,
-				exercises: $scope.exercises,
-				equipment: $scope.equipments,
-				level: $scope.workout.level,
-				time: $scope.workoutTime,
-				reps: $scope.workoutReps,
-				description: $scope.workout.description
-			};
+        $scope.postNewWorkout = function() {
 
-			if(!$scope.workout.name) {
-				$scope.errorMessages.push(" name");
-			}
-			if(!$scope.workout.type) {
-				$scope.errorMessages.push(" type");
-			}
-			if($scope.exercises.length === 0) {
-				$scope.errorMessages.push(" exercises");
-			}
-			if($scope.equipments.length === 0) {
-				$scope.errorMessages.push(" equipment");
-			}
-			if(!$scope.workout.level) {
-				$scope.errorMessages.push(" level");
-			}
-			if($scope.workout.type === "interval") {
-				if(!$scope.workoutTime) {
-					$scope.errorMessages.push(" estimated time");
-				}
-			}
-			if($scope.workout.type === "reps") {
-				if(!$scope.workoutReps) {
-					$scope.errorMessages.push(" reps/sets");
-				}
-			}
+            $scope.workoutTime = {
+                hrs: $scope.workout.hrs,
+                mins: $scope.workout.mins,
+                secs: $scope.workout.secs
+            };
 
-			if(!$scope.workout.description) {
-				$scope.errorMessages.push(" description");
-			}
+            $scope.workoutReps = {
+                hrs: $scope.workout.hrs,
+                reps: $scope.workout.reps,
+                sets: $scope.workout.sets
+            };
 
-			if($scope.errorMessages.length > 0) {
-				alert("The following are missing: " + $scope.errorMessages);
-				$scope.errorMessages = [];
-			}
+            $scope.newWorkout = {
+                name: $scope.workout.name,
+                workoutType: $scope.workout.type,
+                exercises: $scope.exercises,
+                equipment: $scope.equipments,
+                level: $scope.workout.level,
+                time: $scope.workoutTime,
+                reps: $scope.workoutReps,
+                description: $scope.workout.description
+            };
 
-			else {
-				workoutCreationSrvc.addNewWorkout($scope.newWorkout).then(function (data) {
+            if(!$scope.workout.name) {
+                $scope.errorMessages.push(" name");
+            }
 
-					alert("Workout Added");
-					$state.go('tab.workout-selection');
+            if(!$scope.workout.type) {
+                $scope.errorMessages.push(" type");
+            }
 
-				});
-			}
-		};
+            if($scope.exercises.length === 0) {
+                $scope.errorMessages.push(" exercises");
+            }
+
+            if($scope.equipments.length === 0) {
+                $scope.errorMessages.push(" equipment");
+            }
+
+            if(!$scope.workout.level) {
+                $scope.errorMessages.push(" level");
+            }
+
+            if($scope.workout.type === "interval") {
+                if(!$scope.workoutTime) {
+                    $scope.errorMessages.push(" estimated time");
+                }
+            }
+
+            if($scope.workout.type === "reps") {
+                if(!$scope.workoutReps) {
+                    $scope.errorMessages.push(" reps/sets");
+                }
+            }
+
+            if(!$scope.workout.description) {
+                $scope.errorMessages.push(" description");
+            }
+
+            if($scope.errorMessages.length > 0) {
+                alert("The following are missing: " + $scope.errorMessages);
+                $scope.errorMessages = [];
+            }
+
+            else {
+                workoutCreationSrvc.addNewWorkout($scope.newWorkout).then(function (data) {
+
+                    alert("Workout Added");
+                    $state.go('tab.workout-selection');
+
+                });
+            }
+        };
 };
