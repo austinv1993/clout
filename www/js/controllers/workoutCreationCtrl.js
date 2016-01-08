@@ -12,12 +12,34 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 
 		$scope.addNewExercise = function() {
 
-			if(!$scope.newExercise.text) {
-				alert("Please enter exercise");
+			if($scope.workout.type === "interval") {
+				
+				if(!$scope.newExercise.name || !$scope.newExercise.mins || !$scope.newExercise.secs) {
+					alert("Please enter exercise information");
+				}
+				else {
+					$scope.exercises.push({
+						name: $scope.newExercise.name,
+						mins: $scope.newExercise.mins,
+						secs: $scope.newExercise.secs
+					});
+					$scope.newExercise = {};
+				}
 			}
-			else {
-				$scope.exercises.push($scope.newExercise.text);
-				$scope.newExercise = {};
+			
+			if($scope.workout.type === "repetition") {
+				
+				if(!$scope.newExercise.name || !$scope.newExercise.reps || !$scope.newExercise.sets) {
+					alert("Please enter exercise information");
+				}
+				else {
+					$scope.exercises.push({
+						name: $scope.newExercise.name,
+						reps: $scope.newExercise.reps,
+						sets: $scope.newExercise.sets
+					});
+					$scope.newExercise = {};
+				}
 			}
 		};
 
@@ -51,13 +73,15 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 		$scope.interval = false;
 
 		$scope.workoutType = function() {
-			if($scope.workout.type === "reps") {
+			if($scope.workout.type === "repetition") {
 				$scope.reps = true;
 				$scope.interval = false;
+				$scope.exercises = [];
 			}
 			if($scope.workout.type === "interval") {
 				$scope.interval = true;
-				$scope.reps = false;
+				$scope.repetition = false;
+				$scope.exercises = [];
 			}
 		};
 
@@ -66,13 +90,9 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 		$scope.postNewWorkout = function() {
 
 			$scope.workoutTime = {
+				hrs: $scope.workout.hrs,
 				mins: $scope.workout.mins,
 				secs: $scope.workout.secs
-			};
-
-			$scope.workoutReps = {
-				reps: $scope.workout.reps,
-				sets: $scope.workout.sets
 			};
 
 			$scope.newWorkout = {
@@ -82,30 +102,35 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 				equipment: $scope.equipments,
 				level: $scope.workout.level,
 				time: $scope.workoutTime,
-				reps: $scope.workoutReps,
 				description: $scope.workout.description
 			};
 
 			if(!$scope.workout.name) {
 				$scope.errorMessages.push(" name");
 			}
+			
 			if(!$scope.workout.type) {
 				$scope.errorMessages.push(" type");
 			}
+			
 			if($scope.exercises.length === 0) {
 				$scope.errorMessages.push(" exercises");
 			}
+			
 			if($scope.equipments.length === 0) {
 				$scope.errorMessages.push(" equipment");
 			}
+			
 			if(!$scope.workout.level) {
 				$scope.errorMessages.push(" level");
 			}
+			
 			if($scope.workout.type === "interval") {
 				if(!$scope.workoutTime) {
 					$scope.errorMessages.push(" estimated time");
 				}
 			}
+			
 			if($scope.workout.type === "reps") {
 				if(!$scope.workoutReps) {
 					$scope.errorMessages.push(" reps/sets");
