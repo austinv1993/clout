@@ -27,7 +27,7 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 				}
 			}
 			
-			if($scope.workout.type === "reps") {
+			if($scope.workout.type === "repetition") {
 				
 				if(!$scope.newExercise.name || !$scope.newExercise.reps || !$scope.newExercise.sets) {
 					alert("Please enter exercise information");
@@ -95,11 +95,6 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 				secs: $scope.workout.secs
 			};
 
-			$scope.workoutReps = {
-				reps: $scope.workout.reps,
-				sets: $scope.workout.sets
-			};
-
 			$scope.newWorkout = {
 				name: $scope.workout.name,
 				workoutType: $scope.workout.type,
@@ -107,7 +102,6 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 				equipment: $scope.equipments,
 				level: $scope.workout.level,
 				time: $scope.workoutTime,
-				reps: $scope.workoutReps,
 				description: $scope.workout.description
 			};
 
