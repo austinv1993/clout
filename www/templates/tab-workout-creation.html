@@ -45,13 +45,13 @@
       </button>
 
       <div class="row responsive-sm">
-        <div class="col" ng-repeat="exercise in exercises track by $index">
+        <div class="col" ng-repeat="exercise in exercises track by $index" ng-show="interval">
 
           <button class="ion-close" ng-click="deleteExercise(exercises, $index)">
 
           </button>
 
-          {{ exercise.name }} {{ exercise.mins }} {{ exercise.secs }}
+          {{ exercise.name }} - {{ exercise.mins }} minutes, {{ exercise.secs }} seconds
 
 
         </div>
@@ -71,13 +71,13 @@
     </button>
     
     <div class="row responsive-sm">
-        <div class="col" ng-repeat="exercise in exercises track by $index">
+        <div class="col" ng-repeat="exercise in exercises track by $index" ng-show="reps">
 
           <button class="ion-close" ng-click="deleteExercise(exercises, $index)">
 
           </button>
 
-          {{ exercise.name }} {{ exercise.reps }} {{ exercise.sets }}
+          {{ exercise.name }} - {{ exercise.reps }} Reps x {{ exercise.sets }} Sets
 
 
         </div>
@@ -87,7 +87,7 @@
 
     <div class="list">
 
-      <div class="item item-input-inset" ng-show="reps">
+      <div class="item item-input-inset">
         <label class="item-input-wrapper">
           <input type="text" placeholder="Add Equipment" ng-model="newEquipment.text">
         </label>

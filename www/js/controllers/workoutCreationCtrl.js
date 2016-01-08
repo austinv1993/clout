@@ -18,9 +18,11 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 					alert("Please enter exercise information");
 				}
 				else {
-					$scope.exercises.push($scope.newExercise.name);
-					$scope.exercises.push($scope.newExercise.mins);
-					$scope.exercises.push($scope.newExercise.secs);
+					$scope.exercises.push({
+						name: $scope.newExercise.name,
+						mins: $scope.newExercise.mins,
+						secs: $scope.newExercise.secs
+					});
 					console.log($scope.exercises);
 					$scope.newExercise = {};
 				}
@@ -32,9 +34,11 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 					alert("Please enter exercise information");
 				}
 				else {
-					$scope.exercises.push($scope.newExercise.name);
-					$scope.exercises.push($scope.newExercise.reps);
-					$scope.exercises.push($scope.newExercise.sets);
+					$scope.exercises.push({
+						name: $scope.newExercise.name,
+						reps: $scope.newExercise.reps,
+						sets: $scope.newExercise.sets
+					});
 					console.log($scope.exercises);
 					$scope.newExercise = {};
 				}
@@ -43,7 +47,7 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 
 		$scope.deleteExercise = function(array, index) {
 
-			$scope.exercises = {};
+			array.splice(index, 1);
 		};
 
 		$scope.newEquipment = {};
