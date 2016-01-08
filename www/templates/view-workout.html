@@ -2,7 +2,10 @@
     <ion-content>
         <div class="container">
             <div>
-                {{workout.name}} {{workout.type}} {{workout.description}}
+                <div>
+                <h4>{{workout.name}}</h4>
+                </div>
+                {{workout.type}} {{workout.description}}
                 <div ng-repeat="equipment in workout.equipment">
                     {{equipment}}
                 </div>
