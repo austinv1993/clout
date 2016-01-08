@@ -66,6 +66,9 @@ angular.module('clout', ['ionic', 'clout.controllers', 'clout.services'])
         controller: 'timerCtrl'
       })
 
+
     $urlRouterProvider.otherwise('/tab/workout-creation');
+
+
 
   });
