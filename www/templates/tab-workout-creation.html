@@ -1,114 +1,139 @@
-
 <ion-view view-title="">
 
   <ion-content class="padding">
 
-<div class="clout-header">
-  <h1 class="clout-name">clout.</h1>
-</div>
+    <div class="clout-header">
+      <h1 class="clout-name">clout.</h1>
+    </div>
 
     <h1 class="workout-header">WORKOUT CREATION</h1>
 
 
 
-  <div class="list">
-    <label class="item item-input item-floating-label">
-      <span class="input-label">Workout Name</span>
-      <input type="text" placeholder="Workout Name" ng-model="workout.name">
-    </label>
-  </div>
-
-  <div class="list">
-
-  <label class="item item-input item-select">
-    <div class="input-label">
-      Workout Type
+    <div class="list">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Workout Name</span>
+        <input type="text" placeholder="Workout Name" ng-model="workout.name">
+      </label>
     </div>
-    <select ng-model="workout.type" ng-change="workoutType()">
-      <option value="reps">Repetition</option>
-      <option value="interval">Interval</option>
 
-    </select>
-  </label>
-</div>
+    <div class="list">
 
-<div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Workout Type
+        </div>
+        <select ng-model="workout.type" ng-change="workoutType()">
+          <option value="reps">Repetition</option>
+          <option value="interval">Interval</option>
 
-  <div class="item item-input-inset">
-    <label class="item-input-wrapper">
-      <input type="text" placeholder="Add Exercise" ng-model="newExercise.text">
-    </label>
-    <button class="button button-small" ng-click="addNewExercise()">
+        </select>
+      </label>
+    </div>
+
+    <div class="list">
+
+      <div class="item item-input-inset" ng-show="interval">
+        <label class="item-input-wrapper">
+          <input class="exerName" type="text" placeholder="Name" ng-model="newExercise.name">
+          <input class="exerMins" type="text" placeholder="Mins" ng-model="newExercise.mins">
+          <input class="exerSecs" type="text" placeholder="Secs" ng-model="newExercise.secs">
+        </label>
+      </div>
+      <button class="button button-small" ng-click="addNewExercise()" ng-show="interval">
+        Submit
+      </button>
+
+      <div class="row responsive-sm">
+        <div class="col" ng-repeat="exercise in exercises track by $index">
+
+          <button class="ion-close" ng-click="deleteExercise(exercises, $index)">
+
+          </button>
+
+          {{ exercise.name }} {{ exercise.mins }} {{ exercise.secs }}
+
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="item item-input-inset" ng-show="reps">
+      <label class="item-input-wrapper">
+        <input class="exerName" type="text" placeholder="Name" ng-model="newExercise.name">
+        <input class="exerMins" type="text" placeholder="reps" ng-model="newExercise.reps">
+        <input class="exerSecs" type="text" placeholder="sets" ng-model="newExercise.sets">
+      </label>
+    </div>
+    <button class="button button-small" ng-click="addNewExercise()" ng-show="reps">
       Submit
     </button>
-  </div>
+    
+    <div class="row responsive-sm">
+        <div class="col" ng-repeat="exercise in exercises track by $index">
 
-</div>
+          <button class="ion-close" ng-click="deleteExercise(exercises, $index)">
 
-<div class="row responsive-sm">
-  <div class="col" ng-repeat="exercise in exercises track by $index">
+          </button>
 
-    <button class="ion-close" ng-click="deleteExercise(exercises, $index)">
-
-    </button>
-
-    {{ exercise }}
+          {{ exercise.name }} {{ exercise.reps }} {{ exercise.sets }}
 
 
-  </div>
-</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="list">
+
+      <div class="item item-input-inset" ng-show="reps">
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Add Equipment" ng-model="newEquipment.text">
+        </label>
+        <button class="button button-small" ng-click="addNewEquipment()">
+          Submit
+        </button>
+      </div>
+
+    </div>
+
+    <div class="row responsive-sm">
+      <div class="col" ng-repeat="equipment in equipments track by $index">
+
+        <button class="ion-close" ng-click="deleteEquipment(equipments, $index)">
+
+        </button>
+
+        {{ equipment }}
+
+
+      </div>
+    </div>
 
 
 
-<div class="list">
 
-  <div class="item item-input-inset">
-    <label class="item-input-wrapper">
-      <input type="text" placeholder="Add Equipment" ng-model="newEquipment.text">
+    <label class="item item-input item-select">
+      <div class="input-label">
+        Level
+      </div>
+      <select ng-model="workout.level">
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+
+
+
+      </select>
     </label>
-    <button class="button button-small" ng-click="addNewEquipment()">
-      Submit
-    </button>
-  </div>
-
-</div>
-
-<div class="row responsive-sm">
-  <div class="col" ng-repeat="equipment in equipments track by $index">
-
-    <button class="ion-close" ng-click="deleteEquipment(equipments, $index)">
-
-    </button>
-
-    {{ equipment }}
-
-
-  </div>
-</div>
 
 
 
 
-<label class="item item-input item-select">
-  <div class="input-label">
-    Level
-  </div>
-  <select ng-model="workout.level">
-    <option value="beginner">Beginner</option>
-    <option value="intermediate">Intermediate</option>
-    <option value="advanced">Advanced</option>
+    <br>
 
-
-
-  </select>
-</label>
-
-
-
-
-<br>
-
-<!-- <div class="type-container">
+    <!-- <div class="type-container">
 <input class="mock-time" placeholder="Mins" maxlength="2">
 
 </input>:
@@ -119,67 +144,67 @@
 
 </div> -->
 
-<p ng-show="interval" class="time-selector">Please select workout time</p>
+    <p ng-show="interval" class="time-selector">Please select workout time</p>
 
-<div class="item item-input-inset time-holder" ng-show="interval" >
-  <label class="item-input-wrapper mins-holder">
-    <input type="text" placeholder="Mins" maxlength="2" ng-model="workout.mins">
-  </label>
+    <div class="item item-input-inset time-holder" ng-show="interval">
+      <label class="item-input-wrapper mins-holder">
+        <input type="text" placeholder="Mins" maxlength="2" ng-model="workout.mins">
+      </label>
 
-</div>
+    </div>
 
-<div class="item item-input-inset time-holder" ng-show="interval" >
-
-
-  <label class="item-input-wrapper mins-holder">
-    <input type="text" placeholder="Secs" maxlength="2" ng-model="workout.secs">
-  </label>
+    <div class="item item-input-inset time-holder" ng-show="interval">
 
 
-</div>
-
-<!-- <p ng-show="interval" class="time-selector">Please select workout time</p> -->
-<p ng-show="reps" class="time-selector">Please select repetition and sets</p>
-
-
-<div class="item item-input-inset time-holder" ng-show="reps" >
-
-  <label class="item-input-wrapper mins-holder">
-    <input type="text" placeholder="Reps" maxlength="2" ng-model="workout.reps">
-  </label>
-
-</div>
+      <label class="item-input-wrapper mins-holder">
+        <input type="text" placeholder="Secs" maxlength="2" ng-model="workout.secs">
+      </label>
 
 
-<div class="item item-input-inset time-holder" ng-show="reps">
-  <label class="item-input-wrapper mins-holder">
-    <input type="text" placeholder="Sets" maxlength="2"  ng-model="workout.sets">
-  </label>
+    </div>
 
-</div>
+    <!-- <p ng-show="interval" class="time-selector">Please select workout time</p> -->
+    <p ng-show="reps" class="time-selector">Please select repetition and sets</p>
 
 
+    <div class="item item-input-inset time-holder" ng-show="reps">
 
-<br>
+      <label class="item-input-wrapper mins-holder">
+        <input type="text" placeholder="Reps" maxlength="2" ng-model="workout.reps">
+      </label>
 
-<div class="list">
-  <label class="item item-input item-floating-label">
-    <span class="input-label">Workout Description</span>
-    <input type="text" placeholder="Workout Description" class="workout_descript" ng-model="workout.description">
-  </label>
-</div>
+    </div>
 
-<div class="list">
 
-  <button class="button button-block button-energized" ng-click="postNewWorkout()">
-    Create Workout
-  </button>
+    <div class="item item-input-inset time-holder" ng-show="reps">
+      <label class="item-input-wrapper mins-holder">
+        <input type="text" placeholder="Sets" maxlength="2" ng-model="workout.sets">
+      </label>
+
+    </div>
+
+
+
+    <br>
+
+    <div class="list">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Workout Description</span>
+        <input type="text" placeholder="Workout Description" class="workout_descript" ng-model="workout.description">
+      </label>
+    </div>
+
+    <div class="list">
+
+      <button class="button button-block button-energized" ng-click="postNewWorkout()">
+        Create Workout
+      </button>
       <!-- <button class="button button-energized">Endurance</button><br>
       <button class="button button-energized ex-list">Strength</button><br>
       <button class="button button-energized ex-list">Balance</button><br>
       <button class="button button-energized ex-list">Flexibility</button> -->
 
-    <!--<div class="list card">
+      <!--<div class="list card">
       <div class="item item-divider">Recent Updates</div>
       <div class="item item-body">
         <div>

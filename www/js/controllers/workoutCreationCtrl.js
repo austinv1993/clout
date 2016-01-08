@@ -12,18 +12,38 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 
 		$scope.addNewExercise = function() {
 
-			if(!$scope.newExercise.text) {
-				alert("Please enter exercise");
+			if($scope.workout.type === "interval") {
+				
+				if(!$scope.newExercise.name || !$scope.newExercise.mins || !$scope.newExercise.secs) {
+					alert("Please enter exercise information");
+				}
+				else {
+					$scope.exercises.push($scope.newExercise.name);
+					$scope.exercises.push($scope.newExercise.mins);
+					$scope.exercises.push($scope.newExercise.secs);
+					console.log($scope.exercises);
+					$scope.newExercise = {};
+				}
 			}
-			else {
-				$scope.exercises.push($scope.newExercise.text);
-				$scope.newExercise = {};
+			
+			if($scope.workout.type === "reps") {
+				
+				if(!$scope.newExercise.name || !$scope.newExercise.reps || !$scope.newExercise.sets) {
+					alert("Please enter exercise information");
+				}
+				else {
+					$scope.exercises.push($scope.newExercise.name);
+					$scope.exercises.push($scope.newExercise.reps);
+					$scope.exercises.push($scope.newExercise.sets);
+					console.log($scope.exercises);
+					$scope.newExercise = {};
+				}
 			}
 		};
 
 		$scope.deleteExercise = function(array, index) {
 
-			array.splice(index, 1);
+			$scope.exercises = {};
 		};
 
 		$scope.newEquipment = {};
