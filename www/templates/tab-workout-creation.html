@@ -1,3 +1,13 @@
+
+Previous messageNext messageBack to messages
+html‏
+html
+Mario Vargas
+Add to contacts
+10:43 AM
+[Keep this message at the top of your inbox]
+To: OdieD8
+mario.vargas29@gmail.com
 <ion-view view-title="">
 
   <ion-content class="padding">
@@ -24,7 +34,7 @@
           Workout Type
         </div>
         <select ng-model="workout.type" ng-change="workoutType()">
-          <option value="reps">Repetition</option>
+          <option value="repetition">Repetition</option>
           <option value="interval">Interval</option>
 
         </select>
@@ -40,9 +50,12 @@
           <input class="exerSecs" type="text" placeholder="Secs" ng-model="newExercise.secs">
         </label>
       </div>
-      <button class="button button-small" ng-click="addNewExercise()" ng-show="interval">
+      <button class="button button-block button-energized" ng-click="addNewExercise()" ng-show="interval">
         Submit
       </button>
+      <!-- <button class="button button-block button-energized" ng-click="addNewExercise()"" ng-show="interval">
+        Create Workout
+      </button> -->
 
       <div class="row responsive-sm">
         <div class="col" ng-repeat="exercise in exercises track by $index" ng-show="interval">
@@ -66,10 +79,12 @@
         <input class="exerSecs" type="text" placeholder="sets" ng-model="newExercise.sets">
       </label>
     </div>
-    <button class="button button-small" ng-click="addNewExercise()" ng-show="reps">
+    <button class="button button-block button-energized" ng-click="addNewExercise()" ng-show="reps">
       Submit
     </button>
-    
+
+
+
     <div class="row responsive-sm">
         <div class="col" ng-repeat="exercise in exercises track by $index" ng-show="reps">
 
@@ -144,16 +159,24 @@
 
 </div> -->
 
-    <p ng-show="interval" class="time-selector">Please select workout time</p>
+    <p ng-show="interval" class="time-selector">Please enter estimated workout time</p>
 
-    <div class="item item-input-inset time-holder" ng-show="interval">
+    <div class="item item-input-inset time-holder">
+      <label class="item-input-wrapper mins-holder">
+        <input type="text" placeholder="Hours" maxlength="2" ng-model="workout.hrs">
+      </label>
+
+    </div>
+
+
+    <div class="item item-input-inset time-holder">
       <label class="item-input-wrapper mins-holder">
         <input type="text" placeholder="Mins" maxlength="2" ng-model="workout.mins">
       </label>
 
     </div>
 
-    <div class="item item-input-inset time-holder" ng-show="interval">
+    <div class="item item-input-inset time-holder">
 
 
       <label class="item-input-wrapper mins-holder">
@@ -162,28 +185,6 @@
 
 
     </div>
-
-    <!-- <p ng-show="interval" class="time-selector">Please select workout time</p> -->
-    <p ng-show="reps" class="time-selector">Please select repetition and sets</p>
-
-
-    <div class="item item-input-inset time-holder" ng-show="reps">
-
-      <label class="item-input-wrapper mins-holder">
-        <input type="text" placeholder="Reps" maxlength="2" ng-model="workout.reps">
-      </label>
-
-    </div>
-
-
-    <div class="item item-input-inset time-holder" ng-show="reps">
-      <label class="item-input-wrapper mins-holder">
-        <input type="text" placeholder="Sets" maxlength="2" ng-model="workout.sets">
-      </label>
-
-    </div>
-
-
 
     <br>
 
@@ -229,4 +230,6 @@
       </div>
     </div>-->
   </ion-content>
-</ion-view>
+</ion-view
+
+        

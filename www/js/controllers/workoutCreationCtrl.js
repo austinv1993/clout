@@ -73,7 +73,7 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 		$scope.interval = false;
 
 		$scope.workoutType = function() {
-			if($scope.workout.type === "reps") {
+			if($scope.workout.type === "repetition") {
 				$scope.reps = true;
 				$scope.interval = false;
 				$scope.exercises = [];
@@ -90,6 +90,7 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 		$scope.postNewWorkout = function() {
 
 			$scope.workoutTime = {
+				hrs: $scope.workout.hrs,
 				mins: $scope.workout.mins,
 				secs: $scope.workout.secs
 			};
