@@ -111,23 +111,29 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 			if(!$scope.workout.name) {
 				$scope.errorMessages.push(" name");
 			}
+			
 			if(!$scope.workout.type) {
 				$scope.errorMessages.push(" type");
 			}
+			
 			if($scope.exercises.length === 0) {
 				$scope.errorMessages.push(" exercises");
 			}
+			
 			if($scope.equipments.length === 0) {
 				$scope.errorMessages.push(" equipment");
 			}
+			
 			if(!$scope.workout.level) {
 				$scope.errorMessages.push(" level");
 			}
+			
 			if($scope.workout.type === "interval") {
 				if(!$scope.workoutTime) {
 					$scope.errorMessages.push(" estimated time");
 				}
 			}
+			
 			if($scope.workout.type === "reps") {
 				if(!$scope.workoutReps) {
 					$scope.errorMessages.push(" reps/sets");
