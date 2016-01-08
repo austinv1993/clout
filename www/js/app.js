@@ -58,6 +58,11 @@ angular.module('clout', ['ionic', 'clout.controllers', 'clout.services'])
     controller: 'viewWorkoutCtrl'
   })
 
+  .state('active-view', {
+    url: '/active-view',
+    templateUrl: 'templates/active-view.html'
+  });
+
   $urlRouterProvider.otherwise('/tab/workout-creation');
 
 });
