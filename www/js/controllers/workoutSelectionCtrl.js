@@ -1,5 +1,5 @@
 angular.module('clout')
-.controller('workoutSelectionCtrl', function($scope, workoutSelectionSrvc) {
+.controller('workoutSelectionCtrl', function($state, $scope, workoutSelectionSrvc) {
     $scope.getFirstPage = function() {
         workoutSelectionSrvc.getWorkouts().then(function(workouts) {
             $scope.workouts = workouts;
@@ -45,4 +45,8 @@ angular.module('clout')
             }
         });
     };
+    
+    $scope.viewWorkout = function(workoutId) {
+        $state.go('view-workout', ({workoutId: workoutId }))
+        }
 });
