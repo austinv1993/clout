@@ -1,9 +1,17 @@
-<div class="container">
-    
-    <div>
-        {{workout.name}}
-        {{workout.}}
-    </div>
-    <button class="button button-positive"ng-click="runWorkout()">Run Workout</button>
-    
-</div>
+<ion-view view-title="Workout">
+    <ion-content>
+        <div class="container">
+            <div>
+                {{workout.name}} {{workout.type}} {{workout.description}}
+                <div ng-repeat="equipment in workout.equipment">
+                    {{equipment}}
+                </div>
+                <div ng-repeat="excercise in workout.exercises">
+                    {{exercise}}
+                </div>
+            </div>
+            <button class="button button-positive" ng-click="runWorkout()">Run Workout</button>
+
+        </div>
+    </ion-content>
+</ion-view>
