@@ -76,10 +76,12 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 			if($scope.workout.type === "reps") {
 				$scope.reps = true;
 				$scope.interval = false;
+				$scope.exercises = [];
 			}
 			if($scope.workout.type === "interval") {
 				$scope.interval = true;
 				$scope.reps = false;
+				$scope.exercises = [];
 			}
 		};
 
