@@ -23,7 +23,6 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 						mins: $scope.newExercise.mins,
 						secs: $scope.newExercise.secs
 					});
-					console.log($scope.exercises);
 					$scope.newExercise = {};
 				}
 			}
@@ -39,7 +38,6 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 						reps: $scope.newExercise.reps,
 						sets: $scope.newExercise.sets
 					});
-					console.log($scope.exercises);
 					$scope.newExercise = {};
 				}
 			}
