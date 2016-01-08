@@ -119,3 +119,14 @@ body, html {
     clear: both;
 }
 
+.exerName {
+  width: 150px;
+}
+
+.exerMins {
+  width: 50px;
+}
+
+.exerSecs {
+  width: 50px;
+}
