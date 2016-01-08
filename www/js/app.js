@@ -53,7 +53,7 @@ angular.module('clout', ['ionic', 'clout.controllers', 'clout.services'])
     }
   })
   .state('view-workout', {
-    url: '/view-workout',
+    url: '/view-workout/:workoutId',
     views: {
       'view-workout': {
         templateUrl: 'templates/view-workout.html',
