@@ -32,8 +32,8 @@
                     <p>Description: {{workout.description}}</p>
                 </ion-item>
                 <!--<ion-infinite-scroll on-infinite="getWorkouts()" distance="1%"></ion-infinite-scroll> -->
-                <button ng-show="showBackButton" class="button button-positive" style="margin:auto 0" ng-click="getPreviousWorkouts()">Back</button>
-                <button ng-show="!endOfResults" class="button button-positive" style="margin:auto 0" ng-click="getMoreWorkouts()">Next Page</button>
+                <button ng-show="showBackButton" class="button button-positive" style="margin:auto 0; background-color: #341a1a;" ng-click="getPreviousWorkouts()">Back</button>
+                <button ng-show="!endOfResults" class="button button-positive" style="margin:auto 0; background-color: #341a1a;" ng-click="getMoreWorkouts()">Next Page</button>
             </ion-list>
             <a sref="tab.workout-creation">Create New Workout!</a>
     </ion-content>
