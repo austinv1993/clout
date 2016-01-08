@@ -5,6 +5,8 @@ body, html {
     
     
 }
+
+
 .ex-list {
   margin-top: 10px;
 }
@@ -170,20 +172,5 @@ font-style: italic;
 
 
 
-.mainLogo {
-width: 60%;
-
-
-}
-.workOutName {
-font-weight: bold;
-
-
-}
-
-.workOutTime {
-font-style: italic;
-
-}
 
 
