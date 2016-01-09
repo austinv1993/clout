@@ -17,7 +17,7 @@ angular.module('clout')
     
     $scope.getMoreWorkouts = function() {
         console.log('trying to get more workouts');
-        workoutSelectionSrvc.offset += 4;
+        workoutSelectionSrvc.offset += 8;
         workoutSelectionSrvc.getWorkouts().then(function(workouts, err) {
             if (err) {
                 $scope.moreDataAvailable = false;

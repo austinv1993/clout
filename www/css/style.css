@@ -212,6 +212,15 @@ font-style: italic;
 .the-end {
     text-align: center;
 }
+.select-filter {
+    width: 27%;
+}
+.filters {
+    margin-top: 7px;
+}
+.center {
+    margin: auto 0;
+}
 /*.absolute {
  position: fixed;
 }*/
