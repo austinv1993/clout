@@ -1,10 +1,12 @@
 var app = angular.module('clout');
 
-app.controller('timerCtrl', ['$scope', '$state', '$stateParams', '$timeout', 'workoutCreationSrvc', timerCtrl]);
+app.controller('timerCtrl', ['$scope', '$state', '$stateParams', '$timeout', 'workoutSelectionSrvc', timerCtrl]);
 
-function timerCtrl($scope, $state, $stateParams, $timeout, workoutCreationSrvc) {
+function timerCtrl($scope, $state, $stateParams, $timeout, workoutSelectionSrvc) {
 
-	$scope.counter = 3;
+	var getCounter = function() {
+        $scope.counter = "totalPulledFromDB";
+    };
 
     var mytimeout = null; // the current timeoutID
  
