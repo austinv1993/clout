@@ -3,6 +3,7 @@ angular.module('clout')
     $scope.getFirstPage = function() {
         workoutSelectionSrvc.getWorkouts().then(function(workouts) {
             $scope.workouts = workouts;
+            console.log(workouts);
         });
     };
     $scope.getFirstPage();
