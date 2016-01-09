@@ -3,13 +3,14 @@ angular.module('clout')
     $scope.getFirstPage = function() {
         workoutSelectionSrvc.getWorkouts().then(function(workouts) {
             $scope.workouts = workouts;
+            console.log(workouts);
         });
     };
     $scope.getFirstPage();
     $scope.endOfResults = false;
     
     $scope.getMoreWorkouts = function() {
-        workoutSelectionSrvc.offset += 6;
+        workoutSelectionSrvc.offset += 4;
         workoutSelectionSrvc.getWorkouts().then(function(workouts) {
             $scope.workouts = workouts;
             console.log(workoutSelectionSrvc.offset);
@@ -29,7 +30,7 @@ angular.module('clout')
     };
     
     $scope.getPreviousWorkouts = function() {
-        workoutSelectionSrvc.offset -= 6;
+        workoutSelectionSrvc.offset -= 4;
         workoutSelectionSrvc.getPreviousWorkouts().then(function(workouts) {
             $scope.workouts = workouts;
             if ($scope.workouts.length > 0) {
