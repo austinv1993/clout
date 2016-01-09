@@ -1,20 +1,12 @@
-
-Previous messageNext messageBack to messages
-html‏
-html
-Mario Vargas
-Add to contacts
-10:43 AM
-[Keep this message at the top of your inbox]
-To: OdieD8
-mario.vargas29@gmail.com
 <ion-view view-title="">
 
   <ion-content class="padding">
 
+
     <div class="clout-header">
-      <h1 class="clout-name">clout.</h1>
+      <img class='mainLogo' src='../img/cloutMainLogo.png' />
     </div>
+
 
     <h1 class="workout-header">WORKOUT CREATION</h1>
 
@@ -26,6 +18,22 @@ mario.vargas29@gmail.com
         <input type="text" placeholder="Workout Name" ng-model="workout.name">
       </label>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div class="list">
 
@@ -43,17 +51,22 @@ mario.vargas29@gmail.com
 
     <div class="list">
 
-      <div class="item item-input-inset" ng-show="interval">
-        <label class="item-input-wrapper">
+      <div ng-show="interval">
+
+
           <input class="exerName" type="text" placeholder="Name" ng-model="newExercise.name">
-          <input class="exerMins" type="text" placeholder="Mins" ng-model="newExercise.mins">
-          <input class="exerSecs" type="text" placeholder="Secs" ng-model="newExercise.secs">
-        </label>
+          <div class="min-sec-container">
+          <input class="exerMins" type="text" placeholder="Mins" ng-model="newExercise.mins" maxlength="2">
+          <input class="exerSecs" type="text" placeholder="Secs" ng-model="newExercise.secs" maxlength="2">
+        </div>
+
       </div>
-      <button class="button button-block button-energized" ng-click="addNewExercise()" ng-show="interval">
+      <button class="button button-block " style='background-color: #383747; color: white;' ng-click="addNewExercise()" ng-show="interval">
         Submit
       </button>
-      <!-- <button class="button button-block button-energized" ng-click="addNewExercise()"" ng-show="interval">
+
+
+        <!-- <button class="button button-block button-energized" ng-click="addNewExercise()"" ng-show="interval">
         Create Workout
       </button> -->
 
@@ -72,21 +85,36 @@ mario.vargas29@gmail.com
 
     </div>
 
-    <div class="item item-input-inset" ng-show="reps">
+    <div ng-show="repetition">
+
+
+        <input class="exerName" type="text" placeholder="Name" ng-model="newExercise.name">
+        <div class="rep-set-container">
+        <input class="exerMins" type="text" placeholder="reps" ng-model="newExercise.reps" maxlength="2">
+        <input class="exerSecs" type="text" placeholder="sets" ng-model="newExercise.sets" maxlength="2">
+      </div>
+
+    </div>
+    <button class="button button-block " style='background-color: #383747; color: white;' ng-click="addNewExercise()" ng-show="repetition">
+      Submit
+    </button>
+
+
+    <!-- <div ng-show="repetition">
       <label class="item-input-wrapper">
         <input class="exerName" type="text" placeholder="Name" ng-model="newExercise.name">
         <input class="exerMins" type="text" placeholder="reps" ng-model="newExercise.reps">
         <input class="exerSecs" type="text" placeholder="sets" ng-model="newExercise.sets">
       </label>
     </div>
-    <button class="button button-block button-energized" ng-click="addNewExercise()" ng-show="reps">
+    <button class="button button-block button-energized" ng-click="addNewExercise()" ng-show="repetition">
       Submit
-    </button>
+    </button>  -->
 
 
 
     <div class="row responsive-sm">
-        <div class="col" ng-repeat="exercise in exercises track by $index" ng-show="reps">
+        <div class="col" ng-repeat="exercise in exercises track by $index" ng-show="repetition">
 
           <button class="ion-close" ng-click="deleteExercise(exercises, $index)">
 
@@ -150,22 +178,20 @@ mario.vargas29@gmail.com
 
     <!-- <div class="type-container">
 <input class="mock-time" placeholder="Mins" maxlength="2">
-
 </input>:
-
 <input class="mock-time-two" placeholder="Secs" maxlength="2">
-
 </input>
-
 </div> -->
 
-    <p ng-show="interval" class="time-selector">Please enter estimated workout time</p>
+    <p class="time-selector">Please enter estimated workout time</p>
+
+    <div class="time-container">
 
     <div class="item item-input-inset time-holder">
       <label class="item-input-wrapper mins-holder">
         <input type="text" placeholder="Hours" maxlength="2" ng-model="workout.hrs">
       </label>
-
+      &nbsp :
     </div>
 
 
@@ -173,7 +199,7 @@ mario.vargas29@gmail.com
       <label class="item-input-wrapper mins-holder">
         <input type="text" placeholder="Mins" maxlength="2" ng-model="workout.mins">
       </label>
-
+      &nbsp :
     </div>
 
     <div class="item item-input-inset time-holder">
@@ -185,6 +211,26 @@ mario.vargas29@gmail.com
 
 
     </div>
+  </div>
+    <!-- <p ng-show="interval" class="time-selector">Please select workout time</p> -->
+    <!-- <p ng-show="reps" class="time-selector">Please enter estimated workout time</p>
+    <div class="item item-input-inset time-holder" ng-show="reps">
+      <label class="item-input-wrapper mins-holder">
+        <input type="text" placeholder="Hours" maxlength="2" ng-model="workout.hrs">
+      </label>
+    </div>
+    <div class="item item-input-inset time-holder" ng-show="reps">
+      <label class="item-input-wrapper mins-holder">
+        <input type="text" placeholder="Mins" maxlength="2" ng-model="workout.mins">
+      </label>
+    </div>
+    <div class="item item-input-inset time-holder" ng-show="reps">
+      <label class="item-input-wrapper mins-holder">
+        <input type="text" placeholder="Secs" maxlength="2" ng-model="workout.secs">
+      </label>
+    </div> -->
+
+
 
     <br>
 
@@ -197,9 +243,11 @@ mario.vargas29@gmail.com
 
     <div class="list">
 
-      <button class="button button-block button-energized" ng-click="postNewWorkout()">
+
+      <button class="button button-block button-energized" style='background-color: #383747;'ng-click="postNewWorkout()">
         Create Workout
       </button>
+
       <!-- <button class="button button-energized">Endurance</button><br>
       <button class="button button-energized ex-list">Strength</button><br>
       <button class="button button-energized ex-list">Balance</button><br>
@@ -230,4 +278,5 @@ mario.vargas29@gmail.com
       </div>
     </div>-->
   </ion-content>
+
 </ion-view>
