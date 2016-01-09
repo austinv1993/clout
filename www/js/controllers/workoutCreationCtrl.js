@@ -2,6 +2,7 @@ var app = angular.module('clout');
 
 app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'workoutCreationSrvc', workoutCreationCtrl]);
 
+
 function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) {
 
 	$scope.newExercise = {};
@@ -74,7 +75,7 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) 
 
 	$scope.workoutType = function() {
 		if($scope.workout.type === "repetition") {
-			$scope.reps = true;
+			$scope.repetition = true;
 			$scope.interval = false;
 			$scope.exercises = [];
 		}
@@ -151,8 +152,10 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) 
 
 				alert("Workout Added");
 				$state.go('tab.workout-selection');
-
+                console.log($scope.newWorkout);
 			});
 		}
 	};
+
+
 };
