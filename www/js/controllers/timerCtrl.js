@@ -4,14 +4,31 @@ app.controller('timerCtrl', ['$scope', '$state', '$stateParams', '$timeout', 'wo
 
 function timerCtrl($scope, $state, $stateParams, $timeout, workoutSelectionSrvc) {
 
-	var getCounter = function() {
-        $scope.counter = "totalPulledFromDB";
+    $scope.exerciseTime = [];
+
+	$scope.getCounter = function() {
+
+        workoutSelectionSrvc.getWorkoutById($stateParams.workoutId).then(function(data) {
+            
+            var exercise = data.exercises;
+            exercise.forEach(function(e) {
+                console.log(e);
+                $scope.exerciseTime.push({
+                    mins: e.mins,
+                    secs: e.secs
+                });
+            })
+            console.log($scope.exerciseTime);
+        });
     };
+    
+    $scope.getCounter();
 
     var mytimeout = null; // the current timeoutID
  
     // actual timer method, counts down every second, stops on zero
     $scope.onTimeout = function () {
+        
         if ($scope.counter === 0) {
             $scope.$broadcast('timer-stopped', 0);
             $timeout.cancel(mytimeout);
@@ -22,6 +39,9 @@ function timerCtrl($scope, $state, $stateParams, $timeout, workoutSelectionSrvc)
     };
 
     $scope.startTimer = function () {
+        $scope.exerciseTime.forEach(function(e) {
+            console.log(e); 
+        });
         mytimeout = $timeout($scope.onTimeout, 1000);
     };
  

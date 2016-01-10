@@ -48,6 +48,10 @@ angular.module('clout')
     };
     
     $scope.viewWorkout = function(workoutId) {
-        $state.go('view-workout', ({workoutId: workoutId }))
-        }
+        $state.go('view-workout', ({workoutId: workoutId }));
+    };
+        
+    $scope.quickStart = function(workoutId) {
+        $state.go('timer', ({workoutId: workoutId }));
+    };
 });
