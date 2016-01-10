@@ -65,10 +65,17 @@ angular.module('clout', ['ionic', 'clout.controllers', 'clout.services'])
 
 
 
-  .state('active-view', {
-    url: '/active-view',
-    templateUrl: 'templates/active-view.html'
-  });
+      .state('active-view', {
+        url: '/active-view',
+        templateUrl: 'templates/active-view.html'
+      })
+
+      .state('workoutComplete', {
+        url: '/workoutComplete',
+        templateUrl: 'templates/workoutComplete.html'
+      });
+
+
 
   $urlRouterProvider.otherwise('/tab/workout-creation');
 
