@@ -138,7 +138,7 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) 
 		// 	}
 		// }
 		
-		if(!$scope.workoutTime) {
+		if(!$scope.workoutTime.hrs || !$scope.workoutTime.mins || !$scope.workoutTime.secs) {
 			$scope.errorMessages.push(" estimated workout time");
 		}
 
