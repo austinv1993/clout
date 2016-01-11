@@ -1,18 +1,50 @@
 <ion-view view-title="Workout Selection">
     <ion-content>
         <div class="container">
-            <div class="bar bar-header item-input-inset">
+
+            <div class="bar bar-header item-input-inset absolute">
                 <label class="item-input-wrapper">
                     <i class="icon ion-ios-search placeholder-icon"></i>
                     <input ng-model="searchName" type="search" placeholder="Search">
                 </label>
-                <button class="button button-clear">
+                <button ng-click="clearInput()" class="button button-clear">
                     Cancel
                 </button>
             </div>
+            <!--<div class="filters">
+                <label class="item item-input item-select select-filter float">
+                    <div class="input-label">
+                        Workout Type
+                    </div>
+                    <select ng-model="workout.type" ng-change="workoutType()">
+                        <option value="repetition">Repetition</option>
+                        <option value="interval">Interval</option>
 
+                    </select>
+                </label>
+                <div class="center">
+                <label class="item item-input item-select select-filter float">
+                    <div class="input-label">
+                        Workout Type
+                    </div>
+                    <select ng-model="workout.type" ng-change="workoutType()">
+                        <option value="repetition">Repetition</option>
+                        <option value="interval">Interval</option>
 
-            <button>Begin Workout!</button>
+                    </select>
+                </label>
+                </div>
+                <label class="item item-input item-select select-filter float-right">
+                    <div class="input-label">
+                        Workout Type
+                    </div>
+                    <select ng-model="workout.type" ng-change="workoutType()">
+                        <option value="repetition">Repetition</option>
+                        <option value="interval">Interval</option>
+
+                    </select>
+                </label>
+            </div>-->
 
 
 
@@ -27,34 +59,43 @@
                 </div>
                 <hr>
             </div>-->
-            <button ng-show="endOfResults" class="button button-full button-assertive" style='background-color: red;'>
-                No more workouts!
-            </button>
+
             <ion-list>
-                <ion-item ng-repeat="workout in workouts | filter:{name:searchName}">
+                <button sref="tab.workout-creation" class="button button-block button-energized" style='background-color: #383747;' ng-click="postNewWorkout()">
+                    Create New Workout
+                </button>
+                <ion-item ng-repeat="workout in retrievedWorkouts | filter:{name:searchName}">
 
                     <p class="workOutName">{{workout.name}}</p>
                     <p class="workOutTime">{{workout.time.mins}} minutes</p>
                     <p>Type: {{workout.workoutType}}</p>
                     <p>Description: {{workout.description}}</p>
 
-                    <button  ng-click="viewWorkout(workout._id)" class="button button-small button-assertive" style='margin-left: 10px; background-color: #510000; float: right;'>
-  View
-</button>
+
+                    <button ng-click="viewWorkout(workout._id)" class="button button-small button-assertive" style='margin-left: 10px; background-color: #510000; float: right;'>
+                        View
+                    </button>
+
                     <button class="button button-small button-assertive" style='margin-left: 0 auto; background-color: #383747; float: right;'>
 
-  Quick Start
-</button>
+                        Quick Start
+                    </button>
                 </ion-item>
-                <!--<ion-infinite-scroll on-infinite="getWorkouts()" distance="1%"></ion-infinite-scroll> -->
-
-                <button ng-show="showBackButton" class="button button-positive" style="margin:auto 0; background-color: #510000;" ng-click="getPreviousWorkouts()">Back</button>
-                <button ng-show="!endOfResults" class="button button-positive" style="margin:auto 0; background-color: #510000;" ng-click="getMoreWorkouts()">Next Page</button>
             </ion-list>
 
-            <button sref="tab.workout-creation" class="button button-block button-energized" style='background-color: #383747;'ng-click="postNewWorkout()">
-        Create New Workout
-      </button>
+        </div>
+
+        <div>
+            <div class="the-end" ng-show="endOfResults">The End</div>
+        </div>
+
+
+        <ion-infinite-scroll ng-if="moreDataAvailable" on-infinite="getMoreWorkouts()" distance="10%">
+        </ion-infinite-scroll>
+
+
+
+
 
     </ion-content>
 </ion-view>
