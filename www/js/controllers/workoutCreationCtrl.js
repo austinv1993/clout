@@ -160,6 +160,4 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) 
 			});
 		}
 	};
-
-
 };

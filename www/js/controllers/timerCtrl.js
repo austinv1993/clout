@@ -4,21 +4,12 @@ app.controller('timerCtrl', ['$scope', '$state', '$stateParams', '$timeout', 'wo
 
 function timerCtrl($scope, $state, $stateParams, $timeout, workoutSelectionSrvc) {
 
-    $scope.exerciseTime = [];
-
 	$scope.getCounter = function() {
 
         workoutSelectionSrvc.getWorkoutById($stateParams.workoutId).then(function(data) {
             
-            var exercise = data.exercises;
-            exercise.forEach(function(e) {
-                console.log(e);
-                $scope.exerciseTime.push({
-                    mins: e.mins,
-                    secs: e.secs
-                });
-            })
-            console.log($scope.exerciseTime);
+            $scope.exerciseInterval = data.exercises;
+            $scope.counter = $scope.exerciseInterval[0].mins;
         });
     };
     
@@ -39,9 +30,6 @@ function timerCtrl($scope, $state, $stateParams, $timeout, workoutSelectionSrvc)
     };
 
     $scope.startTimer = function () {
-        $scope.exerciseTime.forEach(function(e) {
-            console.log(e); 
-        });
         mytimeout = $timeout($scope.onTimeout, 1000);
     };
  
@@ -58,5 +46,4 @@ function timerCtrl($scope, $state, $stateParams, $timeout, workoutSelectionSrvc)
             alert('Finished!');
         }
     });
-		
 };
