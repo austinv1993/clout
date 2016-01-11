@@ -71,5 +71,8 @@ angular.module('clout')
         $state.go('view-workout', ({workoutId: workoutId }));
         };
         
+     $scope.startWorkout = function(workoutId) {
+     $state.go('active-view', ({workoutId: workoutId }));
+    };
 
 });
