@@ -20,7 +20,9 @@
                     <div>
                         <b>Equipment Used</b>
                     </div>
-
+                    <div ng-show="noEquipment">
+                        None
+                    </div>
                     <div ng-repeat="equipment in workout.equipment">
                         {{equipment}}
                     </div>
@@ -35,8 +37,10 @@
                 </div>
             </div>
 
-        <button class="button button-full button-energized" ng-click="runWorkout()" style='background-color: #510000;'>Run Workout</button>
+
         </div>
+        <div class="run-workout-container">
+        <button class="button button-full button-energized run-workout" ng-click="runWorkout()">Run Workout</button>
         
     </ion-content>
 </ion-view>
