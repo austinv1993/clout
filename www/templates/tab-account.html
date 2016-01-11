@@ -37,11 +37,11 @@
       </div>
 
 
-    <div ng-controller='accountCtrl'>
+    <div class='goalTodo' ng-controller='accountCtrl'>
 
     <form class='addGoalField' name='frm' ng-submit='addTodo()'>
         <input  type="text" name='newtodo' placeholder="New Goal" ng-model='newTodo' required />
-        <button ng-disabled='frm.$invalid'>Add</button>
+        <button class='addGoalBtn' ng-disabled='frm.$invalid'>Add</button>
         
         </form>
         
@@ -54,7 +54,7 @@
             </li>
         
         </ul>
-        <button ng-click='clearCompleted()'>Clear Completed</button>
+        <button class='clearGoalBtn' ng-click='clearCompleted()'>Clear Completed</button>
 
       </div>
 

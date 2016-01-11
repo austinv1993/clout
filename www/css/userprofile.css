@@ -63,6 +63,40 @@ text-decoration: line-through;
 }
 
 
+.addGoalBtn {
+background-color: #383747;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 300px;
+    
+    
+
+}
+.clearGoalBtn {
+background-color: #510000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    
+
+}
+.addGoalField {
+margin-left: 10px;
+    width: 100%;
+    float: left;
+
+}
+.goalTodo {
+width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+
 
 
 
