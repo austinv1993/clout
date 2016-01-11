@@ -126,16 +126,20 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) 
 			$scope.errorMessages.push(" level");
 		}
 		
-		if($scope.workout.type === "interval") {
-			if(!$scope.workoutTime) {
-				$scope.errorMessages.push(" estimated time");
-			}
-		}
+		// if($scope.workout.type === "interval") {
+		// 	if(!$scope.workoutTime) {
+		// 		$scope.errorMessages.push(" estimated time");
+		// 	}
+		// }
 		
-		if($scope.workout.type === "reps") {
-			if(!$scope.workoutReps) {
-				$scope.errorMessages.push(" reps/sets");
-			}
+		// if($scope.workout.type === "repetition") {
+		// 	if(!$scope.workoutReps) {
+		// 		$scope.errorMessages.push(" reps/sets");
+		// 	}
+		// }
+		
+		if(!$scope.workoutTime) {
+			$scope.errorMessages.push(" estimated workout time");
 		}
 
 		if(!$scope.workout.description) {
