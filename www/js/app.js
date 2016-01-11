@@ -38,7 +38,7 @@ angular.module('clout', ['ionic', 'clout.controllers', 'clout.services'])
         views: {
           'tab-account': {
             templateUrl: 'templates/tab-account.html',
-            controller: 'AccountCtrl'
+            controller: 'accountCtrl'
           }
         }
       })
