@@ -197,9 +197,16 @@ width: 60%;
 }
 .item-divider {
   text-align: center;
+  background-color: #510000;
+  color: white;
+  font-weight: 700;
+  font-family: Montserrat, sans-serif;
 }
 .item-text-wrap {
   text-align: center;
+  font-weight: 700;
+  font-family: Montserrat, sans-serif;
+
 }
 .timer {
   text-align: center;

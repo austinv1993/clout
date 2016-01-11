@@ -1,5 +1,5 @@
 angular.module('clout')
-.controller('viewWorkoutCtrl', function($scope, $stateParams, workoutSelectionSrvc) {
+.controller('viewWorkoutCtrl', function($state, $scope, $stateParams, workoutSelectionSrvc) {
     $scope.getWorkout = function(workoutId) {
         workoutSelectionSrvc.getWorkoutById(workoutId).then(function(workout) {
             $scope.workout = workout;
@@ -13,6 +13,11 @@ angular.module('clout')
     $scope.noWorkout = false;
     $scope.testThis = function() {
         console.log('controller is connected');
+    };
+    
+    
+     $scope.startWorkout = function(workoutId) {
+     $state.go('active-view', ({workoutId: workoutId }));
     };
     $scope.testThis();
     

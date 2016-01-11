@@ -105,6 +105,7 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) 
 			time: $scope.workoutTime,
 			description: $scope.workout.description
 		};
+        
 
 		if(!$scope.workout.name) {
 			$scope.errorMessages.push(" name");

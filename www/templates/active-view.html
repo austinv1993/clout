@@ -4,14 +4,25 @@
     <div class="clout-header">
       <img class='mainLogo' src='../img/cloutMainLogo.png' />
     </div>
+    
+    <!--<div>
+        Exercise in Progress:
+        {{workout.name}}
+    </div>-->
 
     <div class="card">
       <div class="item item-divider">
-        Current Workout
+        Exercise in Progress
+
       </div>
       <div class="item item-text-wrap">
-        <button class="ion-ios-skipbackward"></button> BENCH PRESS
+          
+        <button class="ion-ios-skipbackward"></button>
+                    {{workout.name}}
+        <div ng-repeat="exercise in workout.exercises"></div>
+
         <button class="ion-ios-skipforward"></button>
+
       </div>
       <div class="item item-divider">
 
@@ -21,7 +32,7 @@
     <div class="list card">
 
       <div>
-        <!-- <img src=""> -->
+
         <h2 class="timer">15:32</h2>
 
       </div>
@@ -34,10 +45,7 @@
         <div class="play-pause">
           <button class="ion-play"></button>
         </div>
-        <p>
-          <a href="#" class="subdued">GREAT JOB</a>
-          <a href="#" class="subdued">ALMOST THERE</a>
-        </p>
+
       </div>
 
     </div>
