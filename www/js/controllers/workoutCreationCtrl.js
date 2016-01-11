@@ -1,9 +1,17 @@
 var app = angular.module('clout');
 
-app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'workoutCreationSrvc', workoutCreationCtrl]);
+app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'workoutCreationSrvc', 'userSrvc', workoutCreationCtrl]);
 
 
-function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) {
+function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc, userSrvc) {
+    
+    $scope.getCurrentUser = function() {
+        userSrvc.getCurrentUser().then(function(user) {
+            $scope.user = user;
+            console.log('current user', $scope.user);
+        })
+    }
+    $scope.getCurrentUser();
 
 	$scope.newExercise = {};
 
