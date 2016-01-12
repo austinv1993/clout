@@ -57,11 +57,11 @@ angular.module('clout', ['ionic', 'clout.controllers', 'clout.services'])
         controller: 'viewWorkoutCtrl'
 
       })
-      .state('start-workout', {
-        url: '/start-workout/:workoutId',
-        templateUrl: 'templates/active-workout-view.html',
-        controller: ''
-      })
+    //   .state('start-workout', {
+    //     url: '/start-workout/:workoutId',
+    //     templateUrl: 'templates/active-workout-view.html',
+    //     controller: ''
+    //   })
       .state('timer', {
         url: '/timer/:workoutId',
         templateUrl: 'templates/timer.html',
