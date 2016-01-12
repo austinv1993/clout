@@ -14,9 +14,4 @@ function workoutCreationSrvc($q, $http) {
 				console.log(error);
 			});
 	};
-	
-	this.startTimer = function(newWorkout) {
-		
-		
-	}
 };

@@ -47,6 +47,7 @@
             </div>-->
 
 
+
             <!--<button class="button button-icon icon ion-navicon-round" ng-touch="show()">
             </button>-->
             <!--<div ng-repeat="workout in workouts | filter:{name:searchName}">
@@ -73,12 +74,12 @@
                     <button ng-click="viewWorkout(workout._id)" class="button button-small button-assertive" style='margin-left: 10px; background-color: #510000; float: right;'>
                         View
                     </button>
-                    <button class="button button-small button-assertive" style='margin-left: 0 auto; background-color: #383747; float: right;'>
-
-                        Quick Start
+                    <button ng-click="quickStart(workout._id)" class="button button-small button-assertive" style='margin-left: 0 auto; background-color: #383747; float: right;'>
+                    Quick Start
                     </button>
                 </ion-item>
             </ion-list>
+
         </div>
 
         <div>
@@ -88,6 +89,7 @@
 
         <ion-infinite-scroll ng-if="moreDataAvailable" on-infinite="getMoreWorkouts()" distance="10%">
         </ion-infinite-scroll>
+
 
 
 
