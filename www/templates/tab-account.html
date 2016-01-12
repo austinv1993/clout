@@ -1,11 +1,66 @@
 <ion-view view-title="Account">
-  <div class="bar bar-subheader">
-  <h2 class="userNameSubHeader">DAKOTA CORBIN</h2>
-</div>
-    
+ 
+  <ion-content>
+
+    <div class='nameHeader'>Arnold Schwarzenegger</div>
+
     <div class='profilePic'></div>
+
+    <div class="row userRow">
+      <div class="col">23
+        <br/><b>Workouts Completed</b></div>
+      <div class="col">14
+        <br/><b>Workouts Created</b></div>
+      <div class="col">7
+        <br/><b>Clout<br/>Level</b></div>
+    </div>
+
+
+    <div class="list">
+
+      <div class="item item-divider" style='background-color: #510000; color: white;'>
+        Recently Completed Workouts
+      </div>
+
+      <a class="item" href="#">
+    Dwight's Tractor Pull
+  </a>
+      <a class="item" href="#">
+    The Bro Workout
+  </a>
+
+
+    </div>
+      
+      <div class="item item-divider" style='background-color: #510000; color: white;'>
+        Goals
+      </div>
+
+
+    <div class='goalTodo' ng-controller='accountCtrl'>
+
+    <form class='addGoalField' name='frm' ng-submit='addTodo()'>
+        <input  type="text" name='newtodo' placeholder="New Goal" ng-model='newTodo' required />
+        <button class='addGoalBtn' ng-disabled='frm.$invalid'>Add</button>
+        
+        </form>
+        
+        
+        <ul>
+        
+        <li ng-repeat='todo in todos'>
+            <input type="checkbox" ng-model='todo.done' />
+            <span ng-class="{'done':todo.done}">{{todo.title}}</span>
+            </li>
+        
+        </ul>
+        <button class='clearGoalBtn' ng-click='clearCompleted()'>Clear Completed</button>
+
+      </div>
+
+
     
-    <ion-content>
-   
+
+
   </ion-content>
 </ion-view>

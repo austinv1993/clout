@@ -1,9 +1,17 @@
 var app = angular.module('clout');
 
-app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'workoutCreationSrvc', workoutCreationCtrl]);
+app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'workoutCreationSrvc', 'userSrvc', workoutCreationCtrl]);
 
 
-function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) {
+function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc, userSrvc) {
+    
+    $scope.getCurrentUser = function() {
+        userSrvc.getCurrentUser().then(function(user) {
+            $scope.user = user;
+            console.log('current user', $scope.user);
+        })
+    }
+    $scope.getCurrentUser();
 
 	$scope.newExercise = {};
 
@@ -127,16 +135,20 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) 
 			$scope.errorMessages.push(" level");
 		}
 		
-		if($scope.workout.type === "interval") {
-			if(!$scope.workoutTime) {
-				$scope.errorMessages.push(" estimated time");
-			}
-		}
+		// if($scope.workout.type === "interval") {
+		// 	if(!$scope.workoutTime) {
+		// 		$scope.errorMessages.push(" estimated time");
+		// 	}
+		// }
 		
-		if($scope.workout.type === "reps") {
-			if(!$scope.workoutReps) {
-				$scope.errorMessages.push(" reps/sets");
-			}
+		// if($scope.workout.type === "repetition") {
+		// 	if(!$scope.workoutReps) {
+		// 		$scope.errorMessages.push(" reps/sets");
+		// 	}
+		// }
+		
+		if(!$scope.workoutTime.hrs || !$scope.workoutTime.mins || !$scope.workoutTime.secs) {
+			$scope.errorMessages.push(" estimated workout time");
 		}
 
 		if(!$scope.workout.description) {
@@ -157,6 +169,4 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) 
 			});
 		}
 	};
-
-
 };

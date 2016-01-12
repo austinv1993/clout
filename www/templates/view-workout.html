@@ -14,7 +14,7 @@
                     Estimated Time: {{workout.time.hrs}} hours {{workout.time.mins}} mins
                 </div>
 
-                <div>{{workout.type}} <b>Description:</b>
+                <div><b>Type: </b>{{workout.type}}<br/> <b>Description:</b>
                     <br> {{workout.description}}</div>
                 <div class="equipment-list float">
                     <div>
@@ -37,9 +37,13 @@
                 </div>
             </div>
 
+
         </div>
         <div class="run-workout-container">
-        <button class="button button-full button-energized run-workout" ng-click="startWorkout(workout._id)">Run Workout</button>
+
+
+        <button class="button button-full button-energized run-workout" style='background-color: #510000;' ng-click="startWorkout(workout._id)">Run Workout</button>
+
         
     </ion-content>
 </ion-view>
