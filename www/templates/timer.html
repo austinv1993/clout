@@ -1,23 +1,13 @@
 <ion-view>
 	<ion-content>
-		<div ng-show="inExercise">
-			<h1 class="col text-center">Current Exercise: {{ exerciseName }}</h1>
+			<h1 class="col text-center" ng-show="inExercise">Current Exercise: {{ exerciseName }}</h1>
 			<div class="stopwatch"></div>
+			<h1 class="col text-center" ng-show="inBreak">Take a Break!</h1>
+			<div class="breakwatch"></div>
 			<div class="col text-center">
 				<button class="btn btn-success start">Start</button>
 				<button class="btn btn-danger stop">Stop</button>
 				<button class="btn btn-info restart">Restart</button>
 			</div>
-		</div>
-		<div ng-show="inBreak">
-			<h1 class="col text-center">Take a Break!</h1>
-			<div class="breakWatch"></div>
-			<div class="col text-center">
-				<button class="btn btn-success start">Start</button>
-				<button class="btn btn-danger stop">Stop</button>
-				<button class="btn btn-info restart">Restart</button>
-			</div>
-		</div>
-		{{ exerciseName }}
 	</ion-content>
 </ion-view>

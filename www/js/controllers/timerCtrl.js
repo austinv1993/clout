@@ -61,19 +61,19 @@ function timerCtrl($scope, $state, $stateParams, $timeout, workoutSelectionSrvc)
         $scope.inBreak = true;
         $scope.inExercise = false;
 
-        angular.element(".breakWatch").attr("data-timer", "5");
+        angular.element(".breakwatch").attr("data-timer", "5");
         
-        $(".breakWatch").TimeCircles().rebuild();
-        $(".breakWatch").TimeCircles({ start: true });
-        $(".breakWatch").TimeCircles();
-        $(".start").click(function () { $(".breakWatch").TimeCircles().start(); });
-        $(".stop").click(function () { $(".breakWatch").TimeCircles().stop(); });
-        $(".restart").click(function () { $(".breakWatch").TimeCircles().restart(); });
-        $(".breakWatch").TimeCircles().addListener(function (unit, value, total) {
+        $(".breakwatch").TimeCircles().rebuild();
+        $(".breakwatch").TimeCircles({ start: true });
+        $(".breakwatch").TimeCircles();
+        $(".start").click(function () { $(".breakwatch").TimeCircles().start(); });
+        $(".stop").click(function () { $(".breakwatch").TimeCircles().stop(); });
+        $(".restart").click(function () { $(".breakwatch").TimeCircles().restart(); });
+        $(".breakwatch").TimeCircles().addListener(function (unit, value, total) {
             if (total === 0) {
                 
                 console.log("In break timer");
-                $(".breakWatch").TimeCircles().destroy();
+                $(".breakwatch").TimeCircles().destroy();
                 $scope.startWorkout();               
             }
         });
