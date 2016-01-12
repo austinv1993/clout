@@ -3,7 +3,7 @@ angular.module('clout')
     $scope.getCurrentUser = function() {
       userSrvc.getCurrentUser().then(function(user) {
         $scope.user = user;  
-        // console.log('current user', $scope.user);      
+        console.log('current user', $scope.user);      
       })    
     };
     $scope.getCurrentUser();
