@@ -7,16 +7,18 @@ body, html {
 }
 
 
+
 .ex-list {
   margin-top: 10px;
 }
 .clout-header {
-  background-color: #383747;
+  background-color: #00ff12;
     text-align: center;
 }
 .mainLogo {
 
 width: 60%;
+background-color: #00ff12;
 
 }
 
@@ -186,10 +188,10 @@ font-style: italic;
   width: 50px;
 }
 
-.clout-header {
+/*.clout-header {
  background-color: #383747 ;
    text-align: center;
-}
+}*/
 .mainLogo {
 
 width: 60%;
@@ -197,7 +199,7 @@ width: 60%;
 }
 .item-divider {
   text-align: center;
-  background-color: #510000;
+  background-color: black;
   color: white;
   font-weight: 700;
   font-family: Montserrat, sans-serif;
@@ -206,6 +208,8 @@ width: 60%;
   text-align: center;
   font-weight: 400;
   font-family: Montserrat, sans-serif;
+  background-color: black;
+  color: white;
 
 
 }
@@ -217,7 +221,7 @@ width: 60%;
 }
 .subdued {
   text-align: center;
-
+}
 .view-workout-container {
     margin: 15px;
     outline: 1px solid black;
