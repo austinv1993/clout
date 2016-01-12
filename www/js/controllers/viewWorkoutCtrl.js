@@ -16,9 +16,10 @@ angular.module('clout')
     };
     
     
-     $scope.startWorkout = function(workoutId) {
+    $scope.workoutStart = function(workoutId) {
         $state.go('active-view', ({workoutId: workoutId }));
     };
+    
     $scope.testThis();
     
     setMode(true);
