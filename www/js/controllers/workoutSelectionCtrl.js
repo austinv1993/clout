@@ -1,5 +1,5 @@
 angular.module('clout')
-.controller('workoutSelectionCtrl', function($state, $scope, workoutSelectionSrvc) {
+.controller('workoutSelectionCtrl', function($state, $scope, $stateParams, workoutSelectionSrvc) {
     $scope.getFirstPage = function() {
         workoutSelectionSrvc.getWorkouts().then(function(workouts) {
             for (var i = 0; i < workouts.length; i++) {
@@ -70,14 +70,15 @@ angular.module('clout')
     $scope.viewWorkout = function(workoutId) {
         $state.go('view-workout', ({workoutId: workoutId }));
 
-        };
+    };
         
      $scope.startWorkout = function(workoutId) {
-     $state.go('active-view', ({workoutId: workoutId }));
+        $state.go('active-view', ({workoutId: workoutId }));
     };
         
     $scope.quickStart = function(workoutId) {
-        $state.go('timer', ({workoutId: workoutId }));
+        $state.go('active-view', ({workoutId: workoutId }));
+        console.log("hit quickStart Function");
     };
 
 });
