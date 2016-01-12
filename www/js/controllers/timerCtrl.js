@@ -4,7 +4,10 @@ app.controller('timerCtrl', ['$scope', '$state', '$stateParams', '$timeout', 'wo
 
 function timerCtrl($scope, $state, $stateParams, $timeout, workoutSelectionSrvc) {
 
-
+    setMode(true);
+    $scope.buttonChange = false;
+    $scope.button = "STOP";
+    $scope.buttonColor = "btn btn-danger";
 
     $scope.getCounter = function () {
 
@@ -15,38 +18,54 @@ function timerCtrl($scope, $state, $stateParams, $timeout, workoutSelectionSrvc)
 
             $scope.startWorkout = function () {
 
-                if (i === data.exercises.length) {
-                    alert("Workout Completed. Good Job!");
+                setMode(true);
+
+                var counterMins = exerciseInterval[i].mins;
+                var counterSecs = exerciseInterval[i].secs;
+                $scope.exerciseTime = parseInt(counterMins) * 60 + parseInt(counterSecs);
+                $scope.exerciseName = exerciseInterval[i].name;
+                $scope.$apply();
+
+                angular.element(".stopwatch").attr("data-timer", $scope.exerciseTime);
+
+                $(".stopwatch").TimeCircles().rebuild();
+                $(".stopwatch").TimeCircles({ start: true });
+                $(".stopwatch").TimeCircles();
+
+                $scope.startStop = function () {
+                    if ($scope.buttonChange === false) {
+                        $(".stopwatch").TimeCircles().stop();
+                        $scope.buttonChange = true;
+                        $scope.button = "START";
+                        $scope.buttonColor = "btn btn-success";
+                    }
+                    else {
+                        $(".stopwatch").TimeCircles().start();
+                        $scope.buttonChange = false;
+                        $scope.button = "STOP";
+                        $scope.buttonColor = "btn btn-danger";
+                    }
+                };
+
+                $scope.restart = function () {
+                    $(".stopwatch").TimeCircles().restart();
+                    $scope.buttonChange = false;
+                    $scope.button = "STOP"
+                    $scope.buttonColor = "btn btn-danger";
                 }
-                else {
-                    
-                    $scope.inExercise = true;
-                    $scope.inBreak = false;
-                    var counterMins = exerciseInterval[i].mins;
-                    var counterSecs = exerciseInterval[i].secs;
-                    $scope.exerciseTime = parseInt(counterMins) * 60 + parseInt(counterSecs) + 1;
-                    $scope.exerciseName = exerciseInterval[i].name;
-                    console.log(exerciseInterval[i].name);
-                    console.log(i);
-                    
-                    angular.element(".stopwatch").attr("data-timer", $scope.exerciseTime);
-                    
-                    $(".stopwatch").TimeCircles().rebuild();
-                    $(".stopwatch").TimeCircles({ start: true });
-                    $(".stopwatch").TimeCircles();
-                    $(".start").click(function () { $(".stopwatch").TimeCircles().start(); });
-                    $(".stop").click(function () { $(".stopwatch").TimeCircles().stop(); });
-                    $(".restart").click(function () { $(".stopwatch").TimeCircles().restart(); });
-                    $(".stopwatch").TimeCircles().addListener(function (unit, value, total) {
-                        if (total === 0) {
-                            
-                            console.log("in exercise timer");
+                $(".stopwatch").TimeCircles().addListener(function (unit, value, total) {
+                    if (total === 0) {
+                        if (i === data.exercises.length - 1) {
+                            $state.go("tab.workout-selection");
+                            alert("Workout Completed. Good Job!");
+                        }
+                        else {
                             i++;
                             $(".stopwatch").TimeCircles().destroy();
                             $scope.breakTime();
                         }
-                    });
-                }
+                    }
+                });
             };
             if (i === 0) {
                 $scope.startWorkout();
@@ -58,25 +77,51 @@ function timerCtrl($scope, $state, $stateParams, $timeout, workoutSelectionSrvc)
 
     $scope.breakTime = function () {
 
-        $scope.inBreak = true;
-        $scope.inExercise = false;
+        setMode(false);
 
-        angular.element(".breakwatch").attr("data-timer", "5");
-        
+        angular.element(".breakwatch").attr("data-timer", "3");
+
         $(".breakwatch").TimeCircles().rebuild();
         $(".breakwatch").TimeCircles({ start: true });
         $(".breakwatch").TimeCircles();
-        $(".start").click(function () { $(".breakwatch").TimeCircles().start(); });
-        $(".stop").click(function () { $(".breakwatch").TimeCircles().stop(); });
-        $(".restart").click(function () { $(".breakwatch").TimeCircles().restart(); });
+
+        $scope.startStopBreak = function () {
+            if ($scope.buttonChange === false) {
+                $(".breakwatch").TimeCircles().stop();
+                $scope.buttonChange = true;
+                $scope.button = "START";
+                $scope.buttonColor = "btn btn-success";
+            }
+            else {
+                $(".breakwatch").TimeCircles().start();
+                $scope.buttonChange = false;
+                $scope.button = "STOP";
+                $scope.buttonColor = "btn btn-danger";
+            }
+        };
+
+        $scope.restartBreak = function () {
+            $(".breakwatch").TimeCircles().restart();
+            $scope.buttonChange = false;
+            $scope.button = "STOP"
+            $scope.buttonColor = "btn btn-danger";
+        }
+
         $(".breakwatch").TimeCircles().addListener(function (unit, value, total) {
             if (total === 0) {
-                
-                console.log("In break timer");
+
                 $(".breakwatch").TimeCircles().destroy();
-                $scope.startWorkout();               
+                $scope.startWorkout();
             }
         });
+    }
+
+    function setMode(exercise) {
+
+        $scope.inExercise = exercise;
+        $scope.inBreak = !exercise;
+        $scope.$apply();
+
     }
 
 };
