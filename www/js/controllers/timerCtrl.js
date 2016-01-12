@@ -28,7 +28,7 @@ function timerCtrl($scope, $state, $stateParams, $timeout, workoutSelectionSrvc)
                     $scope.exerciseName = exerciseInterval[i].name;
                     console.log(exerciseInterval[i].name);
                     console.log(i);
-
+                    
                     angular.element(".stopwatch").attr("data-timer", $scope.exerciseTime);
                     
                     $(".stopwatch").TimeCircles().rebuild();
@@ -42,7 +42,6 @@ function timerCtrl($scope, $state, $stateParams, $timeout, workoutSelectionSrvc)
                             
                             console.log("in exercise timer");
                             i++;
-                            $scope.inExercise = false;
                             $(".stopwatch").TimeCircles().destroy();
                             $scope.breakTime();
                         }
@@ -60,6 +59,7 @@ function timerCtrl($scope, $state, $stateParams, $timeout, workoutSelectionSrvc)
     $scope.breakTime = function () {
 
         $scope.inBreak = true;
+        $scope.inExercise = false;
 
         angular.element(".breakWatch").attr("data-timer", "5");
         
