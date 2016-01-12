@@ -118,9 +118,9 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) 
 			$scope.errorMessages.push(" exercises");
 		}
 		
-		if($scope.equipments.length === 0) {
-			$scope.errorMessages.push(" equipment");
-		}
+		// if($scope.equipments.length === 0) {
+		// 	$scope.errorMessages.push(" equipment");
+		// }
 		
 		if(!$scope.workout.level) {
 			$scope.errorMessages.push(" level");
@@ -138,7 +138,7 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc) 
 		// 	}
 		// }
 		
-		if(!$scope.workoutTime.hrs || !$scope.workoutTime.mins || !$scope.workoutTime.secs) {
+		if(!$scope.workoutTime.hrs && !$scope.workoutTime.mins || !$scope.workoutTime.mins || !$scope.workoutTime.secs) {
 			$scope.errorMessages.push(" estimated workout time");
 		}
 
