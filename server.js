@@ -5,9 +5,9 @@ var express = require('express')
 ,   port = process.env.PORT || 3000
 ,   secret = require('./server/secret.js')
 ,   mongoose = require('mongoose')
-,   mongooseUri = secrets.mongooseUri
-,   WorkoutCtrl = require('.server/controllers/WorkoutCtrl.js')
-,   UserCtrl = require('.server/controllers/UserCtrl.js')
+,   mongooseUri = secret.mongooseUri
+,   WorkoutCtrl = require('./server/controllers/WorkoutCtrl.js')
+,   UserCtrl = require('./server/controllers/UserCtrl.js')
 ,   app = express();
 
 app.use(bodyParser.json());
