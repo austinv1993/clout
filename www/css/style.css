@@ -16,15 +16,23 @@ html {
 .clout-header {
   text-align: center;
   width: 100%;
+    margin-top: 30px;
+}
+.clout-header-two {
+  text-align: center;
+  width: 100%;
+    margin-top: 80px;
 }
 
 .masterContainer {
   width: 100%;
-  background-color: black;
+  background-color:rgba(0,0,0,.4);
   padding: 20px;
   border-radius: 10px;
-  opacity: 0.8;
+    margin-top: 40px;
 }
+
+
 
 .mainLogo {
   width: 60%;
@@ -47,9 +55,9 @@ html {
 }
 
 .button-small {
-  background-color: black;
-  border: 1px solid white;
+  background-color: #2ECC71;
   color: white;
+    opacity: 1.0;
 }
 
 .item-input {
@@ -82,7 +90,7 @@ html {
   font-weight: 300;
   border: none;
   padding: 5px;
-  background: black;
+  background: rgba(0,0,0,0);
 }
 
 .time-container {
