@@ -12,13 +12,13 @@ body, html {
   margin-top: 10px;
 }
 .clout-header {
-  background-color: #00ff12;
+  background-color: #5CE59D;
     text-align: center;
 }
 .mainLogo {
 
 width: 60%;
-background-color: #00ff12;
+background-color: #5CE59D;
 
 }
 
@@ -32,17 +32,18 @@ background-color: #00ff12;
 }
 .workout-header {
   text-align: center;
-  color: #383747;
-  font-weight: 300;
+  color: #5CE59D;
+  font-weight: 400;
   font-size: 24px;
 }
 
 .button-small {
 
-  background-color: #510000;
+  background-color: #5CE59D;
 
   color: white;
 }
+
 
 .item-input {
   font-weight: 300;
@@ -72,7 +73,7 @@ background-color: #00ff12;
   font-weight: 300;
   border: 1px solid;
 
-  background: #510000;
+  background: #5CE59D;
 }
 .time-container {
   display: flex;
@@ -105,7 +106,7 @@ background-color: #00ff12;
 
 .type-selector {
 
-  background-color: #510000;
+  background-color: #5CE59D;
 
   color: white;
   border: none;
@@ -199,7 +200,7 @@ width: 60%;
 }
 .item-divider {
   text-align: center;
-  background-color: black;
+  background-color: #BDBDBD;
   color: white;
   font-weight: 700;
   font-family: Montserrat, sans-serif;
@@ -208,8 +209,7 @@ width: 60%;
   text-align: center;
   font-weight: 400;
   font-family: Montserrat, sans-serif;
-  background-color: black;
-  color: white;
+
 
 
 }
@@ -218,6 +218,7 @@ width: 60%;
 }
 .play-pause {
   text-align: center;
+
 }
 .subdued {
   text-align: center;
@@ -264,7 +265,6 @@ width: 60%;
  position: fixed;
 <<<<<<< HEAD
 }*/
-
 
 
 }*/

@@ -61,7 +61,7 @@
             </div>-->
 
             <ion-list>
-                <button sref="tab.workout-creation" class="button button-block button-energized" style='background-color: #383747;' ng-click="postNewWorkout()">
+                <button sref="tab.workout-creation" class="button button-block button-energized" style='background-color: #5CE59D;' ng-click="postNewWorkout()">
                     Create New Workout
                 </button>
                 <ion-item ng-repeat="workout in retrievedWorkouts | filter:{name:searchName}">
@@ -71,7 +71,7 @@
                     <p>Type: {{workout.workoutType}}</p>
                     <p>Description: {{workout.description}}</p>
 
-                    <button ng-click="viewWorkout(workout._id)" class="button button-small button-assertive" style='margin-left: 10px; background-color: #510000; float: right;'>
+                    <button ng-click="viewWorkout(workout._id)" class="button button-small button-assertive" style='margin-left: 10px; background-color: #5CE59D; float: right;'>
                         View
                     </button>
                     <button ng-click="quickStart(workout._id)" class="button button-small button-assertive" style='margin-left: 0 auto; background-color: #383747; float: right;'>

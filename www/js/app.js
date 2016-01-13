@@ -68,6 +68,10 @@ angular.module('clout', ['ionic', 'clout.controllers', 'clout.services'])
         controller: 'timerCtrl'
       })
 
+      .state('test-login', {
+          url: '/test-login',
+          templateUrl: 'templates/test-login.html',
+      })
 
 
       .state('active-view', {
