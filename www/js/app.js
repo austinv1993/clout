@@ -88,9 +88,8 @@ angular.module('clout', ['ionic', 'clout.controllers', 'clout.services'])
 
 
 
-  $urlRouterProvider.otherwise('/tab/workout-creation');
+  $urlRouterProvider.otherwise('/login');
 
-    $urlRouterProvider.otherwise('/tab/workout-creation');
 
 
 
