@@ -1,20 +1,18 @@
-<ion-view view-title="">
+<ion-view hide-nav-bar="true" view-title="">
     <a href='/#/tab/workout-selection' class="button icon-left ion-chevron-left button-clear button-dark">Back</a>
     
-    <ion-content>
-        <a href='/#/tab/workout-selection' class="button icon-left ion-chevron-left button-clear button-dark">Back</a>
+    <ion-content style='background-image: url(../img/blurredRunners.png);
+    background-size: cover;'>
+        <a href='/#/tab/workout-selection' class="button icon-left ion-chevron-left button-clear button-light">Back</a>
 
-        <ion-nav-back-button class="button-clear">
-            <i class="ion-arrow-left-c"></i> Back
-        </ion-nav-back-button>
 
-        <div class="view-workout-container" style='background: white; width: 90%; margin: 10px auto; padding: 20px; border: 2px solid lightgray; border-radius: 5px;'>
+        <div class="view-workout-container" style='background: black; opacity: 0.8; color: white; width: 90%; margin: 10px auto; padding: 20px; border-radius: 5px;'>
             <div class='viewBG'>
                 <div>
-                    <h4 class="">{{workout.name}}</h4>
+                    <h4 style='color: white; font-weight: bold;'>{{workout.name}}</h4>
                 </div>
                 <div>
-                    Estimated Time: {{workout.time.hrs}} hours {{workout.time.mins}} mins
+                    <b>Estimated Time:</b> {{workout.time.hrs}} hours {{workout.time.mins}} mins
                 </div>
 
                 <div><b>Type: </b>{{workout.type}}<br/> <b>Description:</b>
@@ -46,7 +44,7 @@
 
 
 
-        <button class="button button-full button-energized run-workout" style='background-color: #00ff12;' ng-click="workoutStart(workout._id)">Run Workout</button>
+        <button class="button button-full button-energized run-workout" style='background-color: transparent; border: 1px solid white;' ng-click="workoutStart(workout._id)">Run Workout</button>
 
 
         

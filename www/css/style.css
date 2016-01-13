@@ -1,46 +1,31 @@
 /* Empty. Add your own CSS if you like */
-body, html {
+
+body,
+html {
   width: 100%;
   height: 100%;
-    background-color: #2f2f2f;
-    
-
-
+  background-color: #2f2f2f;
 }
-
-
 
 .ex-list {
   margin-top: 10px;
 }
+
 .clout-header {
-
-  
-    
-
-    text-align: center;
-    width: 100%;
-    
-    
+  text-align: center;
+  width: 100%;
 }
 
 .masterContainer {
-width: 100%;
-    background-color: black;
-    padding: 20px;
-    border-radius: 10px;
-    opacity: 0.8;
-
-
-
-
+  width: 100%;
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  opacity: 0.8;
 }
 
 .mainLogo {
-
-width: 60%;
-
-
+  width: 60%;
 }
 
 .clout-name {
@@ -51,33 +36,33 @@ width: 60%;
   padding-bottom: 18px;
   font-size: 32px;
 }
+
 .workout-header {
   text-align: center;
-  color: #00ff12;
+  color: white;
   font-weight: 300;
   font-size: 24px;
 }
 
 .button-small {
-
   background-color: black;
-border: 1px solid white;
+  border: 1px solid white;
   color: white;
 }
 
 .item-input {
   font-weight: 300;
-    border-radius: 5px;
-    
+  border-radius: 5px;
 }
 
 .ion-close {
-  color: red;
+  color: white;
   background-color: none;
   background: none;
   border: none;
   font-size: 15px;
 }
+
 .time-holder {
   border: none;
 }
@@ -85,8 +70,8 @@ border: 1px solid white;
 .mins-holder {
   width: 5%;
   margin-left: 2px;
-
 }
+
 .time-selector {
   text-align: center;
   margin-top: 10px;
@@ -94,17 +79,19 @@ border: 1px solid white;
   color: white;
   font-weight: 300;
   border: none;
-padding: 5px;
+  padding: 5px;
   background: black;
 }
+
 .time-container {
   display: flex;
-
 }
+
 .type-container {
   padding-left: 63%;
   display: flex;
 }
+
 .mock-time {
   margin-bottom: 5px;
   width: 20%;
@@ -115,6 +102,7 @@ padding: 5px;
   text-align: center;
   position: relative;
 }
+
 .mock-time-two {
   margin-bottom: 5px;
   width: 20%;
@@ -127,9 +115,7 @@ padding: 5px;
 }
 
 .type-selector {
-
   background-color: #510000;
-
   color: white;
   border: none;
   border-radius: 3px;
@@ -138,29 +124,36 @@ padding: 5px;
   font-weight: 300;
   margin-left: 5px;
   position: relative;
-
 }
+
+
 /*
   margin-top: 10px;
 }*/
+
 .container {
-    margin: 15px;
+  margin: 15px;
 }
+
 .workout {
-    /*outline: 1px solid red;*/
-    margin-top: 10px;
-    border-radius: 10px;
+  /*outline: 1px solid red;*/
+  margin-top: 10px;
+  border-radius: 10px;
 }
+
 .float {
-    float: left;
+  float: left;
 }
+
 .margin {
-    margin-left: 10px;
-    margin-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
+
 .clear {
-    clear: both;
+  clear: both;
 }
+
 .exerName {
   width: 100%;
   background: #EEEEEE;
@@ -176,28 +169,24 @@ padding: 5px;
   width: 15%;
   background: #EEEEEE;
 }
+
 .min-sec-container {
   display: flex;
   margin-top: 10px;
 }
+
 .rep-set-container {
   display: flex;
   margin-top: 10px;
 }
 
 .workOutName {
-font-weight: bold;
-
-
+  font-weight: bold;
 }
+
 .workOutTime {
-font-style: italic;
-
+  font-style: italic;
 }
-
-
-
-
 
 .exerName {
   width: 150px;
@@ -211,8 +200,6 @@ font-style: italic;
   width: 50px;
 }
 
-
-
 .item-divider {
   text-align: center;
   background-color: black;
@@ -220,75 +207,71 @@ font-style: italic;
   font-weight: 700;
   font-family: Montserrat, sans-serif;
 }
+
 .item-text-wrap {
   text-align: center;
   font-weight: 400;
   font-family: Montserrat, sans-serif;
   background-color: black;
   color: white;
-
-
 }
+
 .timer {
   text-align: center;
 }
+
 .play-pause {
   text-align: center;
 }
+
 .subdued {
   text-align: center;
 }
+
 .view-workout-container {
-    margin: 15px;
-    outline: 1px solid black;
-    padding: 15px;
-    border-radius: 200px;
+  margin: 15px;
+  padding: 15px;
 }
+
 .exercise-list {
-    margin-left: 20px;
-
-    display: inline-block;
+  margin-left: 20px;
+  display: inline-block;
 }
-.float-right {
-    float: right;
 
+.float-right {
+  float: right;
 }
 
 .run-workout {
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 8px;
-    margin: 0 auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 8px;
+  margin: 0 auto;
 }
+
 .run-workout-container {
-    padding-left: 10px;
-    padding-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
+
 .the-end {
-    text-align: center;
+  text-align: center;
 }
+
 .select-filter {
-    width: 27%;
+  width: 27%;
 }
+
 .filters {
-    margin-top: 7px;
+  margin-top: 7px;
 }
+
 .center {
-    margin: auto 0;
+  margin: auto 0;
 }
 
+
 }
-
-
-
-
-
-
 .theEndContainer {
-text-align: center;
-
+  text-align: center;
 }
-
-
-
-
