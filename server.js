@@ -46,9 +46,33 @@ require('./config/passport')(passport);
 
 
 apiRoutes.post('/signup', UserCtrl.signup);
-apiRoutes.post('/authenticate', UserCtrl.authenticate);
+apiRoutes.post('/authenticate', function(req, res) {
+        User.findOne({
+            name: req.body.name
+        }, function(err, user) {
+            if (err) throw err;
+        
+            if (!user) {
+            res.send({success: false, msg: 'Authentication failed. User not found.'});
+            } else {
+            // check if password matches
+            user.comparePassword(req.body.password, function (err, isMatch) {
+                if (isMatch && !err) {
+                // if user is found and password is right create a token
+                var token = jwt.encode(user, mongooseUri); //not sure if this right
+                // return the information including token as JSON
+                res.json({success: true, token: 'JWT ' + token});
+                } else {
+                res.send({success: false, msg: 'Authentication failed. Wrong password.'});
+                }[]
+            });
+            }
+        });
+    });
 apiRoutes.get('/memberinfo', passport.authenticate('jwt', { session: false}), function(req, res) {
+  console.log(req.headers);
   var token = getToken(req.headers);
+  console.log(req.headers);
   if (token) {
     var decoded = jwt.decode(token, mongooseUri);
     User.findOne({

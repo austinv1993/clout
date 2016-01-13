@@ -79,7 +79,12 @@ angular.module('clout', ['ionic', 'clout.controllers', 'clout.services'])
       .state('workoutComplete', {
         url: '/workoutComplete',
         templateUrl: 'templates/workoutComplete.html'
-      });
+      })
+      .state('login-register', {
+          url: '/loginregister',
+          templateUrl: 'templates/login-register.html',
+          controller: 'loginCtrl'
+      })
 
 
 

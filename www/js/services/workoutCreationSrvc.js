@@ -6,7 +6,7 @@ function workoutCreationSrvc($q, $http) {
 
 	this.addNewWorkout = function(newWorkout) {
 
-		return $http.post('http://localhost:3000/api/workouts', newWorkout) //https://blooming-shore-7771.herokuapp.com
+		return $http.post('http://localhost:8080/api/workouts', newWorkout)
 			.then(function(response) {
 				console.log(newWorkout);
 				return "Workout Added";
