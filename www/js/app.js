@@ -1,4 +1,4 @@
-angular.module('clout', ['ionic', 'clout.controllers', 'clout.services'])
+angular.module('clout', ['ionic','ionic.service.core', 'clout.controllers', 'clout.services'])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
