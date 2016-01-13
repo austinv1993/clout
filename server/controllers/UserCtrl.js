@@ -29,12 +29,13 @@ module.exports = {
         })
     },
     signup: function(req, res) {
-        if (!req.body.name || !req.body.password) {
+        if (!req.body.username || !req.body.password) {
             res.json({success: false, msg: 'Please pass name and password.'});
         } else {
             var newUser = new User({
-                name: req.body.name,
-                password: req.body.password
+                username: req.body.username,
+                password: req.body.password,
+                email: req.body.email
             });
             newUser.save(function(err) {
                 if (err) {

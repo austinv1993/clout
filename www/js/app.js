@@ -80,8 +80,8 @@ angular.module('clout', ['ionic', 'clout.controllers', 'clout.services'])
         url: '/workoutComplete',
         templateUrl: 'templates/workoutComplete.html'
       })
-      .state('login-register', {
-          url: '/loginregister',
+      .state('login', {
+          url: '/login',
           templateUrl: 'templates/login-register.html',
           controller: 'loginCtrl'
       })
