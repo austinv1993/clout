@@ -1,6 +1,7 @@
-<ion-view view-title="">
+<ion-view hide-nav-bar="true" view-title="">
 
-  <ion-content class="padding">
+  <ion-content style='background-image: url(../img/blurredRunners.png);
+    background-size: cover;'class="padding">
 
 
     <div class="clout-header">
@@ -8,14 +9,17 @@
     </div>
 
 
+<div class='masterContainer'>      
+      
+      
     <h1 class="workout-header">WORKOUT CREATION</h1>
 
 
 
     <div class="list">
-      <label class="item item-input item-floating-label">
+      <label class="item item-input item-floating-label" style='border: none;'>
         <span class="input-label">Workout Name</span>
-        <input type="text" placeholder="Workout Name" ng-model="workout.name">
+        <input type="text" placeholder="Workout Name" ng-model="workout.name" style='color: white; border-bottom: 1px solid white;'>
       </label>
     </div>
 
@@ -37,11 +41,11 @@
 
     <div class="list">
 
-      <label class="item item-input item-select">
-        <div class="input-label">
+      <label class="item item-input item-select" style='background-color: black;'>
+        <div class="input-label" style='color: white;'>
           Workout Type
         </div>
-        <select ng-model="workout.type" ng-change="workoutType()">
+        <select ng-model="workout.type" ng-change="workoutType()" style='background-color: black; color: white;'>
           <option value="repetition">Repetition</option>
           <option value="interval">Interval</option>
 
@@ -51,24 +55,22 @@
 
     <div class="list">
 
-      <div ng-show="interval">
+      <div  ng-show="interval">
 
 
-          <input class="exerName" type="text" placeholder="Name" ng-model="newExercise.name">
+          <input class="exerName" type="text" placeholder="Name" ng-model="newExercise.name" style='background-color: black; border-bottom: 1px solid white;'>
           <div class="min-sec-container">
-          <input class="exerMins" type="text" placeholder="Mins" ng-model="newExercise.mins" maxlength="2">
-          <input class="exerSecs" type="text" placeholder="Secs" ng-model="newExercise.secs" maxlength="2">
+          <input class="exerMins" type="text" placeholder="Mins" ng-model="newExercise.mins" maxlength="2" style='background-color: black; border-bottom: 1px solid white;'>
+          <input class="exerSecs" type="text" placeholder="Secs" ng-model="newExercise.secs" maxlength="2" style='background-color: black; border-bottom: 1px solid white;'>
         </div>
 
       </div>
-      <button class="button button-block " style='background-color: #383747; color: white;' ng-click="addNewExercise()" ng-show="interval">
+      <button class="button button-block " style='background-color: black; color: white; border: 1px solid white;' ng-click="addNewExercise()" ng-show="interval">
         Submit
       </button>
 
 
-        <!-- <button class="button button-block button-energized" ng-click="addNewExercise()"" ng-show="interval">
-        Create Workout
-      </button> -->
+      
 
       <div class="row responsive-sm">
         <div class="col" ng-repeat="exercise in exercises track by $index" ng-show="interval">
@@ -88,28 +90,19 @@
     <div ng-show="repetition">
 
 
-        <input class="exerName" type="text" placeholder="Name" ng-model="newExercise.name">
+        <input class="exerName" type="text" placeholder="Name" ng-model="newExercise.name" style='background-color: black; border-bottom: 1px solid white;'>
         <div class="rep-set-container">
-        <input class="exerMins" type="text" placeholder="reps" ng-model="newExercise.reps" maxlength="2">
-        <input class="exerSecs" type="text" placeholder="sets" ng-model="newExercise.sets" maxlength="2">
+        <input class="exerMins" type="text" placeholder="Reps" ng-model="newExercise.reps" maxlength="2" style='background-color: black; border-bottom: 1px solid white;'>
+        <input class="exerSecs" type="text" placeholder="Sets" ng-model="newExercise.sets" maxlength="2" style='background-color: black; border-bottom: 1px solid white;'>
       </div>
 
     </div>
-    <button class="button button-block " style='background-color: #383747; color: white;' ng-click="addNewExercise()" ng-show="repetition">
+    <button class="button button-block " style='background-color: black; color: white; border: 1px solid white;' ng-click="addNewExercise()" ng-show="repetition">
       Submit
     </button>
 
 
-    <!-- <div ng-show="repetition">
-      <label class="item-input-wrapper">
-        <input class="exerName" type="text" placeholder="Name" ng-model="newExercise.name">
-        <input class="exerMins" type="text" placeholder="reps" ng-model="newExercise.reps">
-        <input class="exerSecs" type="text" placeholder="sets" ng-model="newExercise.sets">
-      </label>
-    </div>
-    <button class="button button-block button-energized" ng-click="addNewExercise()" ng-show="repetition">
-      Submit
-    </button>  -->
+    
 
 
 
@@ -126,13 +119,13 @@
         </div>
       </div>
 
-    </div>
+    
 
     <div class="list">
 
-      <div class="item item-input-inset">
-        <label class="item-input-wrapper">
-          <input type="text" placeholder="Add Equipment" ng-model="newEquipment.text">
+      <div class="item item-input-inset" style='background-color: transparent; border: none; color: white;'>
+        <label class="item-input-wrapper" style='background-color: black; color: white; border-bottom: 1px solid white; border-radius: 0px;' >
+          <input type="text" placeholder="Add Equipment" ng-model="newEquipment.text" style='color: white;' >
         </label>
         <button class="button button-small" ng-click="addNewEquipment()">
           Submit
@@ -157,11 +150,11 @@
 
 
 
-    <label class="item item-input item-select">
-      <div class="input-label">
+    <label class="item item-input item-select"style='background-color: black; color: white;'>
+      <div class="input-label" style='color: white;' >
         Level
       </div>
-      <select ng-model="workout.level">
+      <select style='background-color: black; color: white;' ng-model="workout.level">
         <option value="beginner">Beginner</option>
         <option value="intermediate">Intermediate</option>
         <option value="advanced">Advanced</option>
@@ -176,107 +169,67 @@
 
     <br>
 
-    <!-- <div class="type-container">
-<input class="mock-time" placeholder="Mins" maxlength="2">
-</input>:
-<input class="mock-time-two" placeholder="Secs" maxlength="2">
-</input>
-</div> -->
+    
 
     <p class="time-selector">Please enter estimated workout time</p>
 
     <div class="time-container">
 
-    <div class="item item-input-inset time-holder">
-      <label class="item-input-wrapper mins-holder">
-        <input type="text" placeholder="Hours" maxlength="2" ng-model="workout.hrs">
+    <div class="item item-input-inset time-holder" style='background-color: black; color: white;'>
+      <label class="item-input-wrapper mins-holder" style='background-color: black;'>
+        <input type="text" placeholder="Hours" maxlength="2" ng-model="workout.hrs" style='color: white;' >
       </label>
       &nbsp :
     </div>
 
 
-    <div class="item item-input-inset time-holder">
-      <label class="item-input-wrapper mins-holder">
-        <input type="text" placeholder="Mins" maxlength="2" ng-model="workout.mins">
+    <div class="item item-input-inset time-holder" style='background-color: black; color: white;'>
+      <label class="item-input-wrapper mins-holder" style='background-color: black;'>
+        <input type="text" placeholder="Mins" maxlength="2" ng-model="workout.mins" style='color: white;'>
       </label>
       &nbsp :
     </div>
 
-    <div class="item item-input-inset time-holder">
+    <div class="item item-input-inset time-holder" style='background-color: black; color: white;'>
 
 
-      <label class="item-input-wrapper mins-holder">
-        <input type="text" placeholder="Secs" maxlength="2" ng-model="workout.secs">
+      <label class="item-input-wrapper mins-holder" style='background-color: black;'>
+        <input type="text" placeholder="Secs" maxlength="2" ng-model="workout.secs" style='color: white;'>
       </label>
 
 
     </div>
   </div>
-    <!-- <p ng-show="interval" class="time-selector">Please select workout time</p> -->
-    <!-- <p ng-show="reps" class="time-selector">Please enter estimated workout time</p>
-    <div class="item item-input-inset time-holder" ng-show="reps">
-      <label class="item-input-wrapper mins-holder">
-        <input type="text" placeholder="Hours" maxlength="2" ng-model="workout.hrs">
-      </label>
-    </div>
-    <div class="item item-input-inset time-holder" ng-show="reps">
-      <label class="item-input-wrapper mins-holder">
-        <input type="text" placeholder="Mins" maxlength="2" ng-model="workout.mins">
-      </label>
-    </div>
-    <div class="item item-input-inset time-holder" ng-show="reps">
-      <label class="item-input-wrapper mins-holder">
-        <input type="text" placeholder="Secs" maxlength="2" ng-model="workout.secs">
-      </label>
-    </div> -->
+
 
 
 
     <br>
 
     <div class="list">
-      <label class="item item-input item-floating-label">
+      <label class="item item-input item-floating-label" style='border: none;'>
         <span class="input-label">Workout Description</span>
-        <input type="text" placeholder="Workout Description" class="workout_descript" ng-model="workout.description">
+        <input type="text" placeholder="Workout Description" class="workout_descript" ng-model="workout.description" style='color: white; border-bottom: 1px solid white;'>
       </label>
     </div>
 
     <div class="list">
 
 
-      <button class="button button-block button-energized" style='background-color: #383747;'ng-click="postNewWorkout()">
+      <button class="button button-block button-energized" style='background-color: black; border: 1px solid white;'ng-click="postNewWorkout()">
         Create Workout
       </button>
 
-      <!-- <button class="button button-energized">Endurance</button><br>
-      <button class="button button-energized ex-list">Strength</button><br>
-      <button class="button button-energized ex-list">Balance</button><br>
-      <button class="button button-energized ex-list">Flexibility</button> -->
 
-      <!--<div class="list card">
-      <div class="item item-divider">Recent Updates</div>
-      <div class="item item-body">
-        <div>
-          There is a fire in <b>sector 3</b>
-        </div>
+        
       </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Health</div>
-      <div class="item item-body">
-        <div>
-          You ate an apple today!
-        </div>
       </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Upcoming</div>
-      <div class="item item-body">
-        <div>
-          You have <b>29</b> meetings on your calendar tomorrow.
-        </div>
-      </div>
-    </div>-->
+    
+
+
+
+
+        
   </ion-content>
 
 </ion-view>

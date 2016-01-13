@@ -1,12 +1,15 @@
-<ion-view view-title="Workout">
+<ion-view view-title="">
+    <a href='/#/tab/workout-selection' class="button icon-left ion-chevron-left button-clear button-dark">Back</a>
+    
     <ion-content>
+        <a href='/#/tab/workout-selection' class="button icon-left ion-chevron-left button-clear button-dark">Back</a>
 
         <ion-nav-back-button class="button-clear">
             <i class="ion-arrow-left-c"></i> Back
         </ion-nav-back-button>
 
-        <div class="view-workout-container">
-            <div>
+        <div class="view-workout-container" style='background: white; width: 90%; margin: 10px auto; padding: 20px; border: 2px solid lightgray; border-radius: 5px;'>
+            <div class='viewBG'>
                 <div>
                     <h4 class="">{{workout.name}}</h4>
                 </div>
@@ -42,8 +45,11 @@
         <div class="run-workout-container">
 
 
-        <button class="button button-full button-energized run-workout" style='background-color: #510000;' ng-click="startWorkout(workout._id)">Run Workout</button>
-
+        <button class="button button-full button-energized run-workout" style='background-color: #00ff12; width: 300px; margin: 0 auto; border-radius: 5px;' ng-click="startWorkout(workout._id)">Run Workout</button>
+            
+            
+            
+   
         
     </ion-content>
 </ion-view>
