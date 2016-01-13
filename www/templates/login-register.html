@@ -8,12 +8,12 @@
     <img class='mainLogo' src='../img/cloutMainLogo.png' />
   </div>
   
-        <div ng-show="login" class="list list-inset">
-            <label class="item item-input">
-                <input ng-model="loginAttempt.username" type="text" placeholder="Username">
+        <div ng-show="login" class="list list-inset" style="background-color: transparent;">
+            <label class="item item-input" style="background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; margin-bottom: 10px;">
+                <input ng-model="loginAttempt.username" type="text" placeholder="Username" style="color: white;">
             </label>
-            <label class="item item-input">
-                <input ng-model="loginAttempt.password" type="password" placeholder="Password">
+            <label class="item item-input" style="background-color: rgba(0,0,0,.4); border: none; border-radius: 5px;">
+                <input ng-model="loginAttempt.password" type="password" placeholder="Password" style="color: white;">
             </label>
         </div>
         <div ng-hide="login" class="list list-inset">
@@ -31,7 +31,7 @@
             </label>
         </div>
         <button ng-show="login" class="button button-block button-calm" style='background-color: #2ECC71; color: white;' ng-click="authenticate(loginAttempt)">Login</button>
-        <div ng-show="login">No account? <a href="" ng-click="setLoginTrueFalse()"  style='color: #2ECC71'>Register.</a></div>
+        <div ng-show="login" style='color: white;'>No account?  <a href="" ng-click="setLoginTrueFalse()"  style='color: #2ECC71'>Register.</a></div>
         <div ng-show="login"><a href=""  style='color: #2ECC71'>Forgot password?</a></div>
         <div ng-show="login"><a href=""  style='color: #2ECC71'>Continue as unregistered user.</a></div>
         
