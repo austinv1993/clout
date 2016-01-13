@@ -20,13 +20,13 @@
 //=======
 angular.module('clout')
 .controller('accountCtrl', function($scope, userSrvc, $timeout) {
-    $scope.getCurrentUser = function() {
-      userSrvc.getCurrentUser().then(function(user) {
-        $scope.user = user;  
-        console.log('current user', $scope.user);      
-      })    
-    };
-    $scope.getCurrentUser();
+    // $scope.getCurrentUser = function() {
+    //   userSrvc.getCurrentUser().then(function(user) {
+    //     $scope.user = user;  
+    //     console.log('current user', $scope.user);      
+    //   })    
+    // };
+    // $scope.getCurrentUser();
     // $scope.time = 30;
   
     // $scope.startTimer = function(seconds) {

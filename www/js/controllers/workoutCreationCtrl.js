@@ -5,13 +5,13 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 
 function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc, userSrvc) {
     
-    $scope.getCurrentUser = function() {
-        userSrvc.getCurrentUser().then(function(user) {
-            $scope.user = user;
-            console.log('current user', $scope.user);
-        })
-    }
-    $scope.getCurrentUser();
+    // $scope.getCurrentUser = function() {
+    //     userSrvc.getCurrentUser().then(function(user) {
+    //         $scope.user = user;
+    //         console.log('current user', $scope.user);
+    //     })
+    // }
+    // $scope.getCurrentUser();
 
 	$scope.newExercise = {};
 
