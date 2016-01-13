@@ -1,14 +1,15 @@
 angular.module('clout')
-.service('userSrvc', function($http) {
-    
-    // this.getCurrentUser = function() {
-    //   return $http.get('http://localhost:8080/api/userbyid?userId=5693f036e4b07da7bd2464cd').then(function(response) {
-    //       return response.data;
-    //   })
-    //}    
+.service('userSrvc', function($http, storageFactory) {
+     
     this.authenticate = function(loginAttempt) {
         console.log(loginAttempt);
         return $http.post('http://localhost:8080/api/authenticate', loginAttempt).then(function(response) {
+            if(response.data.success) {
+                storageFactory.setToken(response.data.token);
+                storageFactory.save('user', JSON.stringify(response.data.user));
+                console.log('user', JSON.parse(storageFactory.get('user')));
+                
+            }
             return response.data;
         })
     }
