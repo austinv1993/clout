@@ -9,12 +9,15 @@ body, html {
 }
 
 
+
 .ex-list {
   margin-top: 10px;
 }
 .clout-header {
+
   
     
+
     text-align: center;
     width: 100%;
     
@@ -36,6 +39,7 @@ width: 100%;
 .mainLogo {
 
 width: 60%;
+
 
 }
 
@@ -208,9 +212,10 @@ font-style: italic;
 }
 
 
+
 .item-divider {
   text-align: center;
-  background-color: #510000;
+  background-color: black;
   color: white;
   font-weight: 700;
   font-family: Montserrat, sans-serif;
@@ -219,6 +224,8 @@ font-style: italic;
   text-align: center;
   font-weight: 400;
   font-family: Montserrat, sans-serif;
+  background-color: black;
+  color: white;
 
 
 }
@@ -230,7 +237,7 @@ font-style: italic;
 }
 .subdued {
   text-align: center;
-
+}
 .view-workout-container {
     margin: 15px;
     outline: 1px solid black;
@@ -269,14 +276,12 @@ font-style: italic;
 .center {
     margin: auto 0;
 }
-/*.absolute {
- position: fixed;
-<<<<<<< HEAD
-}*/
-
-
 
 }
+
+
+
+
 
 
 .theEndContainer {

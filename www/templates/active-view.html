@@ -1,10 +1,10 @@
-<ion-view view-title="Active Workout">
-  <ion-content>
+<ion-view view-title="">
+  <ion-content style="background-color: #2f2f2f">
 
     <div class="clout-header">
       <img class='mainLogo' src='../img/cloutMainLogo.png' />
     </div>
-    
+
     <!--<div>
         Exercise in Progress:
         {{workout.name}}
@@ -16,17 +16,17 @@
 
       </div>
       <div class="item item-text-wrap">
-          
-        <button class="ion-ios-skipbackward"></button>
-                    {{workout.name}}
+
+        <!--<button class="ion-ios-skipbackward"></button>-->
+        {{workout.name}}
         <div ng-repeat="exercise in workout.exercises"></div>
 
-        <button class="ion-ios-skipforward"></button>
+        <!--<button class="ion-ios-skipforward"></button>-->
 
       </div>
-      
+
       <!--get rid of previous and skip buttons?-->
-      
+
       <div class="item item-divider">
 
       </div>
@@ -37,6 +37,19 @@
       <div>
 
         <h2 class="timer">15:32</h2>
+
+        <h1 class="col text-center" ng-show="inExercise">Current Exercise: {{ exerciseName }}</h1>
+        <div class="stopwatch"></div>
+        <div class="col text-center work" ng-show="inExercise">
+          <button class="{{ buttonColor }}" ng-click="startStop()">{{ button }}</button>
+          <button class="btn btn-info restart" ng-click="restart()">RESTART</button>
+        </div>
+        <h1 class="col text-center" ng-show="inBreak">Take a Break!</h1>
+        <div class="breakwatch"></div>
+        <div class="col text-center break" ng-show="inBreak">
+          <button class="{{ buttonColor }}" ng-click="startStopBreak()">{{ button }}</button>
+          <button class="btn btn-info restart" ng-click="restartBreak()">Restart</button>
+        </div>
 
       </div>
 
@@ -50,6 +63,10 @@
         </div>
 
       </div>
+
+      <button class="button button-block button-positive">
+        Pause
+      </button>
 
     </div>
 
