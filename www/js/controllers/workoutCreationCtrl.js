@@ -100,8 +100,7 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc, 
 
 		$scope.workoutTime = {
 			hrs: $scope.workout.hrs,
-			mins: $scope.workout.mins,
-			secs: $scope.workout.secs
+			mins: $scope.workout.mins
 		};
 
 		$scope.newWorkout = {

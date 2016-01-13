@@ -67,7 +67,12 @@ angular.module('clout', ['ionic', 'clout.controllers', 'clout.services'])
         templateUrl: 'templates/timer.html',
         controller: 'timerCtrl'
       })
-
+      
+      .state('reps', {
+        url: '/reps/:workoutId',
+        templateUrl: 'templates/timer.html',
+        controller: 'repsCtrl'
+      })
 
 
       .state('active-view', {

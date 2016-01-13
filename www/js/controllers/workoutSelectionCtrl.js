@@ -72,13 +72,12 @@ angular.module('clout')
 
     };
         
-     $scope.startWorkout = function(workoutId) {
-        $state.go('active-view', ({workoutId: workoutId }));
+    $scope.startWorkout = function(workoutId) {
+        $state.go('reps', ({workoutId: workoutId }));
     };
         
     $scope.quickStart = function(workoutId) {
-        $state.go('active-view', ({workoutId: workoutId }));
-        console.log("hit quickStart Function");
+        $state.go('reps', ({workoutId: workoutId }));
     };
 
 });
