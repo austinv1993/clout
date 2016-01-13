@@ -1,12 +1,12 @@
 <ion-view hide-nav-bar="true" view-title="">
-    <a href='/#/tab/workout-selection' class="button icon-left ion-chevron-left button-clear button-dark">Back</a>
+   
     
     <ion-content style='background-image: url(../img/blurredRunners.png);
     background-size: cover;'>
-        <a href='/#/tab/workout-selection' class="button icon-left ion-chevron-left button-clear button-light">Back</a>
+        <a href='/#/tab/workout-selection' class="button icon-left ion-chevron-left button-clear button-dark" style='margin-top: 40px;'>Back</a>
 
 
-        <div class="view-workout-container" style='background: black; opacity: 0.8; color: white; width: 90%; margin: 10px auto; padding: 20px; border-radius: 5px;'>
+        <div class="view-workout-container" style='background: rgba(0,0,0,.4); color: white; width: 90%; margin: 10px auto; padding: 20px; border-radius: 5px;'>
             <div class='viewBG'>
                 <div>
                     <h4 style='color: white; font-weight: bold;'>{{workout.name}}</h4>
@@ -44,7 +44,7 @@
 
 
 
-        <button class="button button-full button-energized run-workout" style='background-color: transparent; border: 1px solid white;' ng-click="workoutStart(workout._id)">Run Workout</button>
+        <button class="button button-full button-energized run-workout" style='background-color: #2ECC71; ' ng-click="workoutStart(workout._id)">Run Workout</button>
 
 
         
