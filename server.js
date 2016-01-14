@@ -58,7 +58,7 @@ apiRoutes.post('/authenticate', function(req, res) {
             user.comparePassword(req.body.password, function (err, isMatch) {
                 if (isMatch && !err) {
                     var token = jwt.encode(user, secret.secret); //not sure if this right
-                    
+
                     res.json({success: true, token: token, user: {username: user.username, id: user._id, email: user.email}});
                 } else {
                     res.send({success: false, msg: 'Authentication failed. Wrong password.'});
@@ -102,8 +102,8 @@ var getToken = function (headers) {
 
 mongoose.connection.once('open', function() {
 	console.log("Connected to MongoDB");
-    
+
 app.listen(port, function() {
-console.log('listening on port', port); 
+console.log('listening on port', port);
 });
 });
