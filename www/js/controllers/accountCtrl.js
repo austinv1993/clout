@@ -57,6 +57,18 @@ $scope.clearCompleted = function(){
 
 })
 }
+
+ $scope.logout = function() {
+        var key = localStorage.getItem('clout-auth-token')
+        storageFactory.setToken();
+        storageFactory.save('user');
+        $state.go('login');
+    }
+    $scope.getCurrentUser = function() {
+        $scope.user = JSON.parse(localStorage.getItem('user'));
+        console.log('user', $scope.user);
+    }
+    $scope.getCurrentUser();
     
     
 });
