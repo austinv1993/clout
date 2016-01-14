@@ -1,5 +1,5 @@
 angular.module('clout')
-.controller('workoutSelectionCtrl', function($state, $scope, $stateParams, workoutSelectionSrvc) {
+.controller('workoutSelectionCtrl', function($state, $scope, $stateParams, workoutSelectionSrvc, storageFactory) {
     $scope.getFirstPage = function() {
         workoutSelectionSrvc.getWorkouts().then(function(workouts) {
             for (var i = 0; i < workouts.length; i++) {
@@ -7,7 +7,7 @@ angular.module('clout')
             };
             $scope.workouts = workouts;
             // console.log(workouts);
-            console.log('got first page');
+            // console.log('got first page');
         });
     };
     $scope.getFirstPage();
@@ -16,7 +16,7 @@ angular.module('clout')
     $scope.moreDataAvailable = true;
     
     $scope.getMoreWorkouts = function() {
-        console.log('trying to get more workouts');
+        // console.log('trying to get more workouts');
         workoutSelectionSrvc.offset += 8;
         workoutSelectionSrvc.getWorkouts().then(function(workouts, err) {
             if (err) {
@@ -41,7 +41,7 @@ angular.module('clout')
             if (workouts.length === 0) {
                 $scope.moreDataAvailable = false;
             }
-            console.log('got more workouts');
+            // console.log('got more workouts');
             $scope.$broadcast('scroll.infiniteScrollComplete');
         });
     };
@@ -49,23 +49,6 @@ angular.module('clout')
         $scope.getMoreWorkouts();
   });
     
-    // $scope.getPreviousWorkouts = function() {
-    //     workoutSelectionSrvc.offset -= 4;
-    //     workoutSelectionSrvc.getPreviousWorkouts().then(function(workouts) {
-    //         $scope.workouts = workouts;
-    //         if ($scope.workouts.length > 0) {
-    //             $scope.endOfResults = false;
-    //         } else {
-    //             $scope.endOfResults = true;
-    //         }
-    //         console.log(workoutSelectionSrvc.offset);
-    //         if (workoutSelectionSrvc.offset === 0) {
-    //             $scope.showBackButton = false;
-    //         } else {
-    //             $scope.showBackButton = true;
-    //         }
-    //     });
-    // };
     
     $scope.viewWorkout = function(workoutId) {
         $state.go('view-workout', ({workoutId: workoutId }));
@@ -78,7 +61,14 @@ angular.module('clout')
         
     $scope.quickStart = function(workoutId) {
         $state.go('active-view', ({workoutId: workoutId }));
-        console.log("hit quickStart Function");
+        // console.log("hit quickStart Function");
     };
+    $scope.logout = function() {
+        var key = localStorage.getItem('clout-auth-token')
+        storageFactory.setToken();
+        storageFactory.save('user');
+        $state.go('login');
+    }
+    
 
 });
