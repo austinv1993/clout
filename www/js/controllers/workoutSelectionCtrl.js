@@ -69,6 +69,11 @@ angular.module('clout')
         storageFactory.save('user');
         $state.go('login');
     }
+    $scope.getCurrentUser = function() {
+        $scope.user = JSON.parse(localStorage.getItem('user'));
+        console.log('user', $scope.user);
+    }
+    $scope.getCurrentUser();
     
 
 });
