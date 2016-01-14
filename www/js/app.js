@@ -14,7 +14,7 @@ angular.module('clout', ['ionic','ionic.service.core', 'clout.controllers', 'clo
     });
   })
 
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
 
     $stateProvider
@@ -88,7 +88,8 @@ angular.module('clout', ['ionic','ionic.service.core', 'clout.controllers', 'clo
 
 
 
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/login')
+  $httpProvider.interceptors.push('AuthInterceptor');
 
 
 
