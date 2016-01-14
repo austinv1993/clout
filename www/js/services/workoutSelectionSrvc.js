@@ -10,7 +10,7 @@ angular.module('clout')
         });
     };
     this.getWorkoutById = function(workoutId) {
-        return $http.get('https://blooming-shore-7771.herokuapp.com/api/workout?workoutId=' + workoutId).then(function(response) {
+        return $http.get('http://localhost:8080/api/workout?workoutId=' + workoutId).then(function(response) {
             console.log(response.data);
 
             return response.data;
@@ -18,7 +18,7 @@ angular.module('clout')
     };
 
     this.getPreviousWorkouts = function() {
-        return $http.get('https://blooming-shore-7771.herokuapp.com/api/workouts?offset=' + this.offset + '&count=' + this.pageCount).then(function(response) {
+        return $http.get('http://localhost:8080/api/workouts?offset=' + this.offset + '&count=' + this.pageCount).then(function(response) {
 
             return response.data;
         });

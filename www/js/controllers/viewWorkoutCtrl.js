@@ -14,18 +14,18 @@ angular.module('clout')
     $scope.testThis = function() {
         console.log('controller is connected');
     };
-    
-    
+
+
     $scope.workoutStart = function(workoutId) {
         $state.go('active-view', ({workoutId: workoutId }));
     };
-    
+
     $scope.testThis();
-    
+
     workoutSelectionSrvc.getWorkoutById($stateParams.workoutId).then(function(data) {
         console.log(data);
     })
-    
+
     setMode(true);
     $scope.buttonChange = false;
     $scope.button = "STOP";
@@ -37,6 +37,8 @@ angular.module('clout')
 
             var i = 0;
             var exerciseInterval = data.exercises;
+
+            console.log(data);
 
             $scope.startWorkout = function () {
 
@@ -147,18 +149,18 @@ angular.module('clout')
     };
 
     $scope.getReps = function() {
-        
+
         workoutSelectionSrvc.getWorkoutById($stateParams.workoutId).then(function (data) {
-            
+
             var i = 0;
             var exerciseInterval = data.exercises;
-            
+
             $scope.workout = function() {
-                
+
                 $scope.repsCounter = exerciseInterval[i].reps;
                 $scope.setsCounter = exerciseInterval[i].sets;
                 $scope.exerciseName = exerciseInterval[i].name;
-                
+
                 if (i === data.exercises.length - 1) {
                     $state.go("tab.workout-selection");
                     alert("Workout Completed. Good Job!");
@@ -170,5 +172,5 @@ angular.module('clout')
             }
         });
     }
-    
+
 });
