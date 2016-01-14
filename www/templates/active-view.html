@@ -50,6 +50,10 @@
           <button class="{{ buttonColor }}" ng-click="startStopBreak()">{{ button }}</button>
           <button class="btn btn-info restart" ng-click="restartBreak()">Restart</button>
         </div>
+        
+        <h1 class="col text-center" ng-show="inReps">Current Exercise: {{ exerciseName }}</h1>
+        <h2 class="col text-center" ng-show="inReps">{{ repsCounter }} Reps X {{ setsCounter }} Sets
+          <button class="btn btn-info" ng-click="nextWorkout()">Next Exercise</button>
 
       </div>
 
