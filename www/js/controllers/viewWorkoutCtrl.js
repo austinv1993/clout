@@ -22,6 +22,10 @@ angular.module('clout')
     
     $scope.testThis();
     
+    workoutSelectionSrvc.getWorkoutById($stateParams.workoutId).then(function(data) {
+        console.log(data);
+    })
+    
     setMode(true);
     $scope.buttonChange = false;
     $scope.button = "STOP";
