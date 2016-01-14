@@ -27,13 +27,13 @@ app.use('/api', apiRoutes);
 
 //WORKOUTS//
 apiRoutes.get('/workouts', WorkoutCtrl.allWorkouts);
-app.post('/workouts', WorkoutCtrl.createWorkout);
-app.get('/workout', WorkoutCtrl.findById);
+apiRoutes.post('/workouts', WorkoutCtrl.createWorkout);
+apiRoutes.get('/workout', WorkoutCtrl.findById);
 
 //USERS//
-app.post('/newuser', UserCtrl.createUser);
-app.get('/userbyid', UserCtrl.getById);
-app.get('/users', UserCtrl.getUsers);
+// app.post('/newuser', UserCtrl.createUser);
+// app.get('/userbyid', UserCtrl.getById);
+// app.get('/users', UserCtrl.getUsers);
 
 
 
