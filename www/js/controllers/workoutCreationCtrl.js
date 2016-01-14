@@ -93,6 +93,11 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc, 
 			$scope.exercises = [];
 		}
 	};
+    $scope.getCurrentUser = function() {
+        $scope.user = localStorage.getItem('user');
+        console.log('user', $scope.user);
+    }
+    $scope.getCurrentUser();
 
 	$scope.errorMessages = [];
 
