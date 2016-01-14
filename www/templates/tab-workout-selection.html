@@ -1,12 +1,11 @@
 <ion-view hide-nav-bar="true" view-title="Workout Selection">
-  <ion-content style='background-image: url(../img/blurredRunners.png);
-    background-size: cover;'>
+  <ion-content>
     <div class="container">
 
       <div class="bar bar-header item-input-inset absolute" style='background: rgba(0,0,0,.4); border-radius: 5px; margin-top: 50px;'>
         <label class="item-input-wrapper" style='background: rgba(0,0,0,0);color:white;'>
           <i class="icon ion-ios-search placeholder-icon"></i>
-          <input ng-model="searchName" type="search" placeholder="Search" style='border-bottom: 1px solid white; color: white;'>
+          <input ng-model="searchName" type="search" placeholder="Search" style='border: 1px solid white; color: white; border-radius: 5px;'>
         </label>
         <button ng-click="clearInput()" class="button button-clear">
           Cancel
