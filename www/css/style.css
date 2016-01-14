@@ -229,13 +229,13 @@ html {
   font-family: Montserrat, sans-serif;
 }
 
-.item-text-wrap {
+/*.item-text-wrap {
   text-align: center;
-  font-weight: 400;
   font-family: Montserrat, sans-serif;
   background-color: black;
   color: white;
-}
+
+}*/
 
 .timer {
   text-align: center;
