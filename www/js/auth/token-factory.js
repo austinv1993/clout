@@ -17,7 +17,7 @@ angular.module('clout').factory('storageFactory', storageFactory);
 		}
 		
 		function setToken (token) {
-            console.log('saving token', token);
+            // console.log('saving token', token);
 			if (token) {
 				store.setItem(key, token);
 			} else {
@@ -30,11 +30,12 @@ angular.module('clout').factory('storageFactory', storageFactory);
 		}
 		
 		function save (key, value) {
-            console.log('saving token', value);
+            
 			if (value) {
 				store.setItem(key, value);
 			} else {
 				store.removeItem(key);
+             
 			}
 		}
 	}

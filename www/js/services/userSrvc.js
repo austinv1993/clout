@@ -7,7 +7,7 @@ angular.module('clout')
             if(response.data.success) {
                 storageFactory.setToken(response.data.token);
                 storageFactory.save('user', JSON.stringify(response.data.user));
-                console.log('user', JSON.parse(storageFactory.get('user')));
+                // console.log('user', JSON.parse(storageFactory.get('user')));
                 
             }
             return response.data;
