@@ -5,38 +5,30 @@
       <img class='mainLogo' src='../img/cloutMainLogo.png' />
     </div>
 
-    <!--<div>
-        Exercise in Progress:
-        {{workout.name}}
-    </div>-->
 
-    <div class="card">
-      <div class="item item-divider">
+    
+    <!--<div class="card" style="background-color: transparent; border: none;">
+  <div class="item item-text-wrap" style='background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; border: none;'>
         Exercise in Progress
+  </div>
+</div>
 
-      </div>
-      <div class="item item-text-wrap">
+    <div class="card" style="background-color: transparent; border: none;">
+  <div class="item item-text-wrap" style='background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; border: none;'>
+        {{workout.name}} test
+  </div>
+          <div ng-repeat="exercise in workout.exercises"></div>
+</div>-->
 
-        <!--<button class="ion-ios-skipbackward"></button>-->
-        {{workout.name}}
-        <div ng-repeat="exercise in workout.exercises"></div>
-
-        <!--<button class="ion-ios-skipforward"></button>-->
-
-      </div>
-
-      <!--get rid of previous and skip buttons?-->
-
-      <div class="item item-divider">
-
-      </div>
+    <div class="timer-container">
+        <div ng-show="inExercise">Current Exercise: {{ exerciseName }}</div>
+        
+        
     </div>
 
-    <div class="list card">
 
-      <div>
 
-        <h2 class="timer">15:32</h2>
+    <div>
 
         <h1 class="col text-center" ng-show="inExercise">Current Exercise: {{ exerciseName }}</h1>
         <div class="stopwatch"></div>
@@ -57,7 +49,7 @@
 
       </div>
 
-      <div class="item item-body">
+      <!--<div class="item item-body">
         <img class="">
         <p>
           <img class="full-image" src="img/sampleworkout.jpg">
@@ -70,9 +62,9 @@
 
       <button class="button button-block button-positive">
         Pause
-      </button>
+      </button>-->
 
-    </div>
+
 
 
 

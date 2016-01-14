@@ -221,19 +221,19 @@ html {
   width: 50px;
 }
 
-.item-divider {
+/*.item-divider {
   text-align: center;
   background-color: black;
   color: white;
   font-weight: 700;
   font-family: Montserrat, sans-serif;
-}
+}*/
+
 
 .item-text-wrap {
   text-align: center;
-  font-weight: 400;
   font-family: Montserrat, sans-serif;
-  background-color: black;
+  border: none;
   color: white;
 }
 
@@ -291,8 +291,11 @@ html {
   margin: auto 0;
 }
 
-
-}
 .theEndContainer {
   text-align: center;
+}
+.timer-container {
+    color: white;
+    text-align: center;
+    
 }
