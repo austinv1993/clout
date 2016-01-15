@@ -38,7 +38,7 @@
         
 
         <h1 class="col text-center" ng-show="inExercise">Current Exercise: {{ exerciseName }}</h1>
-        <div class="stopwatch"></div>
+        <div class="stopwatch" style="background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; color: white;"></div>
         <div class="col text-center work" ng-show="inExercise">
           <button class="{{ buttonColor }}" ng-click="startStop()">{{ button }}</button>
           <button class="btn btn-info restart" ng-click="restart()">RESTART</button>
