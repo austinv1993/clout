@@ -53,7 +53,7 @@
 
         <h1 class="col text-center" ng-show="inReps">Current Exercise: {{ exerciseName }}</h1>
         <h2 class="col text-center" ng-show="inReps">{{ repsCounter }} Reps X {{ setsCounter }} Sets<br><br>
-          <button class="btn btn-info" ng-click="nextWorkout()">NEXT EXERCISE</button>
+          <button class="{{ repButtonColor }}" ng-click="nextWorkout()">{{ repButton }}</button>
 
       </div>
 

@@ -141,6 +141,8 @@ angular.module('clout')
 		$scope.inExercise = false;
 		$scope.inBreak = false;
 		$scope.inReps = true;
+		$scope.repButton = "NEXT EXERCISE";
+		$scope.repButtonColor = "btn btn-info";
 
         workoutSelectionSrvc.getWorkoutById($stateParams.workoutId).then(function (data) {
 
@@ -150,6 +152,12 @@ angular.module('clout')
 			$scope.workoutData = data;
 
             $scope.workout = function() {
+
+				if(i === data.exercises.length - 1) {
+
+					$scope.repButton = "FINISH WORKOUT!";
+					$scope.repButtonColor = "btn btn-success";
+				}
 
                 if (i === data.exercises.length) {
                     $state.go("tab.workout-selection");
