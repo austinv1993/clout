@@ -151,7 +151,7 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc, 
 		// 	}
 		// }
 
-		if(!$scope.workoutTime.hrs && !$scope.workoutTime.mins || !$scope.workoutTime.mins || !$scope.workoutTime.secs) {
+		if(!$scope.workoutTime.hrs && !$scope.workoutTime.mins || !$scope.workoutTime.mins) {
 			$scope.errorMessages.push(" estimated workout time");
 		}
 
@@ -174,7 +174,7 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc, 
                 id.userId = $scope.user.id;
                 id.workoutId = response._id;
                 console.log('this is id', id);
-                userSrvc.pushWorkout(id)
+                userSrvc.pushCreated(id)
 			});
 		}
 	};

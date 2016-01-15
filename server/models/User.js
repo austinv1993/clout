@@ -8,6 +8,7 @@ var User = new mongoose.Schema({
     email: {type: String, required: true},
     favoriteWorkouts: [{type: mongoose.Schema.Types.ObjectId, ref:'Workout'}],
     createdWorkouts: [{type: mongoose.Schema.Types.ObjectId, ref:'Workout'}],
+    completedWorkouts: [{type: mongoose.Schema.Types.ObjectId, ref:'Workout'}]
     
 })
 User.pre('save', function (next) {

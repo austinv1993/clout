@@ -1,33 +1,33 @@
 var User = require('../models/User.js');
 
 module.exports = {
-    createUser: function(req, res) {
-        new User(req.body).save(function(err, user) {
-            if (err) {
-                res.send(err);
-            } else {
-                res.send(user);
-            }
-        })
-    },
-    getById: function(req, res) {
-        User.findById(req.query.userId, function(err, user) {
-            if (err) {
-                res.send(err);
-            } else {
-                res.send(user);
-            }
-        })
-    },
-    getUsers: function(req, res) {
-        User.find({}, function(err, users) {
-            if (err) {
-                res.send(err)
-            } else {
-                res.send(users);
-            }
-        })
-    },
+    // createUser: function(req, res) {
+    //     new User(req.body).save(function(err, user) {
+    //         if (err) {
+    //             res.send(err);
+    //         } else {
+    //             res.send(user);
+    //         }
+    //     })
+    // },
+    // getById: function(req, res) {
+    //     User.findById(req.query.userId, function(err, user) {
+    //         if (err) {
+    //             res.send(err);
+    //         } else {
+    //             res.send(user);
+    //         }
+    //     })
+    // },
+    // getUsers: function(req, res) {
+    //     User.find({}, function(err, users) {
+    //         if (err) {
+    //             res.send(err)
+    //         } else {
+    //             res.send(users);
+    //         }
+    //     })
+    // },
     signup: function(req, res) {
         if (!req.body.username || !req.body.password) {
             res.json({success: false, msg: 'Please pass name and password.'});
@@ -45,7 +45,7 @@ module.exports = {
             });
         }
     },
-    pushWorkout: function(req, res) {
+    pushCreated: function(req, res) {
         User.findByIdAndUpdate(req.body.userId, {$push: {createdWorkouts: req.body.workoutId}}, function(err, workout) {
             if (err) {
                 res.send(err);
@@ -54,12 +54,48 @@ module.exports = {
             }
         })
     },
-    pushFavorite: function(req, res) {
+    pushCompleted: function(req, res) {
+        User.findByIdAndUpdate(req.body.userId, {$push: {completedWorkouts: req.body.workoutId}}, function(err, workout) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(workout);
+            }
+        })
+    },
+    pushFavorites: function(req, res) {
         User.findByIdAndUpdate(req.body.userId, {$push: {favoriteWorkouts: req.body.workoutId}}, function(err, workout) {
             if (err) {
                 res.send(err);
             } else {
                 res.send(workout);
+            }
+        })
+    },
+    getCompleted: function(req, res) {
+        User.findById(req.query.userId).populate('completedWorkouts').exec(function(err, userObj) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(userObj.completedWorkouts);
+            }
+        })
+    },
+    getCreated: function(req, res) {
+        User.findById(req.query.userId).populate('createdWorkouts').exec(function(err, userObj) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(userObj.createdWorkouts);
+            }
+        })
+    },
+    getFavorites: function(req, res) {
+        User.findById(req.query.userId).populate('favoriteWorkouts').exec(function(err, userObj) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(userObj.favoriteWorkouts);
             }
         })
     }

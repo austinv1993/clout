@@ -1,5 +1,5 @@
 angular.module('clout')
-.controller('activeViewCtrl', function($state, $scope, $stateParams, $timeout, workoutSelectionSrvc) {
+.controller('activeViewCtrl', function($state, $scope, $stateParams, $timeout, workoutSelectionSrvc, userSrvc) {
 
     workoutSelectionSrvc.getWorkoutById($stateParams.workoutId).then(function(data) {
 
@@ -12,6 +12,11 @@ angular.module('clout')
 			$scope.getReps();
 		}
     });
+    $scope.getCurrentUser = function() {
+        $scope.user = JSON.parse(localStorage.getItem('user'));
+        console.log('user', $scope.user);
+    }
+    $scope.getCurrentUser();
 
     setMode(true);
     $scope.buttonChange = false;
@@ -70,6 +75,11 @@ angular.module('clout')
                         if (i === data.exercises.length - 1) {
                             $state.go("tab.workout-selection");
                             alert("Workout Completed. Good Job!");
+                            $scope.idObj = {};
+                            $scope.idObj.workoutId = $scope.workoutData._id;
+                            $scope.idObj.userId = $scope.user.id;
+                            console.log($scope.idObj);
+                            userSrvc.pushCompleted($scope.idObj)
                         }
                         else {
                             i++;
@@ -162,6 +172,11 @@ angular.module('clout')
                 if (i === data.exercises.length) {
                     $state.go("tab.workout-selection");
                     alert("Workout Completed. Good Job!");
+                    $scope.idObj = {};
+                    $scope.idObj.workoutId = $scope.workoutData._id;
+                    $scope.idObj.userId = $scope.user.id;
+                    console.log($scope.idObj);
+                    userSrvc.pushCompleted($scope.idObj)
                 }
 
 				$scope.repsCounter = exerciseInterval[i].reps;
