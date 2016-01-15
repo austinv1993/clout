@@ -10,36 +10,27 @@
         {{workout.name}}
     </div>-->
 
-    <div class="card">
-      <div class="item item-divider">
-        Workout in Progress
-
-      </div>
-      <div class="item item-text-wrap">
-
-        <!--<button class="ion-ios-skipbackward"></button>-->
+    <div class="card" style="background-color: transparent;">
+      <div class="item item-text-wrap" style="background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; color: white; text-align: center; border: none;">
         {{workoutData.name}}
         <div ng-repeat="exercise in workout.exercises"></div>
 
-        <!--<button class="ion-ios-skipforward"></button>-->
-
       </div>
 
-      <!--get rid of previous and skip buttons?-->
 
-      <div class="item item-divider">
+
 
       </div>
     </div>
 
-    <div class="list card">
+    <div class="list card" style="background-color: transparent; border: none;">
 
       <div>
 
         <h2 class="timer"></h2>
 
         <h1 class="col text-center" ng-show="inExercise">Current Exercise: {{ exerciseName }}</h1>
-        <div class="stopwatch"></div>
+        <div class="stopwatch" style="color: white;"></div>
         <div class="col text-center work" ng-show="inExercise">
           <button class="{{ buttonColor }}" ng-click="startStop()">{{ button }}</button>
           <button class="btn btn-info restart" ng-click="restart()">RESTART</button>
@@ -57,20 +48,16 @@
 
       </div>
 
-      <div class="item item-body">
+      <div class="item item-body" style="background-color: transparent;">
         <img class="">
         <p>
           <img class="full-image" src="img/sampleworkout.jpg">
         </p>
-        <div class="play-pause">
-          <button class="ion-play"></button>
-        </div>
+
 
       </div>
 
-      <button class="button button-block button-positive">
-        Pause
-      </button>
+
 
     </div>
 
