@@ -65,4 +65,3 @@ angular.module('clout')
         })
     }
 });
->>>>>>> master
