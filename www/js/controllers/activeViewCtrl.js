@@ -172,6 +172,11 @@ angular.module('clout')
                 if (i === data.exercises.length) {
                     $state.go("tab.workout-selection");
                     alert("Workout Completed. Good Job!");
+                    $scope.idObj = {};
+                    $scope.idObj.workoutId = $scope.workoutData._id;
+                    $scope.idObj.userId = $scope.user.id;
+                    console.log($scope.idObj);
+                    userSrvc.pushCompleted($scope.idObj)
                 }
 
 				$scope.repsCounter = exerciseInterval[i].reps;

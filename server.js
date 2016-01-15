@@ -35,7 +35,10 @@ apiRoutes.get('/workout', WorkoutCtrl.findById);
 // app.get('/userbyid', UserCtrl.getById);
 // app.get('/users', UserCtrl.getUsers);
 apiRoutes.put('/myworkouts', UserCtrl.pushWorkout);
-apiRoutes.put('/myfavorites', UserCtrl.pushFavorite);
+apiRoutes.put('/mycompleted', UserCtrl.pushCompleted);
+apiRoutes.get('/mycompleted', UserCtrl.getCompleted);
+apiRoutes.get('/mycreated', UserCtrl.getCompleted);
+apiRoutes.get('/myfavorites', UserCtrl.getCompleted);
 
 
 
