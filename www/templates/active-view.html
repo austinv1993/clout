@@ -1,5 +1,5 @@
 <ion-view view-title="">
-  <ion-content style="background-color: #2f2f2f">
+  <ion-content>
 
     <div class="clout-header">
       <img class='mainLogo' src='img/cloutMainLogo.png' />
@@ -10,28 +10,29 @@
         {{workout.name}}
     </div>-->
 
-    <div class="card" style="background-color: transparent;">
-      <div class="item item-text-wrap" style="background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; color: white; text-align: center; border: none; font-size: 24px;">
+    <!--<div class="card" style="background-color: transparent;">
+      <div class="item item-text-wrap" style="background: none; border: none; border-radius: 5px; color: white; text-align: center; border: none; font-size: 24px;">
         {{workoutData.name}}
         <div ng-repeat="exercise in workout.exercises"></div>
 
-      </div>
+      </div>-->
 
 
 
 
       </div>
     </div>
-
+    
+      <div class="transparent-holder" style="background-color:rgba(0,0,0,.4);">    
     <div class="card" style="background-color: transparent; border: none;">
 
-      <div>
 
-        <h2 class="timer"></h2>
 
-        <h1 class="col text-center" ng-show="inExercise">Current Exercise: {{ exerciseName }}</h1>
+
+
+        <h1 class="col text-center" ng-show="inExercise" style="margin: auto; font-weight: bold; border: none; "><p class="exercise-name">{{workoutData.name}}</p></br>Current Exercise: {{ exerciseName }}</h1>
         <div class="stopwatch" style="color: white;"></div>
-        <div class="col text-center work" ng-show="inExercise">
+        <div class="col text-center work" ng-show="inExercise" style="margin: auto; background: none; border: none;">
           <button class="{{ buttonColor }}" ng-click="startStop()">{{ button }}</button>
           <button class="btn btn-info restart" ng-click="restart()">RESTART</button>
         </div>
