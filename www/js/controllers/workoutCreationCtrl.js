@@ -4,7 +4,7 @@ app.controller('workoutCreationCtrl', ['$scope', '$state', '$stateParams', 'work
 
 
 function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc, userSrvc) {
-    
+
     // $scope.getCurrentUser = function() {
     //     userSrvc.getCurrentUser().then(function(user) {
     //         $scope.user = user;
@@ -22,7 +22,7 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc, 
 	$scope.addNewExercise = function() {
 
 		if($scope.workout.type === "interval") {
-			
+
 			if(!$scope.newExercise.name || !$scope.newExercise.mins || !$scope.newExercise.secs) {
 				alert("Please enter exercise information");
 			}
@@ -35,9 +35,9 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc, 
 				$scope.newExercise = {};
 			}
 		}
-		
+
 		if($scope.workout.type === "repetition") {
-			
+
 			if(!$scope.newExercise.name || !$scope.newExercise.reps || !$scope.newExercise.sets) {
 				alert("Please enter exercise information");
 			}
@@ -106,7 +106,6 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc, 
 		$scope.workoutTime = {
 			hrs: $scope.workout.hrs,
 			mins: $scope.workout.mins,
-			secs: $scope.workout.secs
 		};
 
 		$scope.newWorkout = {
@@ -118,40 +117,40 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc, 
 			time: $scope.workoutTime,
 			description: $scope.workout.description
 		};
-        
+
 
 		if(!$scope.workout.name) {
 			$scope.errorMessages.push(" name");
 		}
-		
+
 		if(!$scope.workout.type) {
 			$scope.errorMessages.push(" type");
 		}
-		
+
 		if($scope.exercises.length === 0) {
 			$scope.errorMessages.push(" exercises");
 		}
-		
+
 		// if($scope.equipments.length === 0) {
 		// 	$scope.errorMessages.push(" equipment");
 		// }
-		
+
 		if(!$scope.workout.level) {
 			$scope.errorMessages.push(" level");
 		}
-		
+
 		// if($scope.workout.type === "interval") {
 		// 	if(!$scope.workoutTime) {
 		// 		$scope.errorMessages.push(" estimated time");
 		// 	}
 		// }
-		
+
 		// if($scope.workout.type === "repetition") {
 		// 	if(!$scope.workoutReps) {
 		// 		$scope.errorMessages.push(" reps/sets");
 		// 	}
 		// }
-		
+
 		if(!$scope.workoutTime.hrs && !$scope.workoutTime.mins || !$scope.workoutTime.mins || !$scope.workoutTime.secs) {
 			$scope.errorMessages.push(" estimated workout time");
 		}

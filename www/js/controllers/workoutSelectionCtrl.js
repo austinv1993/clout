@@ -1,5 +1,6 @@
 angular.module('clout')
 .controller('workoutSelectionCtrl', function($state, $scope, $stateParams, workoutSelectionSrvc, storageFactory) {
+
     $scope.getFirstPage = function() {
         workoutSelectionSrvc.getWorkouts().then(function(workouts) {
             for (var i = 0; i < workouts.length; i++) {
@@ -14,7 +15,7 @@ angular.module('clout')
     $scope.endOfResults = false;
     $scope.retrievedWorkouts = [];
     $scope.moreDataAvailable = true;
-    
+
     $scope.getMoreWorkouts = function() {
         // console.log('trying to get more workouts');
         workoutSelectionSrvc.offset += 8;
@@ -24,7 +25,7 @@ angular.module('clout')
                 return;
             }
             $scope.workouts = workouts;
-            
+
             if ($scope.workouts.length > 0) {
                 $scope.endOfResults = false;
             } else {
@@ -48,23 +49,25 @@ angular.module('clout')
     $scope.$on('$stateChangeSuccess', function() {
         $scope.getMoreWorkouts();
   });
-    
-    
+
+
     $scope.viewWorkout = function(workoutId) {
+		window.location.reload(true);
         $state.go('view-workout', ({workoutId: workoutId }));
 
     };
-        
+
      $scope.startWorkout = function(workoutId) {
         $state.go('active-view', ({workoutId: workoutId }));
     };
-        
+
     $scope.quickStart = function(workoutId) {
+		window.location.reload(true);
         $state.go('active-view', ({workoutId: workoutId }));
         // console.log("hit quickStart Function");
     };
     $scope.logout = function() {
-        
+
         storageFactory.setToken();
         storageFactory.save('user');
         $state.go('login');
@@ -74,6 +77,5 @@ angular.module('clout')
         console.log('user', $scope.user);
     }
     $scope.getCurrentUser();
-    
 
 });
