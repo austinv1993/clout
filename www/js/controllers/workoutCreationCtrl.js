@@ -174,7 +174,7 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc, 
                 id.userId = $scope.user.id;
                 id.workoutId = response._id;
                 console.log('this is id', id);
-                userSrvc.pushWorkout(id)
+                userSrvc.pushCreated(id)
 			});
 		}
 	};
