@@ -15,17 +15,17 @@
 
             </label>
         </div>
-        <div ng-hide="login" class="list list-inset">
-            <label class="item item-input">
+        <div style="background-color: transparent;" ng-hide="login" class="list list-inset">
+            <label class="item item-input" style="background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; margin-bottom: 10px;">
                 <input ng-model="regAttempt.email" type="text" placeholder="Email" ng-model="data.username">
             </label>
-            <label class="item item-input">
+            <label class="item item-input" style="background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; margin-bottom: 10px;">
                 <input ng-model="regAttempt.username" type="text" placeholder="Username">
             </label>
-            <label class="item item-input">
+            <label class="item item-input" style="background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; margin-bottom: 10px;">
                 <input ng-model="regAttempt.password" type="password" placeholder="Password">
             </label>
-            <label class="item item-input">
+            <label class="item item-input" style="background-color: rgba(0,0,0,.4); border: none; border-radius: 5px;">
                 <input type="password" placeholder="Retype Password">
             </label>
         </div>
@@ -35,7 +35,7 @@
         <div ng-show="login"><a href=""  style='color: #2ECC71'>Continue as unregistered user.</a></div>
         
         
-        <button ng-hide="login" class="button button-block button-calm" ng-click="register(regAttempt)">Register</button>
-        <div ng-hide="login" ng-click="setLoginTrueFalse()"><a href="">Login</a></div>
+        <button ng-hide="login" class="button button-block button-calm" style='background-color: #2ECC71; color: white;'  ng-click="register(regAttempt)">Register</button>
+        <div ng-hide="login" ng-click="setLoginTrueFalse()"><a style='color: #2ECC71;' href="">Login</a></div>
     </ion-content>
 </ion-view>

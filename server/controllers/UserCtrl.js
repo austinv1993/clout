@@ -44,7 +44,26 @@ module.exports = {
                 res.json({success: true, msg: 'Successfully created new user.'});
             });
         }
+    },
+    pushWorkout: function(req, res) {
+        User.findByIdAndUpdate(req.body.userId, {$push: {createdWorkouts: req.body.workoutId}}, function(err, workout) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(workout);
+            }
+        })
+    },
+    pushFavorite: function(req, res) {
+        User.findByIdAndUpdate(req.body.userId, {$push: {favoriteWorkouts: req.body.workoutId}}, function(err, workout) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(workout);
+            }
+        })
     }
+    
     // authenticate: function(req, res) {
     //     User.findOne({
     //         name: req.body.name

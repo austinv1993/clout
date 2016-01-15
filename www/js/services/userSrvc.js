@@ -18,8 +18,13 @@ angular.module('clout')
             return response.data;
         })
     }
-    this.tokenTest = function() {
-        return $http.get('http://localhost:8080/api/memberinfo').then(function(response) {
+    // this.tokenTest = function() {
+    //     return $http.get('http://localhost:8080/api/memberinfo').then(function(response) {
+    //         return response.data;
+    //     })
+    // }
+    this.pushWorkout = function(obj) {
+        return $http.put('http://localhost:8080/api/myworkouts', obj).then(function(response) {
             return response.data;
         })
     }
