@@ -94,7 +94,7 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc, 
 		}
 	};
     $scope.getCurrentUser = function() {
-        $scope.user = localStorage.getItem('user');
+        $scope.user = JSON.parse(localStorage.getItem('user'));
         console.log('user', $scope.user);
     }
     $scope.getCurrentUser();
@@ -166,11 +166,16 @@ function workoutCreationCtrl($scope, $state, $stateParams, workoutCreationSrvc, 
 		}
 
 		else {
-			workoutCreationSrvc.addNewWorkout($scope.newWorkout).then(function (data) {
+			workoutCreationSrvc.addNewWorkout($scope.newWorkout).then(function (response) {
 
 				alert("Workout Added");
 				$state.go('tab.workout-selection');
-                console.log($scope.newWorkout);
+                // console.log(response);
+                var id = {};
+                id.userId = $scope.user.id;
+                id.workoutId = response._id;
+                console.log('this is id', id);
+                userSrvc.pushWorkout(id)
 			});
 		}
 	};

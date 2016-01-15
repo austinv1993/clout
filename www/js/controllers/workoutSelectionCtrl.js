@@ -64,7 +64,7 @@ angular.module('clout')
         // console.log("hit quickStart Function");
     };
     $scope.logout = function() {
-        var key = localStorage.getItem('clout-auth-token')
+        
         storageFactory.setToken();
         storageFactory.save('user');
         $state.go('login');

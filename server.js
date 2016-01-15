@@ -34,6 +34,8 @@ apiRoutes.get('/workout', WorkoutCtrl.findById);
 // app.post('/newuser', UserCtrl.createUser);
 // app.get('/userbyid', UserCtrl.getById);
 // app.get('/users', UserCtrl.getUsers);
+apiRoutes.put('/myworkouts', UserCtrl.pushWorkout);
+apiRoutes.put('/myfavorites', UserCtrl.pushFavorite);
 
 
 

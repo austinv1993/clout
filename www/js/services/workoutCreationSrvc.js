@@ -8,8 +8,8 @@ function workoutCreationSrvc($q, $http) {
 
 		return $http.post('http://localhost:8080/api/workouts', newWorkout)
 			.then(function(response) {
-				console.log(newWorkout);
-				return "Workout Added";
+				console.log('this is workout from server after creation', response.data);
+				return response.data;
 			}, function(error) {
 				console.log(error);
 			});

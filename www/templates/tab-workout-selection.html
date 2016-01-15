@@ -18,9 +18,9 @@
 
 
       <ion-list>
-        <button sref="tab.workout-creation" class="button button-block button-energized" style='background-color: #2ECC71;  font-weight: bold;' ng-click="postNewWorkout()">
+        <!--<button sref="tab.workout-creation" class="button button-block button-energized" style='background-color: #2ECC71;  font-weight: bold;' ng-click="postNewWorkout()">
           Create New Workout
-        </button>
+        </button>-->
         <ion-item ng-repeat="workout in retrievedWorkouts | filter:{name:searchName}" style='background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; margin-bottom: 5px;'>
 
           <p style='color: white;' class="workOutName">{{workout.name}}</p>

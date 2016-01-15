@@ -1,6 +1,7 @@
 angular.module('clout')
 .controller('loginCtrl', function($scope, userSrvc, $state) {
     $scope.authenticate = function(loginAttempt) {
+        
         userSrvc.authenticate(loginAttempt).then(function(response) {
             console.log(response);
             if (response.success) {
