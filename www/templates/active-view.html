@@ -12,13 +12,13 @@
 
     <div class="card">
       <div class="item item-divider">
-        Exercise in Progress
+        Workout in Progress
 
       </div>
       <div class="item item-text-wrap">
 
         <!--<button class="ion-ios-skipbackward"></button>-->
-        {{workout.name}}
+        {{workoutData.name}}
         <div ng-repeat="exercise in workout.exercises"></div>
 
         <!--<button class="ion-ios-skipforward"></button>-->
@@ -36,7 +36,7 @@
 
       <div>
 
-        <h2 class="timer">12:00</h2>
+        <h2 class="timer"></h2>
 
         <h1 class="col text-center" ng-show="inExercise">Current Exercise: {{ exerciseName }}</h1>
         <div class="stopwatch"></div>
@@ -50,10 +50,10 @@
           <button class="{{ buttonColor }}" ng-click="startStopBreak()">{{ button }}</button>
           <button class="btn btn-info restart" ng-click="restartBreak()">Restart</button>
         </div>
-        
+
         <h1 class="col text-center" ng-show="inReps">Current Exercise: {{ exerciseName }}</h1>
-        <h2 class="col text-center" ng-show="inReps">{{ repsCounter }} Reps X {{ setsCounter }} Sets
-          <button class="btn btn-info" ng-click="nextWorkout()">Next Exercise</button>
+        <h2 class="col text-center" ng-show="inReps">{{ repsCounter }} Reps X {{ setsCounter }} Sets<br><br>
+          <button class="{{ repButtonColor }}" ng-click="nextWorkout()">{{ repButton }}</button>
 
       </div>
 
