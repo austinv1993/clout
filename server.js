@@ -34,11 +34,16 @@ apiRoutes.get('/workout', WorkoutCtrl.findById);
 // app.post('/newuser', UserCtrl.createUser);
 // app.get('/userbyid', UserCtrl.getById);
 // app.get('/users', UserCtrl.getUsers);
-apiRoutes.put('/myworkouts', UserCtrl.pushWorkout);
+
+//PUT
+apiRoutes.put('/mycreated', UserCtrl.pushCreated);
 apiRoutes.put('/mycompleted', UserCtrl.pushCompleted);
-apiRoutes.get('/mycompleted', UserCtrl.getCompleted);
-apiRoutes.get('/mycreated', UserCtrl.getCompleted);
-apiRoutes.get('/myfavorites', UserCtrl.getCompleted);
+apiRoutes.put('/myfavorites', UserCtrl.pushFavorites);
+
+//GET
+apiRoutes.get('/mycreated', UserCtrl.getCompleted)
+apiRoutes.get('/mycompleted', UserCtrl.getCreated);
+apiRoutes.get('/myfavorites', UserCtrl.getFavorites);
 
 
 

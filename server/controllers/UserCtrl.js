@@ -45,7 +45,7 @@ module.exports = {
             });
         }
     },
-    pushWorkout: function(req, res) {
+    pushCreated: function(req, res) {
         User.findByIdAndUpdate(req.body.userId, {$push: {createdWorkouts: req.body.workoutId}}, function(err, workout) {
             if (err) {
                 res.send(err);
@@ -56,6 +56,15 @@ module.exports = {
     },
     pushCompleted: function(req, res) {
         User.findByIdAndUpdate(req.body.userId, {$push: {completedWorkouts: req.body.workoutId}}, function(err, workout) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(workout);
+            }
+        })
+    },
+    pushFavorites: function(req, res) {
+        User.findByIdAndUpdate(req.body.userId, {$push: {favoriteWorkouts: req.body.workoutId}}, function(err, workout) {
             if (err) {
                 res.send(err);
             } else {

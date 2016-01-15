@@ -20,19 +20,48 @@ angular.module('clout')
             console.log('error registering new user', err)
         })
     }
-    
-    this.pushWorkout = function(obj) {
-        return $http.put('http://localhost:8080/api/myworkouts', obj).then(function(response) {
+    //
+    this.pushCreated = function(obj) {
+        return $http.put('http://localhost:8080/api/mycreated', obj).then(function(response) {
             return response.data;
         }, function(err) {
-            console.log('error registering new user', err)
+            console.log('error pushing workout', err)
         })
     }
     this.pushCompleted = function(obj) {
         return $http.put('http://localhost:8080/api/mycompleted', obj).then(function(response) {
             return response.data;
         }, function(err) {
-            console.log('error registering new user', err)
+            console.log('error pushing workout to completed', err)
+        })
+    }
+    this.pushFavorites = function(obj) {
+        return $http.put('http://localhost:8080/api/myfavorites', obj).then(function(response) {
+            return response.data;
+        }, function(err) {
+            console.log('error pushing workout to completed', err)
+        })
+    }
+    //
+    this.getCreated = function(userId) {
+        return $http.get('http://localhost:8080/api/mycreated?userId=' + userId).then(function(response) {
+            return response.data;
+        }, function(err) {
+            console.log('error pushing workout', err)
+        })
+    }
+    this.getCompleted = function(userId) {
+        return $http.get('http://localhost:8080/api/mycompleted?userId=' + userId).then(function(response) {
+            return response.data;
+        }, function(err) {
+            console.log('error pushing workout to completed', err)
+        })
+    }
+    this.getFavorites = function(userId) {
+        return $http.get('http://localhost:8080/api/myfavorites?userId=' + userId).then(function(response) {
+            return response.data;
+        }, function(err) {
+            console.log('error pushing workout to completed', err)
         })
     }
 });

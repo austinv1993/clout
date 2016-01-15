@@ -79,7 +79,7 @@ angular.module('clout')
                             $scope.idObj.workoutId = $scope.workoutData._id;
                             $scope.idObj.userId = $scope.user.id;
                             console.log($scope.idObj);
-                            userSrvc.pushFavorite($scope.idObj)
+                            userSrvc.pushCompleted($scope.idObj)
                         }
                         else {
                             i++;
