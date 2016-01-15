@@ -15,6 +15,7 @@ angular.module('clout')
     $scope.noWorkout = false;
 
     $scope.workoutStart = function(workoutId) {
+		window.location.reload(true);
         $state.go('active-view', ({workoutId: workoutId }));
     };
 
