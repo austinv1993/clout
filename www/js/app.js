@@ -73,7 +73,7 @@ angular.module('clout', ['ionic','ionic.service.core', 'clout.controllers', 'clo
       .state('active-view', {
         url: '/active-view/:workoutId',
         templateUrl: 'templates/active-view.html',
-        controller: 'viewWorkoutCtrl'
+        controller: 'activeViewCtrl'
       })
 
       .state('workoutComplete', {
