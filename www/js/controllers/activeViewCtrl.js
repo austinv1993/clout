@@ -145,19 +145,21 @@ angular.module('clout')
         workoutSelectionSrvc.getWorkoutById($stateParams.workoutId).then(function (data) {
 
             var i = 0;
+
             var exerciseInterval = data.exercises;
 			$scope.workoutData = data;
 
             $scope.workout = function() {
 
-                $scope.repsCounter = exerciseInterval[i].reps;
-                $scope.setsCounter = exerciseInterval[i].sets;
-                $scope.exerciseName = exerciseInterval[i].name;
-
-                if (i === data.exercises.length - 1) {
+                if (i === data.exercises.length) {
                     $state.go("tab.workout-selection");
                     alert("Workout Completed. Good Job!");
                 }
+
+				$scope.repsCounter = exerciseInterval[i].reps;
+                $scope.setsCounter = exerciseInterval[i].sets;
+                $scope.exerciseName = exerciseInterval[i].name;
+
             };
 			if(i === 0) {
 
