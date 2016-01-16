@@ -101,7 +101,7 @@
   margin-top: 10px;
 }
 
-.item {
+.recItem {
   width: 90%;
   margin: 0 auto;
   border-radius: 5px;
@@ -109,6 +109,9 @@
   color: white;
   border: none;
 }
+
+
+
 
 .recCompl {
   margin-top: 10px;
