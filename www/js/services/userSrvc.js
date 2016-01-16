@@ -39,7 +39,7 @@ angular.module('clout')
         return $http.put('http://localhost:8080/api/myfavorites', obj).then(function(response) {
             return response.data;
         }, function(err) {
-            console.log('error pushing workout to completed', err)
+            console.log('error pushing workout to user favorites', err)
         })
     }
     //

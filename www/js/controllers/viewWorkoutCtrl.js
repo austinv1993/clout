@@ -19,15 +19,26 @@ angular.module('clout')
         $state.go('active-view', ({workoutId: workoutId }));
     };
 
+	$scope.getCurrentUser = function() {
+        $scope.user = JSON.parse(localStorage.getItem('user'));
+        console.log('user', $scope.user);
+    }
+    $scope.getCurrentUser();
+
 	$scope.fovoriteToAdd = true;
 
 	$scope.addToFavorites = function(workoutId) {
 
-		userSrvc.pushFavorites(workoutId).then(function(favorites) {
+		$scope.idObj = {
+			workoutId: $scope.workout._id,
+			userId: $scope.user.id
+		}
+
+		userSrvc.pushFavorites($scope.idObj).then(function(favorites) {
 
 			alert("Workout Added to Favorites!");
 			$scope.fovoriteToAdd = false;
 		});
-	}
+	};
 
 });
