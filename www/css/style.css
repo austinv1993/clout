@@ -13,6 +13,20 @@ html {
   background-size: cover;
 }
 
+.viewWorkoutBG {
+  background: url("../img/stretching.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+.selectionBG {
+  background: url("../img/runnerOnRoad.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
 .ex-list {
   margin-top: 10px;
 }
