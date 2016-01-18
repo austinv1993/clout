@@ -26,14 +26,11 @@ var apiRoutes = express.Router();
 app.use('/api', apiRoutes);
 
 //WORKOUTS//
-apiRoutes.get('/workouts', WorkoutCtrl.allWorkouts);
+apiRoutes.get('/workouts', WorkoutCtrl.allWorkouts); //used for
 apiRoutes.post('/workouts', WorkoutCtrl.createWorkout);
 apiRoutes.get('/workout', WorkoutCtrl.findById);
 
 //USERS//
-// app.post('/newuser', UserCtrl.createUser);
-// app.get('/userbyid', UserCtrl.getById);
-// app.get('/users', UserCtrl.getUsers);
 
 //PUT
 apiRoutes.put('/mycreated', UserCtrl.pushCreated);
