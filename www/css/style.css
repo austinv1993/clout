@@ -223,7 +223,7 @@ html {
 
 .item-divider {
   text-align: center;
-  background-color: black;
+  background-color: #2ECC71;
   color: white;
   font-weight: 700;
   font-family: Montserrat, sans-serif;
@@ -233,8 +233,8 @@ html {
   text-align: center;
   font-weight: 400;
   font-family: Montserrat, sans-serif;
-  background-color: black;
-  color: white;
+  /*background-color: transparent;*/
+  color: black;
 }
 
 .timer {

@@ -43,7 +43,7 @@
           <button class="btn btn-info restart" ng-click="restartBreak()">Restart</button>
         </div>
 
-        <h1 class="col text-center" ng-show="inReps">Current Exercise: {{ exerciseName }}</h1>
+        <h1 class="col text-center" ng-show="inReps" style="border: none;">Current Exercise: {{ exerciseName }}</h1>
         <h2 class="col text-center" ng-show="inReps">{{ repsCounter }} Reps X {{ setsCounter }} Sets<br><br>
           <button class="{{ repButtonColor }}" ng-click="nextWorkout()">{{ repButton }}</button>
 
