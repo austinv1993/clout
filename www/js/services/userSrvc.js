@@ -61,7 +61,7 @@ angular.module('clout')
         return $http.get('http://localhost:8080/api/myfavorites?userId=' + userId).then(function(response) {
             return response.data;
         }, function(err) {
-            console.log('error pushing workout to completed', err)
+            console.log('error getting favorite workouts for user', err)
         })
     }
 });
