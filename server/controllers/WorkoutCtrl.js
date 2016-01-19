@@ -26,6 +26,15 @@ module.exports = {
                 res.send(workout);
             };
         });
+        },
+    filterBy: function(req, res) {
+        Workout.find({workoutType: req.query.value}, function(err, workouts) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(workouts);
+            };
+        });
         }
     
 };

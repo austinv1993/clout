@@ -29,6 +29,7 @@ app.use('/api', apiRoutes);
 apiRoutes.get('/workouts', WorkoutCtrl.allWorkouts); //used for
 apiRoutes.post('/workouts', WorkoutCtrl.createWorkout);
 apiRoutes.get('/workout', WorkoutCtrl.findById);
+apiRoutes.get('/filter/workouts', WorkoutCtrl.filterBy);
 
 //USERS//
 
