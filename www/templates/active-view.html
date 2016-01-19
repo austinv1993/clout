@@ -7,15 +7,15 @@
 
 
 
-        <h1 class="col text-center" ng-show="inExercise" style="margin: auto; font-weight: bold; border: none; "><p class="exercise-name" style="border: none;">{{workoutData.name}}</p></br>Current Exercise: {{ exerciseName }}</h1>
+        <h3 class="active-name" ng-show="inExercise" style="text-align: center;color: white; border: none; background-color: transparent; "><p class="exercise-name" style="border: none;">{{workoutData.name}}</p>Current Exercise: {{ exerciseName }}</h3>
         <div class="stopwatch" style="color: white; border: none;"></div>
         <div class="col text-center work" ng-show="inExercise" style="margin: auto; background: none; border: none;">
           <button class="{{ buttonColor }}" ng-click="startStop()" style="border: none;">{{ button }}</button>
           <button class="btn btn-info restart" ng-click="restart()" style="border: none;">RESTART</button>
         </div>
-        <h1 class="col text-center" ng-show="inBreak" style="border: none;">Take a Break!</h1>
+        <h3 class="active-name" ng-show="inBreak" style="border: none; text-align: center; color: white; background-color: transparent;">Take a Break!</h3>
         <div class="breakwatch" style="border: none;"></div>
-        <div class="col text-center break" ng-show="inBreak" style="border: none;">
+        <div class="col text-center break" ng-show="inBreak" style="border: none; background-color: transparent;">
           <button class="{{ buttonColor }}" ng-click="startStopBreak()" style="border: none;">{{ button }}</button>
           <button class="btn btn-info restart" ng-click="restartBreak()" style="border: none;">Restart</button>
         </div>

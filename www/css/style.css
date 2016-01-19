@@ -302,3 +302,13 @@ html {
 .theEndContainer {
   text-align: center;
 }
+.btn-info {
+    background-color: #2ECC71;
+}
+.btn-danger {
+    background-color: orange;
+}
+.btn-success {
+    background-color: #0BB5FF;
+
+}

@@ -803,9 +803,9 @@
         start: true,
         animation: "smooth",
         count_past_zero: false,
-        circle_bg_color: "#60686F",
+        circle_bg_color: "transparent",
         use_background: true,
-        fg_width: 0.1,
+        fg_width: 0.02,
         bg_width: 1.2,
         text_size: 0.07,
         total_duration: "Auto",
@@ -826,12 +826,12 @@
             Minutes: {
                 show: true,
                 text: "Minutes",
-                color: "#BFB"
+                color: "#0BB5FF"
             },
             Seconds: {
                 show: true,
                 text: "Seconds",
-                color: "#F99"
+                color: "#2ECC71"
             }
         }
     };
