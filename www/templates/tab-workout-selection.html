@@ -29,6 +29,7 @@
     Filter By:
   </div>
   <select ng-model="filterBy" ng-change="filterBy()" style='background-color:rgba(0,0,0,0); color: white;'>
+    <!--<option value="none" ng-click="undefined"></option>-->
     <option value="favorites">Favorites</option>
     <option value="created">Created</option>
     <option value="recentlyCompleted">Recently Completed</option>
@@ -39,6 +40,7 @@
     Workout Type:
   </div>
   <select ng-model="workoutType" ng-change="filterByWorType()" style='background-color:rgba(0,0,0,0); color: white;'>
+    <!--<option value="none" ng-click="undefined"></option>   -->
     <option value="repetition">Repetition</option>
     <option value="interval">Interval</option>
   </select>
