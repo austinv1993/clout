@@ -20,6 +20,8 @@ html {
   background-size: cover;
 }
 
+
+
 .selectionBG {
   background: url("../img/runnerOnRoad.png") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -302,3 +304,67 @@ html {
 .theEndContainer {
   text-align: center;
 }
+
+
+.filterContainer {
+width: 100%;
+    background-color: rgba(0,0,0,.4);
+    border-radius: 5px;
+    margin: 0 0 30px 0;
+padding: 20px;
+
+
+}
+
+
+
+
+
+
+
+.btn-info {
+    background-color: #2ECC71;
+}
+.btn-danger {
+    background-color: orange;
+}
+.btn-success {
+    background-color: #0BB5FF;
+
+}
+
+.header2 {
+margin-top: 10px;
+
+
+
+}
+
+.clockTitleContainer {
+background-color: rgba(0,0,0,.4);
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+
+}
+
+.repTitleContainer {
+background-color: rgba(0,0,0,.4);
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 15px;
+text-align: center;
+
+}
+
+.startStop {
+background-color: rgba(0,0,0.4);
+
+}
+
+
+

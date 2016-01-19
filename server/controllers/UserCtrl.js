@@ -101,7 +101,6 @@ module.exports = {
     },
 	removeFavorite: function(req, res) {
 		User.findByIdAndUpdate(req.params.userId, { $pullAll: { favoriteWorkouts : [ req.body.workoutId ]}}, function(err, favorite) {
-			console.log(req.body.workkoutId);
 			if(err) {
 				res.send(err);
 			} else {
