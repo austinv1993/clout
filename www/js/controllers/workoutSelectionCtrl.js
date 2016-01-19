@@ -77,5 +77,10 @@ angular.module('clout')
         console.log('user', $scope.user);
     }
     $scope.getCurrentUser();
+    $scope.filterByWorType = function() {
+        workoutSelectionSrvc.filterbyWorType($scope.workoutType).then(function(workouts) {
+            $scope.retrievedWorkouts = workouts;
+        })
+    }
 
 });

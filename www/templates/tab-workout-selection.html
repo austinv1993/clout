@@ -1,51 +1,73 @@
 <ion-view hide-nav-bar="true" view-title="Workout Selection">
-  <ion-content>
-    <div class="container">
-
-      <div style='margin-top: 30px;'>Hello, {{user.username}}</div>
-      <button ng-click="logout()">Logout</button>
-
-      <div class="bar bar-header item-input-inset absolute" style='background: rgba(0,0,0,.4); border-radius: 5px; margin-top: 30px; margin-bottom: 30px;'>
-        <label class="item-input-wrapper" style='background: rgba(0,0,0,0);color:white;'>
-          <i class="icon ion-ios-search placeholder-icon"></i>
-          <input ng-model="searchName" type="search" placeholder="Search" style='border: 1px solid white; color: white; border-radius: 5px;'>
-        </label>
-        <button ng-click="clearInput()" class="button button-clear">
-          Cancel
-        </button>
-      </div>
+    <ion-content class='selectionBG'>
+        <div class="container">
+            <div class='welcomeContainer'>
+                <div style='margin-top: 30px; color: white; font-size: 30px; line-height: 1.0;'>Hello,
+                    <br/>{{user.username}}</div>
+                <button style='margin-top: 10px; background-color: #2ECC71; border: none; border-radius: 5px; color: white;' ng-click="logout()">Logout</button>
+            </div>
 
 
-      <ion-list>
-        <!--<button sref="tab.workout-creation" class="button button-block button-energized" style='background-color: #2ECC71;  font-weight: bold;' ng-click="postNewWorkout()">
+            <div class="bar bar-header item-input-inset absolute" style='background: rgba(0,0,0,.4); border-radius: 5px; margin-top: 20px; margin-bottom: 30px;'>
+                <label class="item-input-wrapper" style='background: rgba(0,0,0,0);color:white;'>
+                    <i class="icon ion-ios-search placeholder-icon"></i>
+                    <input ng-model="searchName" type="search" placeholder="Search" style='color: white; border-radius: 5px;'>
+                </label>
+                <button ng-click="clearInput()" class="button button-clear">
+                    Cancel
+                </button>
+            </div>
+            <label class="item item-input item-select" style='background-color:rgba(0,0,0,0); border: 1px solid white;'>
+                <div class="input-label" style='color: white;'>
+                    Filter By:
+                </div>
+                <select ng-model="filterBy" ng-change="filterBy()" style='background-color:rgba(0,0,0,0); color: white;'>
+                    <option value="favorites">Favorites</option>
+                    <option value="created">Created</option>
+                    <option value="recentlyCompleted">Recently Completed</option>
+                </select>
+            </label>
+            <label class="item item-input item-select" style='background-color:rgba(0,0,0,0); border: 1px solid white;'>
+                <div class="input-label" style='color: white;'>
+                    Filter By:
+                </div>
+                <select ng-model="workoutType" ng-change="filterByWorType()" style='background-color:rgba(0,0,0,0); color: white;'>
+                    <option value="repetition">Repetition</option>
+                    <option value="interval">Interval</option>
+                </select>
+            </label>
+
+
+            <ion-list>
+                <!--<button sref="tab.workout-creation" class="button button-block button-energized" style='background-color: #2ECC71;  font-weight: bold;' ng-click="postNewWorkout()">
           Create New Workout
         </button>-->
-        <ion-item ng-repeat="workout in retrievedWorkouts | filter:{name:searchName}" style='background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; margin-bottom: 5px;'>
+                <ion-item ng-repeat="workout in retrievedWorkouts | filter:{name:searchName}" style='background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; margin-bottom: 5px;'>
 
-          <p style='color: white;' class="workOutName">{{workout.name}}</p>
-          <p style='color: white;' class="workOutTime">{{workout.time.mins}} minutes</p>
-          <p style='color: white;'>Type: {{workout.workoutType}}</p>
-          <p style='color: white;'>Description: {{workout.description}}</p>
+                    <p style='color: white;' class="workOutName">{{workout.name}}</p>
+                    <p style='color: white;' class="workOutTime">{{workout.time.mins}} minutes</p>
+                    <p style='color: white;'>Type: {{workout.workoutType}}</p>
+                    <p style='color: white;'>Description: {{workout.description}}</p>
 
-          <button ng-click="viewWorkout(workout._id)" class="button button-small button-assertive" style='margin: 10px; background-color: #2ECC71;  float: right;'>
-            View
-          </button>
-          <button ng-click="quickStart(workout._id)" class="button button-small button-assertive" style='margin: 10px; background-color: #2ECC71;  float: right;'>
-            Quick Start
-          </button>
-        </ion-item>
-      </ion-list>
+                    <button ng-click="viewWorkout(workout._id)" class="button button-small button-assertive" style='margin: 10px; background-color: #2ECC71;  float: right;'>
+                        View
+                    </button>
+                    <button ng-click="quickStart(workout._id)" class="button button-small button-assertive" style='margin: 10px; background-color: #2ECC71;  float: right;'>
+                        Quick Start
+                    </button>
+                </ion-item>
+            </ion-list>
 
-    </div>
+        </div>
 
-    <div class='theEndContainer'>
-      <div class="the-end" ng-show="endOfResults" style='color: #00ff12;'>The End</div>
-    </div>
-
-
-    <ion-infinite-scroll ng-if="moreDataAvailable" on-infinite="getMoreWorkouts()" distance="10%">
-    </ion-infinite-scroll>
+        <div class='theEndContainer'>
+            <div class="the-end" ng-show="endOfResults" style='color: #00ff12;'>The End</div>
+        </div>
 
 
-  </ion-content>
+        <ion-infinite-scroll ng-if="moreDataAvailable" on-infinite="getMoreWorkouts()" distance="10%">
+        </ion-infinite-scroll>
+
+
+    </ion-content>
 </ion-view>

@@ -7,7 +7,7 @@
   </div>
   
         <div ng-show="login" class="list list-inset" style="background-color: transparent;">
-            <label class="item item-input" style="background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; margin-bottom: 10px;">
+            <label class="item item-input" style="background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; margin-bottom: 10px; ">
                 <input ng-model="loginAttempt.username" type="text" placeholder="Username" style="color: white;">
             </label>
             <label class="item item-input" style="background-color: rgba(0,0,0,.4); border: none; border-radius: 5px;">
@@ -17,16 +17,16 @@
         </div>
         <div style="background-color: transparent;" ng-hide="login" class="list list-inset">
             <label class="item item-input" style="background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; margin-bottom: 10px;">
-                <input ng-model="regAttempt.email" type="text" placeholder="Email" ng-model="data.username">
+                <input ng-model="regAttempt.email" type="text" placeholder="Email" ng-model="data.username" style="color: white;">
             </label>
             <label class="item item-input" style="background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; margin-bottom: 10px;">
-                <input ng-model="regAttempt.username" type="text" placeholder="Username">
+                <input ng-model="regAttempt.username" type="text" placeholder="Username" style="color: white;">
             </label>
             <label class="item item-input" style="background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; margin-bottom: 10px;">
-                <input ng-model="regAttempt.password" type="password" placeholder="Password">
+                <input ng-model="regAttempt.password" type="password" placeholder="Password" style="color: white;">
             </label>
             <label class="item item-input" style="background-color: rgba(0,0,0,.4); border: none; border-radius: 5px;">
-                <input type="password" placeholder="Retype Password">
+                <input type="password" placeholder="Retype Password" style="color: white;">
             </label>
         </div>
         <button ng-show="login" class="button button-block button-calm" style='background-color: #2ECC71; color: white;' ng-click="authenticate(loginAttempt)">Login</button>
