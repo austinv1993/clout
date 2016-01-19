@@ -305,6 +305,7 @@ html {
   text-align: center;
 }
 
+
 .filterContainer {
 width: 100%;
     background-color: rgba(0,0,0,.4);
@@ -319,4 +320,16 @@ padding: 20px;
 
 
 
+
+
+.btn-info {
+    background-color: #2ECC71;
+}
+.btn-danger {
+    background-color: orange;
+}
+.btn-success {
+    background-color: #0BB5FF;
+
+}
 
