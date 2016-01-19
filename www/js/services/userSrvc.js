@@ -64,4 +64,11 @@ angular.module('clout')
             console.log('error getting favorite workouts for user', err)
         })
     }
+	this.removeFavorite = function(userId, workoutId) {
+		return $http.put('http://localhost:8080/api/removeFavorite/' + userId, { workoutId: workoutId }).then(function(response) {
+			return response.data;
+		}, function(err) {
+			console.log("error deleting favorite workout", err);
+		});
+	};
 });

@@ -51,11 +51,15 @@ angular.module('clout', ['ionic','ionic.service.core', 'clout.controllers', 'clo
           }
         }
       })
+	  .state('workout-favorites', {
+        url: '/workout-favorites',
+        templateUrl: 'templates/workout-favorites.html',
+        controller: 'workoutFavoritesCtrl'
+      })
       .state('view-workout', {
         url: '/view-workout/:workoutId',
         templateUrl: 'templates/view-workout.html',
         controller: 'viewWorkoutCtrl'
-
       })
     //   .state('start-workout', {
     //     url: '/start-workout/:workoutId',

@@ -22,7 +22,7 @@ angular.module('clout')
     $scope.getCurrentUser();
 
 	userSrvc.getFavorites($scope.user.id).then(function(favorites) {
-
+		console.log(favorites);
 		$scope.fovoriteToAdd = true;
 		$scope.favorites = favorites;
 		favorites.forEach(function(e) {
@@ -50,4 +50,5 @@ angular.module('clout')
 			$scope.fovoriteToAdd = false;
 		});
 	};
+
 });

@@ -98,14 +98,24 @@ module.exports = {
                 res.send(userObj.favoriteWorkouts);
             }
         })
-    }
-    
+    },
+	removeFavorite: function(req, res) {
+		User.findByIdAndUpdate(req.params.userId, { $pullAll: { favoriteWorkouts : [ req.body.workoutId ]}}, function(err, favorite) {
+			console.log(req.body.workkoutId);
+			if(err) {
+				res.send(err);
+			} else {
+				res.send(favorite);
+			}
+		})
+	}
+
     // authenticate: function(req, res) {
     //     User.findOne({
     //         name: req.body.name
     //     }, function(err, user) {
     //         if (err) throw err;
-        
+
     //         if (!user) {
     //         res.send({success: false, msg: 'Authentication failed. User not found.'});
     //         } else {
@@ -123,6 +133,6 @@ module.exports = {
     //         }
     //     });
     // }
-    
-    
+
+
 };

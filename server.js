@@ -37,6 +37,7 @@ apiRoutes.get('/filter/workouts', WorkoutCtrl.filterBy);
 apiRoutes.put('/mycreated', UserCtrl.pushCreated);
 apiRoutes.put('/mycompleted', UserCtrl.pushCompleted);
 apiRoutes.put('/myfavorites', UserCtrl.pushFavorites);
+apiRoutes.put('/removeFavorite/:userId', UserCtrl.removeFavorite);
 
 //GET
 apiRoutes.get('/mycreated', UserCtrl.getCompleted)
