@@ -8,7 +8,7 @@
     </div>
 
 
-<div class='clockTitleContainer'> <h3 class="active-name" ng-show="inExercise" style="text-align: center;color: white; border: none; background-color: transparent; "><p class="exercise-name" style="border: none;">{{workoutData.name}}</p>Current Exercise: {{ exerciseName }}</h3></div>
+<div class='clockTitleContainer' ng-show="inExercise"> <h3 class="active-name" ng-show="inExercise" style="text-align: center;color: white; border: none; background-color: transparent; "><p class="exercise-name" style="border: none;">{{workoutData.name}}</p>Current Exercise: {{ exerciseName }}</h3></div>
        
         <div class="stopwatch" style="color: white; border: none;"></div>
         <div class="col text-center work" ng-show="inExercise" style="margin: auto; background-color: rgba(0,0,0,.4); width: 90%; border: none; border-bottom-left-radius: 15px;
@@ -25,12 +25,13 @@
         </div>
       
 
-        <h1 class="col text-center" ng-show="inReps" style="border: none;">Current Exercise: {{ exerciseName }}</h1>
-        <h2 class="col text-center" ng-show="inReps" style="border: none;">{{ repsCounter }} Reps X {{ setsCounter }} Sets<br><br>
-          <button class="{{ repButtonColor }}" ng-click="nextWorkout()" style="border: none;">{{ repButton }}</button>
+      <div class='repTitleContainer' ng-show="inReps">  <h1 class="col text-center" ng-show="inReps" style="border: none; margin: 0 auto; background-color: transparent;">Current Exercise: {{ exerciseName }}</h1>
+          <h2 class="col text-center" ng-show="inReps" style="border: none; margin: 0 auto; background-color: transparent;">{{ repsCounter }} Reps X {{ setsCounter }} Sets </h2><br>
+            <button class="{{ repButtonColor }}" ng-click="nextWorkout()" style="border: none; margin: 0 auto; margin-bottom: 20px; background-color: #2ECC71;">{{ repButton }}</button> </div>
 
 
 
+<!--
       <div class="item item-body" style="background-color: transparent; border: none;">
         <p>
           <img class="full-image" src="img/sampleworkout.jpg">
@@ -38,6 +39,7 @@
 
 
       </div>
+-->
 
 
 
