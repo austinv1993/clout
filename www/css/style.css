@@ -333,3 +333,28 @@ padding: 20px;
 
 }
 
+.header2 {
+margin-top: 10px;
+
+
+
+}
+
+.clockTitleContainer {
+background-color: rgba(0,0,0,.4);
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+
+}
+
+.startStop {
+background-color: rgba(0,0,0.4);
+
+}
+
+
+
