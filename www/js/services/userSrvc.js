@@ -3,7 +3,7 @@ angular.module('clout')
 
     this.authenticate = function(loginAttempt) {
         console.log(loginAttempt);
-        return $http.post('http://localhost:8080/api/authenticate', loginAttempt).then(function(response) {
+        return $http.post('http://104.236.75.136:8080/api/authenticate', loginAttempt).then(function(response) {
             if(response.data.success) {
                 storageFactory.setToken(response.data.token);
                 storageFactory.save('user', JSON.stringify(response.data.user));

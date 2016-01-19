@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan('dev'));
 app.use(passport.initialize());
-app.use(express.static(__dirname + './www'));
+app.use(express.static(__dirname + '/www'));
 
 
 var apiRoutes = express.Router();
