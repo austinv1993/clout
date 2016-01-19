@@ -1,7 +1,8 @@
 <ion-view hide-nav-bar="true" view-title="">
-   
-    
+
+
     <ion-content class='viewWorkoutBG'>
+
         <a href='#/tab/workout-selection' class="button icon-left ion-chevron-left button-clear button-dark" style='margin-top: 40px;'>Back</a>
 
 
@@ -45,7 +46,9 @@
 
         <button class="button button-full button-energized run-workout" style='background-color: #2ECC71; ' ng-click="workoutStart(workout._id)">Run Workout</button>
 
+		<button class="button button-full button-balanced run-workout" style='background-color: #FDD017; ' ng-click="addToFavorites(workout._id)" ng-show="fovoriteToAdd">Add to Favorites</button>
 
-        
+
+
     </ion-content>
 </ion-view>

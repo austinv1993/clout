@@ -23,4 +23,9 @@ angular.module('clout')
             return response.data;
         });
     };
+    this.filterbyWorType = function(type) {
+        return $http.get('http://localhost:8080/api/filter/workouts?value=' + type).then(function(response) {
+            return response.data;
+        })
+    }
 })
