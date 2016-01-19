@@ -1,6 +1,6 @@
 angular.module('clout')
 .service('userSrvc', function($http, storageFactory) {
-     
+
     this.authenticate = function(loginAttempt) {
         console.log(loginAttempt);
         return $http.post('http://localhost:8080/api/authenticate', loginAttempt).then(function(response) {
@@ -39,7 +39,7 @@ angular.module('clout')
         return $http.put('http://localhost:8080/api/myfavorites', obj).then(function(response) {
             return response.data;
         }, function(err) {
-            console.log('error pushing workout to completed', err)
+            console.log('error pushing workout to user favorites', err)
         })
     }
     //
@@ -61,7 +61,7 @@ angular.module('clout')
         return $http.get('http://localhost:8080/api/myfavorites?userId=' + userId).then(function(response) {
             return response.data;
         }, function(err) {
-            console.log('error pushing workout to completed', err)
+            console.log('error getting favorite workouts for user', err)
         })
     }
 });
