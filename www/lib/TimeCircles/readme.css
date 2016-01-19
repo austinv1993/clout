@@ -2,6 +2,7 @@
     width: 400px;
     height: 100px;
     margin-bottom: 10px;
+    border: none;
 }
 small.codeType {
     position: absolute;
@@ -9,37 +10,53 @@ small.codeType {
     right: 5px;
     font-weight: bold;
     color: #900;
+    margin-bottom: 10px;
+    border: none;
 }
 h2,h3 {
     margin-top: 1.5em;
+    margin-bottom: 10px;
+    border: none;
 }
 
 pre {
     position: relative;
+    margin-bottom: 10px;
+    border: none;
 }
 .code {
     position: relative;
     font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
     font-size: 13px;
     line-height: 1.428571429;
-    color: #000;
-    white-space: pre-line;
+    /*color: #000;*/
+    /*white-space: pre-line;*/
+    margin-bottom: 10px;
+    border: none;
 }
 
 .nav li {
     list-style: none;
+    margin-bottom: 10px;
+    border: none;
 }
 .nav li a {
-    color: #60686F;
+    /*color: #60686F;*/
     display: block;
+    margin-bottom: 10px;
+    border: none;
 }
 .nav li a:hover {
     text-decoration: none;
-    background-color: rgb(238, 238, 238);
+    /*background-color: rgb(238, 238, 238);*/
+    margin-bottom: 10px;
+    border: none;
 }
 .nav li.active > a {
-    border-right: solid #C0C8CF 2px;
+    /*border-right: solid #C0C8CF 2px;*/
     font-weight: bold;
+    margin-bottom: 10px;
+    border: none;
 }
 
 
@@ -48,8 +65,12 @@ pre {
 
 .nav li ul {
     display: none;
+    margin-bottom: 10px;
+    border: none;
 }
 
 .nav li.active ul {
     display: block;
+    margin-bottom: 10px;
+    border: none;
 }

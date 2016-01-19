@@ -6,6 +6,7 @@
     position: relative;
     width: 100%;
     height: 100%;
+    border: none;
 }
 
 /**
@@ -15,6 +16,7 @@
 .time_circles > div {
     position: absolute;
     text-align: center;
+    border: none;
 }
 
 /**
@@ -26,6 +28,9 @@
     text-align: center;
     text-transform: uppercase;
     font-family: 'Century Gothic', Arial;
+    color: white;
+    border: none;
+   
 }
 
 /**
@@ -39,4 +44,6 @@
     font-size: 300%;
     margin-top: 0.4em;
     font-weight: bold;
+    color: white;
+    border: none;   
 }

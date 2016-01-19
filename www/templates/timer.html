@@ -1,16 +1,16 @@
 <ion-view>
 	<ion-content>
-			<h1 class="col text-center" ng-show="inExercise">Current Exercise: {{ exerciseName }}</h1>
-			<div class="stopwatch"></div>
-			<div class="col text-center work" ng-show="inExercise">
-				<button class="{{ buttonColor }}" ng-click="startStop()">{{ button }}</button>
-				<button class="btn btn-info restart" ng-click="restart()">RESTART</button>
+			<h1 class="col text-center" ng-show="inExercise" style="border: none; color: transparent">Current Exercise: {{ exerciseName }}</h1>
+			<div class="stopwatch" style="border: none; color: transparent"></div>
+			<div class="col text-center work" ng-show="inExercise" style="border: none; color: transparent">
+				<button class="{{ buttonColor }}" ng-click="startStop()" style="border: none; color: transparent">{{ button }}</button>
+				<button class="btn btn-info restart" ng-click="restart()" style="border: none; color: transparent">RESTART</button>
 			</div>
-			<h1 class="col text-center" ng-show="inBreak">Take a Break!</h1>
-			<div class="breakwatch"></div>
-			<div class="col text-center break" ng-show="inBreak">
-				<button class="{{ buttonColor }}" ng-click="startStopBreak()">{{ button }}</button>
-				<button class="btn btn-info restart" ng-click="restartBreak()">Restart</button>
+			<h1 class="col text-center" ng-show="inBreak" style="border: none; color: transparent">Take a Break!</h1>
+			<div class="breakwatch" style="border: none; color: transparent"></div>
+			<div class="col text-center break" ng-show="inBreak" style="border: none; color: transparent">
+				<button class="{{ buttonColor }}" ng-click="startStopBreak()" style="border: none; color: transparent">{{ button }}</button>
+				<button class="btn btn-info restart" ng-click="restartBreak()" style="border: none; color: transparent">Restart</button>
 			</div>
 	</ion-content>
 </ion-view>
