@@ -23,10 +23,11 @@ angular.module('clout')
 
 	userSrvc.getFavorites($scope.user.id).then(function(favorites) {
 		console.log(favorites);
+		console.log($stateParams.workoutId);
 		$scope.fovoriteToAdd = true;
 		$scope.favorites = favorites;
 		favorites.forEach(function(e) {
-			if(e._id === $scope.workout._id || e.id === $scope.workout._id) {
+			if(e._id === $stateParams.workoutId || e.id === $stateParams.workoutId) {
 				$scope.fovoriteToAdd = false;
 			}
 		});
