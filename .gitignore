@@ -7,5 +7,9 @@ platforms/
 plugins/
 platforms/ios/cordova/build-extras.xcconfig
 .DS_Store
+ionic.project
+www/lib/ionic-platform-web-client/dist/ionic.io.bundle.js
+www/lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js
+
 
 
