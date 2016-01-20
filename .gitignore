@@ -5,6 +5,6 @@ node_modules/
 server/secret.js
 platforms/
 plugins/
-
+platforms/ios/cordova/build-extras.xcconfig
 
 
