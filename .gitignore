@@ -6,5 +6,6 @@ server/secret.js
 platforms/
 plugins/
 platforms/ios/cordova/build-extras.xcconfig
+.DS_Store
 
 
