@@ -8,5 +8,5 @@ plugins/
 ionic.project
 www/lib/ionic-platform-web-client/dist/ionic.io.bundle.js
 www/lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js
-
+.DS_Store
 
