@@ -6,42 +6,40 @@
           <br/>{{user.username}}</div>
         <button style='margin-top: 10px; background-color: #2ECC71; border: none; border-radius: 5px; color: white;' ng-click="logout()">Logout</button>
       </div>
+            <div class="bar bar-header item-input-inset absolute" style='background: rgba(0,0,0,.4); border-radius: 5px; margin-top: 20px; margin-bottom: 30px;'>
+                <label class="item-input-wrapper" style='background: rgba(0,0,0,0);color:white;'>
+                    <i class="icon ion-ios-search placeholder-icon"></i>
+                    <input ng-model="searchName" type="search" placeholder="Search" style='color: white; border-radius: 5px;'>
+                </label>
+                <button ng-click="clearInput()" class="button button-clear">
+                    Cancel
+                </button>
+            </div>
 
+            <div class='filterContainer'>            <label class="item item-input item-select" style='background-color:rgba(0,0,0,0); border: 1px solid white;  margin: 0 0 20px 0;'>
+  <div class="input-label" style='color: white;'>
+    Filter By:
+  </div>
+  <select ng-model="filterBy" ng-change="filterBy()" style='background-color:rgba(0,0,0,0); color: white;'>
+    <option value="favorites">Favorites</option>
+    <option value="created">Created</option>
+    <option value="recentlyCompleted">Recently Completed</option>
+  </select>
+</label>
+<label class="item item-input item-select" style='background-color:rgba(0,0,0,0); border: 1px solid white;  margin: 0 auto; '>
+  <div class="input-label" style='color: white;'>
+    Workout Type:
+  </div>
+  <select ng-model="workoutType" ng-change="filterByWorType()" style='background-color:rgba(0,0,0,0); color: white;'>
+    <option value="repetition">Repetition</option>
+    <option value="interval">Interval</option>
+  </select>
+</label>
+            </div>
 
-      <div class="bar bar-header item-input-inset absolute" style='background: rgba(0,0,0,.4); border-radius: 5px; margin-top: 20px; margin-bottom: 30px;'>
-        <label class="item-input-wrapper" style='background: rgba(0,0,0,0);color:white;'>
-          <i class="icon ion-ios-search placeholder-icon"></i>
-          <input ng-model="searchName" type="search" placeholder="Search" style='color: white; border-radius: 5px;'>
-        </label>
-        <button ng-click="clearInput()" class="button button-clear">
-          Cancel
-        </button>
-      </div>
-
-      <div class='filterContainer'>
-        <label class="item item-input item-select" style='background-color:rgba(0,0,0,0); border: 1px solid white;  margin: 0 0 20px 0;'>
-          <div class="input-label" style='color: white;'>
-            Filter By:
-          </div>
-          <select ng-model="filterBy" ng-change="filterBy()" style='background-color:rgba(0,0,0,0); color: white;'>
-            <option value="favorites">Favorites</option>
-            <option value="created">Created</option>
-            <option value="recentlyCompleted">Recently Completed</option>
-          </select>
-        </label>
-        <label class="item item-input item-select" style='background-color:rgba(0,0,0,0); border: 1px solid white;  margin: 0 auto; '>
-          <div class="input-label" style='color: white;'>
-            Workout Type:
-          </div>
-          <select ng-model="workoutType" ng-change="filterByWorType()" style='background-color:rgba(0,0,0,0); color: white;'>
-            <option value="repetition">Repetition</option>
-            <option value="interval">Interval</option>
-          </select>
-        </label>
-      </div>
-
-      <ion-list>
-        <!--<button sref="tab.workout-creation" class="button button-block button-energized" style='background-color: #2ECC71;  font-weight: bold;' ng-click="postNewWorkout()">
+            <ion-list>
+                <!--<button sref="tab.workout-creation" class="button button-block button-energized" style='background-color: #2ECC71;  font-weight: bold;' ng-click="postNewWorkout()">
+>>>>>>> reps
           Create New Workout
         </button>-->
         <ion-item ng-repeat="workout in retrievedWorkouts | filter:{name:searchName}" style='background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; margin-bottom: 5px;'>
