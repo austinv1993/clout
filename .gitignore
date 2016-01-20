@@ -2,6 +2,9 @@
 # http://git-scm.com/docs/gitignore
 
 node_modules/
+server/secret.js
 platforms/
 plugins/
-server/secret.js
+
+
+
