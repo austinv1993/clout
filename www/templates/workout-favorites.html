@@ -1,7 +1,9 @@
-<ion-view hide-nav-bar="true" view-title="Workout Selection">
+<ion-view hide-nav-bar="true" view-title="Favorites">
     <ion-content class='selectionBG'>
-		<h2 style="color: white; text-align: center;" color="white">{{ user.username }}'s<br>Favorite Workouts</h2>
-        <ion-item ng-repeat="favorite in favorites | filter:{name:searchName}" style='background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; margin-bottom: 5px;'>
+        
+        <a onclick="history.back(-1)" class="button icon-left ion-chevron-left button-clear button-dark" style='margin-top: 40px;'>Back</a>
+		<h3 style="color: white; text-align: center; color= white; margin-top: 10px;">{{ user.username }}'s Favorite Workouts</h3>
+        <ion-item ng-repeat="favorite in favorites | filter:{name:searchName}" style='background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; margin-bottom: 5px; width: 90%; margin: 0 auto;'>
 
                     <p style='color: white;' class="workOutName">{{favorite.name}}</p>
                     <p style='color: white;' class="workOutTime">{{favorite.time.mins}} minutes</p>
