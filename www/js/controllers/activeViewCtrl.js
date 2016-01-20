@@ -1,5 +1,5 @@
 angular.module('clout')
-.controller('activeViewCtrl', function($state, $scope, $stateParams, $timeout, workoutSelectionSrvc, userSrvc) {
+.controller('activeViewCtrl', function($state, $scope, $stateParams, $timeout, workoutSelectionSrvc, userSrvc,  storageFactory) {
 
     workoutSelectionSrvc.getWorkoutById($stateParams.workoutId).then(function(data) {
 
@@ -73,7 +73,7 @@ angular.module('clout')
                 $(".stopwatch").TimeCircles().addListener(function (unit, value, total) {
                     if (total === 0) {
                         if (i === data.exercises.length - 1) {
-                            $state.go("tab.workout-selection");
+                            $state.go("workoutComplete");
                             alert("Workout Completed. Good Job!");
                             $scope.idObj = {};
                             $scope.idObj.workoutId = $scope.workoutData._id;
@@ -170,7 +170,7 @@ angular.module('clout')
 				}
 
                 if (i === data.exercises.length) {
-                    $state.go("tab.workout-selection");
+                    $state.go("workoutComplete");
                     alert("Workout Completed. Good Job!");
                     $scope.idObj = {};
                     $scope.idObj.workoutId = $scope.workoutData._id;
@@ -194,5 +194,10 @@ angular.module('clout')
             }
         });
     }
+    // $scope.viewWorkout = function(workoutId) {
+	// 	window.location.reload(true);
+    //     $state.go('workoutComplete', ({workoutId: workoutId }));
+
+    // };        
 
 });

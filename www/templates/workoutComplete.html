@@ -5,61 +5,41 @@
     <div class="clout-header">
          <img class='mainLogo' src='../img/cloutMainLogo.png' />
     </div>
-    <div class="card">
-  <div class="item item-text-wrap">
-    WORKOUT COMPLETED!
-  </div>
 
-</div>
+        <div class="view-workout-container" style='background: rgba(0,0,0,.4); color: white; width: 90%; margin: 10px auto; padding: 20px; border-radius: 5px;'>
+            <div class='viewBG'>
+                <div>
+                    <h4 style='color: white; font-weight: bold;'>{{workout.name}}</h4>
+                </div>
+                <div>
+                    <b>Estimated Time:</b> {{workout.time.hrs}} hours {{workout.time.mins}} mins
+                </div>
 
-
-
-<div class="card">
-  <div class="item item-divider">
-
-  </div>
-  <div class="item item-text-wrap">
-    Completed Ultimate Leg Day Bro!
-  </div>
-  <div class="item item-divider">
-
-  </div>
-</div>
-
-<div class="card">
-  <div class="item item-divider">
-    Workout Overview
-  </div>
-  <div class="item item-text-wrap">
-    Time: 32 mins 29 seconds<br>
-
-    - Wow legs of steel bro -
-  </div>
-  <div class="item item-divider">
-
-  </div>
-</div>
+                <div><b>Type: </b>{{workout.type}}<br/> <b>Description:</b>
+                    <br> {{workout.description}}</div>
+                <div class="equipment-list float">
+                    <div>
+                        <b>Equipment Used</b>
+                    </div>
+                    <div ng-show="noEquipment">
+                        None
+                    </div>
+                    <div ng-repeat="equipment in workout.equipment">
+                        {{equipment}}
+                    </div>
+                </div>
+                <div class="exercise-list">
+                    <div>
+                        <b>Exercises</b>
+                    </div>
+                    <div ng-repeat="exercise in workout.exercises">
+                        {{exercise.name}}
+                    </div>
+                </div>
+            </div>
 
 
-<div class="list card">
-
-
-  <a href="#" class="item item-icon-left">
-    <i class="icon ion-share"></i>
-    Share your progress
-  </a>
-
-  <a href="#" class="item item-icon-left">
-    <i class="icon ion-clipboard"></i>
-    Start new workout
-  </a>
-
-  <a href="#" class="item item-icon-left">
-    <i class="icon ion-person"></i>
-    Profile
-  </a>
-
-</div>
+        </div> 
 
   </ion-content>
 

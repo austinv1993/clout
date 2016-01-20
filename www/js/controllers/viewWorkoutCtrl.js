@@ -51,5 +51,6 @@ angular.module('clout')
 			$scope.fovoriteToAdd = false;
 		});
 	};
+    
 
 });
