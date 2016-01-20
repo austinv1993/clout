@@ -6,7 +6,6 @@ server/secret.js
 platforms/
 plugins/
 ionic.project
-www/js/services/workoutSelectionSrvc.js
 www/lib/ionic-platform-web-client/dist/ionic.io.bundle.js
 www/lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js
 
