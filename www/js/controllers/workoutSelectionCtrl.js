@@ -80,7 +80,14 @@ angular.module('clout')
     $scope.filterByWorType = function() {
         workoutSelectionSrvc.filterbyWorType($scope.workoutType).then(function(workouts) {
             $scope.retrievedWorkouts = workouts;
+            
         })
     }
+    
+    
+    
+    
+    
+    
 
 });
