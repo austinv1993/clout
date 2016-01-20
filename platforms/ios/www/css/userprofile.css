@@ -1,0 +1,110 @@
+.userNameSubHeader {
+    background-color: #383747;
+    color: white;
+    margin: 0 auto;
+    padding: 0px;
+    border: 0px;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    background-size: cover;
+    font-size: 28px;
+
+
+}
+
+.profilePic {
+width: 100%;
+    height: 300px;
+    background-image: url(../img/arnold.jpg);
+    background-size: cover;
+    text-align: center;
+    line-height: 300px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+
+
+}
+
+.col {
+
+text-align: center;
+    border: 2px solid #510000;
+    margin: 2px;
+    font-size: 14px;
+    background-color: white;
+
+
+}
+
+.userRow {
+background-color: #383747;
+
+}
+
+.nameHeader {
+width: 100%;
+    height: 35px;
+    background-color: #00ff12;
+    color: white;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 35px;
+
+}
+
+.done {
+text-decoration: line-through;
+    color: #ccc;
+
+}
+
+
+.addGoalBtn {
+background-color: #383747;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 300px;
+    
+    
+
+}
+.clearGoalBtn {
+background-color: #510000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    
+
+}
+.addGoalField {
+margin-left: 10px;
+    width: 100%;
+    float: left;
+
+}
+.goalTodo {
+width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
