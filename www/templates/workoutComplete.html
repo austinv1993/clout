@@ -1,66 +1,23 @@
 <ion-view view-title="">
 
-  <ion-content>
+    <ion-content class='selectionBG'>
+		<h2 style="color: white; text-align: center;" color="white">{{ user.username }}<br>Completed Workout</h2>
+        <ion-item ng-repeat="favorite in favorites | filter:{name:searchName}" style='background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; margin-bottom: 5px;'>
 
-    <div class="clout-header">
-         <img class='mainLogo' src='../img/cloutMainLogo.png' />
-    </div>
-    <div class="card">
-  <div class="item item-text-wrap">
-    WORKOUT COMPLETED!
-  </div>
-
-</div>
-
-
-
-<div class="card">
-  <div class="item item-divider">
-
-  </div>
-  <div class="item item-text-wrap">
-    Completed Ultimate Leg Day Bro!
-  </div>
-  <div class="item item-divider">
-
-  </div>
-</div>
-
-<div class="card">
-  <div class="item item-divider">
-    Workout Overview
-  </div>
-  <div class="item item-text-wrap">
-    Time: 32 mins 29 seconds<br>
-
-    - Wow legs of steel bro -
-  </div>
-  <div class="item item-divider">
-
-  </div>
-</div>
-
-
-<div class="list card">
-
-
-  <a href="#" class="item item-icon-left">
-    <i class="icon ion-share"></i>
-    Share your progress
-  </a>
-
-  <a href="#" class="item item-icon-left">
-    <i class="icon ion-clipboard"></i>
-    Start new workout
-  </a>
-
-  <a href="#" class="item item-icon-left">
-    <i class="icon ion-person"></i>
-    Profile
-  </a>
-
-</div>
-
-  </ion-content>
+                    {{favorite.name}}
+                    <p style='color: white;' class="workOutTime">{{favorite.time.mins}} minutes</p>
+                    <p style='color: white;'>Type: {{favorite.workoutType}}</p>
+                    <p style='color: white;'>Description: {{favorite.description}}</p>
+					<button ng-click="removeFavorite(user.id, favorite._id, $index)" class="btn btn-danger" style='margin: 5px; float: right;'>
+                        Remove
+                    </button>
+                    <button ng-click="viewWorkout(favorite._id)" class="button button-small button-assertive" style='margin: 5px; background-color: #2ECC71;  float: right;'>
+                        View
+                    </button>
+                    <button ng-click="quickStart(favorite._id)" class="button button-small button-assertive" style='margin:5px; background-color: #2ECC71;  float: right;'>
+                        Quick Start
+                    </button>
+        </ion-item>
+    </ion-content>
 
 </ion-view>

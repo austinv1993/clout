@@ -82,7 +82,8 @@ angular.module('clout', ['ionic','ionic.service.core', 'clout.controllers', 'clo
 
       .state('workoutComplete', {
         url: '/workoutComplete',
-        templateUrl: 'templates/workoutComplete.html'
+        templateUrl: 'templates/workoutComplete.html',
+        controller: 'workoutFavoritesCtrl'
       })
       .state('login', {
           url: '/login',

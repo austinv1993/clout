@@ -4,6 +4,7 @@ angular.module('clout')
 	$scope.getCurrentUser = function() {
         $scope.user = JSON.parse(localStorage.getItem('user'));
         console.log('user', $scope.user);
+        console.log($stateParams);
     };
 
     $scope.getCurrentUser();
