@@ -1,0 +1,54 @@
+<ion-view hide-nav-bar="true" view-title="">
+
+
+    <ion-content class='viewWorkoutBG'>
+
+        <a onclick="history.back(-1)" class="button icon-left ion-chevron-left button-clear button-dark" style='margin-top: 40px;'>Back</a>
+
+
+        <div class="view-workout-container" style='background: rgba(0,0,0,.4); color: white; width: 90%; margin: 10px auto; padding: 20px; border-radius: 5px;'>
+            <div class='viewBG'>
+                <div>
+                    <h4 style='color: white; font-weight: bold;'>{{workout.name}}</h4>
+                </div>
+                <div>
+                    <b>Estimated Time:</b> {{workout.time.hrs}} hours {{workout.time.mins}} mins
+                </div>
+
+                <div><b>Type: </b>{{workout.type}}<br/> <b>Description:</b>
+                    <br> {{workout.description}}</div>
+                <div class="equipment-list float">
+                    <div>
+                        <b>Equipment Used</b>
+                    </div>
+                    <div ng-show="noEquipment">
+                        None
+                    </div>
+                    <div ng-repeat="equipment in workout.equipment">
+                        {{equipment}}
+                    </div>
+                </div>
+                <div class="exercise-list">
+                    <div>
+                        <b>Exercises</b>
+                    </div>
+                    <div ng-repeat="exercise in workout.exercises">
+                        {{exercise.name}}
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="run-workout-container">
+
+
+
+        <button class="button button-full button-energized run-workout" style='background-color: #2ECC71; ' ng-click="workoutStart(workout._id)">Run Workout</button>
+
+		<button class="button button-full button-balanced run-workout" style='background-color: #FDD017; ' ng-click="addToFavorites(workout._id)" ng-show="fovoriteToAdd">Add to Favorites</button>
+
+
+
+    </ion-content>
+</ion-view>

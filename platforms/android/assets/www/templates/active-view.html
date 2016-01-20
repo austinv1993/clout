@@ -1,0 +1,52 @@
+<ion-view hide-nav-bar="true" view-title="">
+  <ion-content>
+
+    <a onclick="history.back(-1)" class="button icon-left ion-chevron-left button-clear button-dark" style='margin-top: 40px;'>Back</a>
+
+    <div class="clout-header header2">
+      <img class='mainLogo' src='img/cloutMainLogo.png' />
+    </div>
+
+
+    <div class='clockTitleContainer' ng-show="inExercise">
+      <h3 class="active-name" ng-show="inExercise" style="text-align: center;color: white; border: none; background-color: transparent; "><p class="exercise-name" style="border: none;">{{workoutData.name}}</p>Current Exercise: {{ exerciseName }}</h3></div>
+
+    <div class="stopwatch" style="color: white; border: none;"></div>
+    <div class="col text-center work" ng-show="inExercise" style="margin: auto; background-color: rgba(0,0,0,.4); width: 90%; border: none; border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px; border-top-left-radius: 0px;
+    border-top-right-radius: 0px;">
+      <button class="{{ buttonColor }}" ng-click="startStop()" style="border: none;">{{ button }}</button>
+      <button class="btn btn-info restart" ng-click="restart()" style="border: none;">RESTART</button>
+    </div>
+    <h3 class="active-name" ng-show="inBreak" style="border: none; text-align: center; color: white; ">Take a Break!</h3>
+    <div class="breakwatch" style="border: none;"></div>
+    <div class="col text-center break" ng-show="inBreak" style="border: none; ">
+      <button class="{{ buttonColor }}" ng-click="startStopBreak()" style="border: none;">{{ button }}</button>
+      <button class="btn btn-info restart" ng-click="restartBreak()" style="border: none;">Restart</button>
+    </div>
+
+
+    <div class='repTitleContainer' ng-show="inReps">
+      <h1 class="col text-center" ng-show="inReps" style="border: none; margin: 0 auto; background-color: transparent;">Current Exercise: {{ exerciseName }}</h1>
+      <h2 class="col text-center" ng-show="inReps" style="border: none; margin: 0 auto; background-color: transparent;">{{ repsCounter }} Reps X {{ setsCounter }} Sets </h2>
+      <br>
+      <button class="{{ repButtonColor }}" ng-click="nextWorkout()" style="border: none; margin: 0 auto; margin-bottom: 20px; background-color: #2ECC71;">{{ repButton }}</button>
+    </div>
+
+
+    <!--
+      <div class="item item-body" style="background-color: transparent; border: none;">
+        <p>
+          <img class="full-image" src="img/sampleworkout.jpg">
+        </p>
+
+
+      </div>
+-->
+
+
+    <!--</div>-->
+
+
+  </ion-content>
+</ion-view>

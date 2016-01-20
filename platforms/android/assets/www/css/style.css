@@ -1,0 +1,345 @@
+/* Empty. Add your own CSS if you like */
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-content {
+  background: url("../img/blurredRunners.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+.viewWorkoutBG {
+  background: url("../img/stretching.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+.selectionBG {
+  background: url("../img/runnerOnRoad.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+.ex-list {
+  margin-top: 10px;
+}
+
+.clout-header {
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.clout-header-two {
+  text-align: center;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.masterContainer {
+  width: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.mainLogo {
+  width: 60%;
+}
+
+.clout-name {
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  padding-top: 2px;
+  padding-bottom: 18px;
+  font-size: 32px;
+}
+
+.workout-header {
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.button-small {
+  background-color: #2ECC71;
+  color: white;
+  opacity: 1.0;
+}
+
+.item-input {
+  font-weight: 300;
+  border-radius: 5px;
+}
+
+.ion-close {
+  color: white;
+  background-color: none;
+  background: none;
+  border: none;
+  font-size: 15px;
+}
+
+.time-holder {
+  border: none;
+}
+
+.mins-holder {
+  width: 5%;
+  margin-left: 2px;
+}
+
+.time-selector {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+  color: white;
+  font-weight: 300;
+  border: none;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0);
+}
+
+.time-container {
+  display: flex;
+}
+
+.type-container {
+  padding-left: 63%;
+  display: flex;
+}
+
+.mock-time {
+  margin-bottom: 5px;
+  width: 20%;
+  border: 1px solid #EEEEEE;
+  border-radius: 3px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+  position: relative;
+}
+
+.mock-time-two {
+  margin-bottom: 5px;
+  width: 20%;
+  border: 1px solid #EEEEEE;
+  border-radius: 3px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+  position: relative;
+}
+
+.type-selector {
+  background-color: #510000;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-weight: 300;
+  margin-left: 5px;
+  position: relative;
+}
+
+
+/*
+  margin-top: 10px;
+}*/
+
+.container {
+  margin: 15px;
+}
+
+.workout {
+  /*outline: 1px solid red;*/
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.float {
+  float: left;
+}
+
+.margin {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.clear {
+  clear: both;
+}
+
+.exerName {
+  width: 100%;
+  background: #EEEEEE;
+}
+
+.exerMins {
+  width: 15%;
+  background: #EEEEEE;
+  margin-right: 10px;
+}
+
+.exerSecs {
+  width: 15%;
+  background: #EEEEEE;
+}
+
+.min-sec-container {
+  display: flex;
+  margin-top: 10px;
+}
+
+.rep-set-container {
+  display: flex;
+  margin-top: 10px;
+}
+
+.workOutName {
+  font-weight: bold;
+}
+
+.workOutTime {
+  font-style: italic;
+}
+
+.exerName {
+  width: 150px;
+}
+
+.exerMins {
+  width: 50px;
+}
+
+.exerSecs {
+  width: 50px;
+}
+
+.item-divider {
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  font-family: Montserrat, sans-serif;
+}
+
+.item-text-wrap {
+  text-align: center;
+  font-weight: 400;
+  font-family: Montserrat, sans-serif;
+  background-color: black;
+  color: white;
+}
+
+.timer {
+  text-align: center;
+}
+
+.play-pause {
+  text-align: center;
+}
+
+.subdued {
+  text-align: center;
+}
+
+.view-workout-container {
+  margin: 15px;
+  padding: 15px;
+}
+
+.exercise-list {
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.float-right {
+  float: right;
+}
+
+.run-workout {
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.run-workout-container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.the-end {
+  text-align: center;
+}
+
+.select-filter {
+  width: 27%;
+}
+
+.filters {
+  margin-top: 7px;
+}
+
+.center {
+  margin: auto 0;
+}
+
+
+}
+.theEndContainer {
+  text-align: center;
+}
+.filterContainer {
+  width: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  border-radius: 5px;
+  margin: 0 0 30px 0;
+  padding: 20px;
+}
+.btn-info {
+  background-color: #2ECC71;
+}
+.btn-danger {
+  background-color: orange;
+}
+.btn-success {
+  background-color: #0BB5FF;
+}
+.header2 {
+  margin-top: 10px;
+}
+.clockTitleContainer {
+  background-color: rgba(0, 0, 0, .4);
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.repTitleContainer {
+  background-color: rgba(0, 0, 0, .4);
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+}
+.startStop {
+  background-color: rgba(0, 0, 0.4);
+}
+
+
+
