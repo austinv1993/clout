@@ -47,19 +47,22 @@
         </button>-->
                 <ion-item ng-repeat="workout in retrievedWorkouts | filter:{name:searchName}" style='background-color: rgba(0,0,0,.4); border: none; border-radius: 5px; margin-bottom: 5px;'>
 
-                    <p style='color: white;' class="workOutName">{{workout.name}}</p>
-                    <p style='color: white;' class="workOutTime">{{workout.time.mins}} minutes</p>
-                    <p style='color: white;'>Type: {{workout.workoutType}}</p>
-                    <p style='color: white;'>Description: {{workout.description}}</p>
 
-                    <button ui-sref='viewWorkout(workout._id)' ng-click="viewWorkout(workout._id)" class="button button-small button-assertive" style='margin: 10px; background-color: #2ECC71;  float: right;'>
-                        View
-                    </button>
-                    <button ng-click="quickStart(workout._id)" class="button button-small button-assertive" style='margin: 10px; background-color: #2ECC71;  float: right;'>
-                        Quick Start
-                    </button>
-                </ion-item>
-            </ion-list>
+          <p style='color: white;' class="workOutName">{{workout.name}}</p>
+          <p style='color: white;' class="workOutTime">{{workout.time.mins}} minutes</p>
+          <p style='color: white;'>Type: {{workout.workoutType}}</p>
+          <p style='color: white;'>Description: {{workout.description}}</p>
+<!--ng-click="viewWorkout(workout._id)"-->
+          <button ui-sref="view-workout({workoutId: workout._id})" class="button button-small button-assertive" style='margin: 10px; background-color: #2ECC71;  float: right;'>
+            View
+          </button>
+          <!--ng-click="quickStart(workout._id)"-->
+          <button ui-sref="active-view({workoutId: workout._id})" class="button button-small button-assertive" style='margin: 10px; background-color: #2ECC71;  float: right;'>
+            Quick Start
+          </button>
+        </ion-item>
+      </ion-list>
+
 
         </div>
 
