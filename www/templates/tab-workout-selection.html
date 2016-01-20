@@ -30,7 +30,7 @@
   <div class="input-label" style='color: white;'>
     Workout Type:
   </div>
-  <select ng-model="workoutType" ng-change="filterByWorType()" style='background-color:rgba(0,0,0,0); color: white;'>
+  <select ng-model="workoutType" ng-change="filterByWorType(workoutType)" style='background-color:rgba(0,0,0,0); color: white;'>
     <option value="repetition">Repetition</option>
     <option value="interval">Interval</option>
   </select>
@@ -49,7 +49,7 @@
           <p style='color: white;'>Type: {{workout.workoutType}}</p>
           <p style='color: white;'>Description: {{workout.description}}</p>
 
-          <button ng-click="viewWorkout(workout._id)" class="button button-small button-assertive" style='margin: 10px; background-color: #2ECC71;  float: right;'>
+          <button ui-sref='viewWorkout(workout._id)' ng-click="viewWorkout(workout._id)" class="button button-small button-assertive" style='margin: 10px; background-color: #2ECC71;  float: right;'>
             View
           </button>
           <button ng-click="quickStart(workout._id)" class="button button-small button-assertive" style='margin: 10px; background-color: #2ECC71;  float: right;'>

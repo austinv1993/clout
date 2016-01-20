@@ -1,5 +1,7 @@
 angular.module('clout')
 .controller('workoutSelectionCtrl', function($state, $scope, $stateParams, workoutSelectionSrvc, storageFactory) {
+    
+    $scope.workoutType = 'interval';
 
     $scope.getFirstPage = function() {
         workoutSelectionSrvc.getWorkouts().then(function(workouts) {
@@ -77,12 +79,25 @@ angular.module('clout')
         console.log('user', $scope.user);
     }
     $scope.getCurrentUser();
-    $scope.filterByWorType = function() {
-        workoutSelectionSrvc.filterbyWorType($scope.workoutType).then(function(workouts) {
-            $scope.retrievedWorkouts = workouts;
+    $scope.filterByWorType = function(type) {
+        
+        console.log(type);
+        
+        var workouts = $scope.retrievedWorkouts.filter(function(el){
+            console.log('el', el);
             
-        })
+            var workoutType = el.workoutType || 'interval' ;
+        return workoutType.toLowerCase() === type;
+        
+        });
+        $scope.retrievedWorkouts = workouts;
+//        workoutSelectionSrvc.filterbyWorType($scope.workoutType).then(function(workouts) {
+//            $scope.retrievedWorkouts = workouts;
+//            
+//        })
     }
+    
+    
     
     
     
