@@ -40,8 +40,8 @@ apiRoutes.put('/myfavorites', UserCtrl.pushFavorites);
 apiRoutes.put('/removeFavorite/:userId', UserCtrl.removeFavorite);
 
 //GET
-apiRoutes.get('/mycreated', UserCtrl.getCompleted)
-apiRoutes.get('/mycompleted', UserCtrl.getCreated);
+apiRoutes.get('/mycreated', UserCtrl.getCreated)
+apiRoutes.get('/mycompleted', UserCtrl.getCompleted);
 apiRoutes.get('/myfavorites', UserCtrl.getFavorites);
 
 

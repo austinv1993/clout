@@ -309,14 +309,14 @@ html {
   margin: 0 0 30px 0;
   padding: 20px;
 }
-.btn-info {
+/* .btn-info {
   background-color: #2ECC71;
 }
 .btn-danger {
   background-color: orange;
 }
 .btn-success {
-  background-color: #0BB5FF;
+  background-color: #0BB5FF; */
 }
 .header2 {
   margin-top: 10px;
@@ -337,9 +337,9 @@ html {
   border-radius: 15px;
   text-align: center;
 }
-.startStop {
+/* .startStop {
   background-color: rgba(0, 0, 0.4);
-}
+} */
 
 
 

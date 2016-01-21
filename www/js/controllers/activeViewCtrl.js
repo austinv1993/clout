@@ -14,7 +14,6 @@ angular.module('clout')
     });
     $scope.getCurrentUser = function() {
         $scope.user = JSON.parse(localStorage.getItem('user'));
-        console.log('user', $scope.user);
     }
     $scope.getCurrentUser();
 
@@ -30,8 +29,6 @@ angular.module('clout')
             var i = 0;
             var exerciseInterval = data.exercises;
 			$scope.workoutData = data;
-			console.log($scope.workout);
-
 
             $scope.startWorkout = function () {
 
@@ -73,13 +70,14 @@ angular.module('clout')
                 $(".stopwatch").TimeCircles().addListener(function (unit, value, total) {
                     if (total === 0) {
                         if (i === data.exercises.length - 1) {
-                            $state.go("tab.workout-selection");
-                            alert("Workout Completed. Good Job!");
                             $scope.idObj = {};
                             $scope.idObj.workoutId = $scope.workoutData._id;
                             $scope.idObj.userId = $scope.user.id;
                             console.log($scope.idObj);
                             userSrvc.pushCompleted($scope.idObj)
+							alert("Workout Completed. Good Job!");
+							$state.go("tab.workout-selection");
+					 		window.location.reload(true);
                         }
                         else {
                             i++;
@@ -170,19 +168,20 @@ angular.module('clout')
 				}
 
                 if (i === data.exercises.length) {
-                    $state.go("tab.workout-selection");
-                    alert("Workout Completed. Good Job!");
                     $scope.idObj = {};
                     $scope.idObj.workoutId = $scope.workoutData._id;
                     $scope.idObj.userId = $scope.user.id;
-                    console.log($scope.idObj);
-                    userSrvc.pushCompleted($scope.idObj)
+                    userSrvc.pushCompleted($scope.idObj);
+					alert("Workout Completed. Good Job!");
+					$state.go("tab.workout-selection");
+					window.location.reload(true);
                 }
 
-				$scope.repsCounter = exerciseInterval[i].reps;
-                $scope.setsCounter = exerciseInterval[i].sets;
-                $scope.exerciseName = exerciseInterval[i].name;
-
+				if (i !== data.exercises.length) {
+					$scope.repsCounter = exerciseInterval[i].reps;
+					$scope.setsCounter = exerciseInterval[i].sets;
+					$scope.exerciseName = exerciseInterval[i].name;
+				}
             };
 			if(i === 0) {
 

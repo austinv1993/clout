@@ -29,6 +29,7 @@ angular.module('clout')
         })
     }
     this.pushCompleted = function(obj) {
+		console.log("hit push completed service");
         return $http.put('http://104.236.75.136:8080/api/mycompleted', obj).then(function(response) {
             return response.data;
         }, function(err) {
@@ -47,14 +48,14 @@ angular.module('clout')
         return $http.get('http://104.236.75.136:8080/api/mycreated?userId=' + userId).then(function(response) {
             return response.data;
         }, function(err) {
-            console.log('error pushing workout', err)
+            console.log('error getting created workouts', err)
         })
     }
     this.getCompleted = function(userId) {
         return $http.get('http://104.236.75.136:8080/api/mycompleted?userId=' + userId).then(function(response) {
             return response.data;
         }, function(err) {
-            console.log('error pushing workout to completed', err)
+            console.log('error getting completed workouts', err)
         })
     }
     this.getFavorites = function(userId) {

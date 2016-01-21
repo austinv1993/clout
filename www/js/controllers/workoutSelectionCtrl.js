@@ -5,7 +5,6 @@ function WorkoutSelection($state, $scope, $stateParams, workoutSelectionSrvc, st
     getFirstPage();
 
     function getFirstPage() {
-        console.log('type:', $scope.type);
         workoutSelectionSrvc.getWorkouts($scope.type).then(function (workouts) {
             $scope.retrievedWorkouts = $scope.workouts = workouts;
         });
@@ -19,18 +18,14 @@ function WorkoutSelection($state, $scope, $stateParams, workoutSelectionSrvc, st
     $scope.getMoreWorkouts = function (type) {
         workoutSelectionSrvc.offset += 8;
         workoutSelectionSrvc.getWorkouts(type).then(function (workouts) {
-            console.log('workouts', workouts);
 
 //            if (err) {
 //                $scope.moreDataAvailable = false;
 //                return;
 //            }
-            
-            console.log('and here');
 
             $scope.workouts = workouts;
             workouts.forEach(function (wo) {
-                console.log('pushing ', wo);
                 $scope.retrievedWorkouts.push(wo);
             });
 
@@ -48,7 +43,6 @@ function WorkoutSelection($state, $scope, $stateParams, workoutSelectionSrvc, st
             if (workouts.length === 0) {
                 $scope.moreDataAvailable = false;
             }
-            // console.log('got more workouts');
             $scope.$broadcast('scroll.infiniteScrollComplete');
         });
     };
@@ -84,7 +78,6 @@ function WorkoutSelection($state, $scope, $stateParams, workoutSelectionSrvc, st
         $state.go('active-view', ({
             workoutId: workoutId
         }));
-        // console.log("hit quickStart Function");
     };
 
     $scope.logout = function () {
@@ -96,7 +89,6 @@ function WorkoutSelection($state, $scope, $stateParams, workoutSelectionSrvc, st
 
     $scope.getCurrentUser = function () {
         $scope.user = JSON.parse(localStorage.getItem('user'));
-        console.log('user', $scope.user);
     };
 
     $scope.getCurrentUser();
